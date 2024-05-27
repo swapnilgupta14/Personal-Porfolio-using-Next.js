@@ -19,7 +19,7 @@ const Header = () => {
                             <li className="hover:text-blue-600 transition duration-300 ease-in-out cursor-pointer" onClick={Router.push('/Page')}>Home</li>
                             <li className="hover:text-blue-600 transition duration-300 ease-in-out cursor-pointer">About</li>
                             <li className="hover:text-blue-600 transition duration-300 ease-in-out cursor-pointer">Projects</li>
-                            <li className="hover:text-blue-600 transition duration-300 ease-in-out cursor-pointer">Contact</li>
+                            <li className="hover:text-blue-600 transition duration-300 ease-in-out cursor-pointer">Contact Me</li>
                         </ul>
                     </div>
                 </nav>
