@@ -1,0 +1,69 @@
+@import './variables';
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
+
+.navbar {
+  width: 80%;
+  margin: 2rem auto;
+  padding: $padding-default;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+  backdrop-filter: blur(10px);
+  border-radius: $border-radius;
+  box-shadow: $box-shadow-default;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all $transition-time ease;
+
+  .navbar-list {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    .navbar-item {
+      margin: 0 1rem;
+
+      .navbar-link {
+        text-decoration: none;
+        color: $link-color;
+        font-weight: 700;
+        padding: $link-padding;
+        position: relative;
+        transition: color $transition-time;
+
+        &::before {
+          content: '';
+          position: absolute;
+          width: 0%;
+          height: 2px;
+          bottom: 0;
+          left: 0;
+          background-color: $link-color;
+          visibility: hidden;
+          transition: all $transition-time ease-in-out;
+        }
+
+        &:hover::before {
+          visibility: visible;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile {
+    max-width: 80%;
+    overflow: hidden;
+    padding: $padding-mobile;
+    font-size: 1rem;
+    display: flex;  
+    justify-content: space-evenly;
+
+    .navbar-item{
+      padding: 5px;
+    }
+  }
+}

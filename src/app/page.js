@@ -1,95 +1,107 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+import React, { useEffect, useState } from 'react';
+import Header from './components/header';
 
-export default function Home() {
+const Page = () => {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    let moveTimeoutId;
+    let hideTimeoutId;
+
+    const showCursor = () => {
+      clearTimeout(hideTimeoutId);
+      setVisible(true);
+    };
+
+    const hideCursor = () => {
+      hideTimeoutId = setTimeout(() => {
+        setVisible(false);
+      }, 200); // Adjust delay before hiding the cursor
+    };
+
+    const mouseMoveHandler = (event) => {
+      clearTimeout(moveTimeoutId);
+      showCursor();
+      setPosition({ x: event.clientX, y: event.clientY });
+      moveTimeoutId = setTimeout(() => {
+        hideCursor();
+      }, 500); // Adjust delay for detecting inactivity
+    };
+
+    const mouseEnterHandler = () => {
+      showCursor();
+    };
+
+    const mouseLeaveHandler = () => {
+      hideCursor();
+    };
+
+    document.addEventListener('mousemove', mouseMoveHandler);
+    document.addEventListener('mouseenter', mouseEnterHandler);
+    document.addEventListener('mouseleave', mouseLeaveHandler);
+
+    return () => {
+      clearTimeout(moveTimeoutId);
+      clearTimeout(hideTimeoutId);
+      document.removeEventListener('mousemove', mouseMoveHandler);
+      document.removeEventListener('mouseenter', mouseEnterHandler);
+      document.removeEventListener('mouseleave', mouseLeaveHandler);
+    };
+  }, []);
+
+  const CustomCursor = () => {
+    const cursorStyle = {
+      position: 'fixed',
+      top: position.y + 'px',
+      left: position.x + 'px',
+      pointerEvents: 'none',
+      zIndex: 9999,
+      visibility: visible ? 'visible' : 'hidden',
+      cursor: "none !important",
+
+    };
+
+    const outerCircleStyle = {
+      width: '20px',
+      height: '20px',
+      borderRadius: '50%',
+      border: '2px solid white',
+      position: 'absolute',
+      top: '-20px',
+      left: '-20px',
+      pointerEvents: 'none',
+      cursor: "none !important",
+    };
+
+    const innerCircleStyle = {
+      width: '5px',
+      height: '5px',
+      borderRadius: '50%',
+      backgroundColor: 'blue', // Set your desired color here
+      position: 'absolute',
+      top: 'calc(50% - 10px)',
+      left: 'calc(50% - 11px)',
+      pointerEvents: 'none',
+      cursor: "none !important",
+
+    };
+
+    return (
+      <div style={cursorStyle}>
+        <div style={outerCircleStyle}></div>
+        <div style={innerCircleStyle}></div>
+      </div>
+    );
+  };
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    <>
+      <Header />
+      <CustomCursor />
+    </>
   );
-}
+};
+
+export default Page;
