@@ -107,6 +107,7 @@
     }
   }
 }
+
 @media (max-width: 768px) {
   .navbar {
     width: 97%;
@@ -114,7 +115,7 @@
     margin-top: 0.5rem;
     flex-direction: row;
     box-shadow: 0px 0.5px 1px rgb(116, 115, 115);
-    position: relative; 
+    position: relative;
 
     .navbar-list {
       flex-direction: row;
@@ -124,9 +125,16 @@
       .navbar-item {
         font-size: 1.4rem;
         padding: 0;
-        
+
         .navbar-link {
           margin: 0;
+        }
+
+        .navbar-link-item {
+          display: flex;
+          align-items: left;
+          flex: 1;
+          justify-content: center;
         }
 
         .dropdown-menu {
@@ -141,18 +149,72 @@
           height: fit-content;
           margin-top: 2vh;
           transition: all 1s ease;
-
         }
 
         .dropdown-item {
           padding: 12px 16px;
           text-decoration: none;
-          display: block;
+          height: fit-content;
+          display: flex;
+          width: 100%;
+          justify-content: center;
           color: $accent-color;
           border-bottom: lighten($accent-color, 50%) 1px solid;
           transition: all $transition-time ease;
+
+          &:hover {
+            background-color: lighten($secondary-color, 10%);
+          }
+
+          .dropdown-item-text {
+            align-items: center;
+            display: flex;
+            flex: 4;
+          }
+
+          .dropdown-item-icon {
+            display: flex;
+            align-items: left;
+            flex: 1;
+            justify-content: center;
+          }
         }
+
+        .sub-dropdown-menu {
+          background-color: $secondary-color;
+          height: fit-content;
+          transition: all 1s ease;
+        }
+
+        .sub-dropdown-item {
+          padding: 12px 16px;
+          text-decoration: none;
+          height: fit-content;
+          display: flex;
+          width: 100%;
+          justify-content: center;
+          color: $accent-color;
+          transition: all $transition-time ease;
+          cursor: pointer;
+
+          &:hover {
+            background-color: lighten($secondary-color, 10%);
+          }
+        }
+
       }
     }
   }
+}
+
+.rotate-icon {
+  transform: rotate(180deg);
+  transition: transform 0.5s ease;
+  transform-origin: center;
+}
+
+.rotate-icon-again {
+  transform: rotate(0deg);
+  transition: transform 0.5s ease;
+  transform-origin: center;
 }

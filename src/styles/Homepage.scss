@@ -34,13 +34,32 @@
         flex: 1;
         background-color: $secondary-color;
         border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        font-family: 'Roboto-mono', monospace;
+        text-align: left;
+
 
         .right-text {
             margin: 5vh;
             font-size: 1.5rem;
-            font-family: "LXGW WenKai Mono TC", monospace;
-            text-align: justify;
+            text-align: left;
+
             color: $accent-color;
+            font-weight: normal;
+            font-size: 16px;
+
+            .social-nav {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+
+        .right-text h1 {
+            font-size: 2rem;
+            text-align: center;
+            justify-content: center;
         }
     }
 
@@ -49,11 +68,12 @@
 
 @media (max-width: 768px) {
     .frontpage-container {
-        margin: 5vh;
-        min-height: calc(100vh - 50vh);
-        max-height: calc(100vh - 50vh);
+        margin: 2vh 2vh 2vh 2vh;
+        min-height: fit-content;
+        max-height: fit-content;
         display: flex;
         flex-direction: column;
+        text-align: left;
 
         .left {
             flex: 2;
@@ -62,7 +82,7 @@
             justify-content: center;
 
             .upper-left-container {
-    
+
                 .circle-container {
                     background-color: $secondary-color;
                     border-radius: 50%;
@@ -76,15 +96,34 @@
 
         .right {
             flex: 1;
+            font-family: 'Roboto-mono', monospace;
+            padding: 1vh;
 
             .right-text {
                 margin: 0vh;
                 font-size: 1rem;
-                font-family: "LXGW WenKai Mono TC", monospace;
-                text-align: center;
+                text-align: left;
                 justify-content: center;
+                padding: 2vh;
+
             }
         }
 
+    }
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    .buttons {
+        background-color: $accent-color;
+        border-radius: 10px;
+        margin: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 1vh 3vh;
+        color: $secondary-color;
     }
 }

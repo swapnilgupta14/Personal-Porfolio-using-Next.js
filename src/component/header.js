@@ -1,10 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { Icon } from './icon/icon';
+import { DropDown } from './icon/icon';
 
 const Header = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
+
+  const dropdownItems = [
+    { id: 1, label: 'Dropdown Item 1', subItems: ['Sub Item 1.1', 'Sub Item 1.2', 'Sub Item 1.3'] },
+    { id: 2, label: 'Dropdown Item 2', subItems: ['Sub Item 2.1', 'Sub Item 2.2', 'Sub Item 2.3'] },
+    { id: 3, label: 'Dropdown Item 3', subItems: ['Sub Item 3.1', 'Sub Item 3.2', 'Sub Item 3.3'] }
+  ];
+
+
+  const handleDropdownItemClick = (item) => {
+    setSelectedItem(selectedItem && selectedItem.id === item.id ? null : item);
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -42,7 +55,7 @@ const Header = () => {
               {!isMobile && !isTablet && (
                 <div>
                   <a href="#" className="navbar-link hindi">
-                    <p>स्वप्निल</p>
+                    <p>Swapnil</p>
                   </a>
                 </div>
               )}
@@ -65,9 +78,30 @@ const Header = () => {
                 </div>
                 {isDropdownOpen && (
                   <div className="dropdown-menu">
-                    <a href="#" className="dropdown-item">Dropdown Item 1</a>
-                    <a href="#" className="dropdown-item">Dropdown Item 2</a>
-                    <a href="#" className="dropdown-item">Dropdown Item 3</a>
+                    {dropdownItems.map(item => (
+                      <div key={item.id} className="dropdown-item-wrapper">
+                        <a
+                          href="#"
+                          className="dropdown-item "
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleDropdownItemClick(item);
+                          }}
+                        >
+                          <div className='dropdown-item-text'>{item.label}</div>
+                          <div className={`dropdown-item-icon ${selectedItem && selectedItem.id === item.id ? 'rotate-icon' : 'rotate-icon-again'}`}>
+                            <DropDown height={45} width={45} />
+                          </div>
+                        </a>
+                        {selectedItem && selectedItem.id === item.id && (
+                          <div className="sub-dropdown-menu">
+                            {item.subItems.map((subItem, index) => (
+                              <a key={index} href="#" className="sub-dropdown-item">{subItem}</a>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    ))}
                   </div>
                 )}
               </li>
