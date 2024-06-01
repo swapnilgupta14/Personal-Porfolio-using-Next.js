@@ -1,5 +1,6 @@
 @import './variables';
 @import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dekko&display=swap');
 
 .navbar {
   width: 80%;
@@ -12,7 +13,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all $transition-time ease;
+  max-height: 4vh;
 
   .navbar-list {
     list-style: none;
@@ -23,15 +24,57 @@
 
     .navbar-item {
       margin: 0 1rem;
+      display: flex;
+      font-size: 1rem;
+      flex-direction: column;
+      justify-content: center;
+
+      .inscribed {
+        overflow: visible;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: #333;
+        box-shadow: 0 4px 8px rgba(128, 127, 127, 0.6);
+        transition: all 0.3s ease-in-out;
+      }
+
+      .inscribed:hover {
+        box-shadow: 0 4px 8px rgba(211, 210, 210, 0.6);
+        transform: scale(1.05);
+      }
+      
+      .hindi {
+        font-family: 'Dekko', cursive;
+        font-size: 2.5rem;
+        text-align: center;
+        color: #fff; 
+      }
+      
+      .hindi p {
+        color: #f0f0f0;
+        text-shadow: 1px 1px 2px rgb(0, 0, 0);
+      }
+
+      .hindi:hover{
+        color: #f0f0f0;
+        text-shadow: 2px 2px 4px rgb(0, 0, 0);
+      }
 
       .navbar-link {
         text-decoration: none;
         color: $link-color;
-        font-weight: 700;
+        font-weight: 600;
         padding: $link-padding;
         position: relative;
         transition: color $transition-time;
+        transition: all $transition-time ease;
+      }
 
+      .hover{
         &::before {
           content: '';
           position: absolute;
@@ -53,17 +96,60 @@
   }
 }
 
-@media (max-width: 768px) {
-  .mobile {
-    max-width: 80%;
-    overflow: hidden;
-    padding: $padding-mobile;
-    font-size: 1rem;
-    display: flex;  
-    justify-content: space-evenly;
+@media (max-width: 1024px) {
+  .navbar {
+    width: 90%;
+    max-height: 5vh;
+    margin: 1.5rem auto;
+    padding: 15px;
 
-    .navbar-item{
-      padding: 5px;
+    .navbar-list {
+      .navbar-item {
+        margin: 0 0.5rem;
+        font-size: 0.9rem;
+
+        .inscribed {
+          width: 80px;
+          height: 80px;
+        }
+
+        .hindi {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    width: 80%;
+    max-height: 4vh;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+
+
+    .navbar-list {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      .navbar-item {
+        margin: 0.5rem 1rem;
+        font-size: 1.2rem;
+
+        .inscribed {
+          width: 100px;
+          height: 100px;
+          font-size: 2.5rem;
+        }
+
+        .hindi {
+          font-size: 1.5rem;
+        }
+      }
     }
   }
 }

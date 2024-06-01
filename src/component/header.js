@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {Icon} from "../components/icon/icon";
+import { Icon } from './icon/icon';
 
 const Header = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -22,33 +22,33 @@ const Header = () => {
         <div className="navbar-tray">
           <ul className="navbar-list">
             <li className="navbar-item">
-              <a href="#" className="navbar-link" >
+              <a href="#" className="navbar-link hover" >
                 Home
               </a>
             </li>
-            <li className="navbar-item">
-              <a href="#" className="navbar-link">
+            {!isTablet && !isMobile ? <li className="navbar-item">
+              <a href="#" className="navbar-link hover" >
                 About
               </a>
+            </li> : null}
+            <li className="navbar-item">
+              <div className='inscribed'>
+                <a href="#" className="navbar-link hindi">
+                  <p>स्वप्निल</p>
+                </a>
+              </div>
             </li>
-            {!isTablet && !isMobile ? <><li className="navbar-item">
-              <a href="#" className="navbar-link">
+            <li className="navbar-item">
+              <a href="#" className="navbar-link hover">
                 Projects
               </a>
             </li>
-              <li className="navbar-item">
-                <a href="#" className="navbar-link">
+            {!isTablet && !isMobile ? <><li className="navbar-item">
+                <a href="#" className="navbar-link hover">
                   Contact
                 </a>
-              </li></> : (
-              <>
-              <li className="navbar-item">
-                <a href="#" className="navbar-link">
-                  <Icon width={20} height={20}/>
-                </a>
-              </li>
-              </>)
-              }
+              </li></> : (null)
+            }
           </ul>
         </div>
       </nav>
@@ -57,3 +57,12 @@ const Header = () => {
 };
 
 export default Header;
+
+
+{/* <>
+<li className="navbar-item">
+  <a href="#" className="navbar-link hover">
+    <Icon width={20} height={20} />
+  </a>
+</li>
+</> */}
