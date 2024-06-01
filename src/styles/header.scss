@@ -6,14 +6,14 @@
   width: 70%;
   margin: 2rem auto;
   padding: $padding-default;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.149) 0%, rgba(255, 255, 255, 0.084) 100%);
+  background: $secondary-color;
   backdrop-filter: blur(10px);
   border-radius: $border-radius;
-  box-shadow: 0px 0px 10px 2px #28ee49;
+  box-shadow: 0px 0.5px 1px rgb(116, 115, 115);
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 7vh;
+  // min-height: 7vh;
   max-height: 7vh;
 
   .navbar-list {
@@ -30,50 +30,35 @@
       flex-direction: column;
       justify-content: center;
 
-      .inscribed {
-        overflow: visible;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        background: #303030;
-        box-shadow: 0px 0px 10px 2px #28ee49;
-        transition: all 0.3s ease-in-out;
-      }
-
-      .inscribed:hover {
-        // box-shadow: 0 4px 8px rgba(211, 210, 210, 0.6);
-        // transform: scale(1.05);
-      }
-      
       .hindi {
         font-family: 'Dekko', cursive;
-        font-size: 2.5rem;
+        font-size: 2.0rem;
+        overflow: auto;
         text-align: center;
-        color: #fff; 
+        color: $accent-color; 
       }
       
       .hindi p {
-        color: #f0f0f0;
-        text-shadow: 1px 1px 2px rgb(0, 0, 0);
+        color: $accent-color;
+        text-shadow: 1px 1px 2px rgb(116, 115, 115);
       }
 
-      .hindi:hover{
-        color: #f0f0f0;
-        text-shadow: 2px 2px 4px rgb(0, 0, 0);
-      }
+      // .hindi:hover{
+      //   color: #f0f0f0;
+      //   text-shadow: 2px 2px 4px rgb(0, 0, 0);
+      // }
 
       .navbar-link {
         text-decoration: none;
-        color: $link-color;
+        color: $accent-color;
         font-weight: 600;
         margin: 10px;
         padding: $link-padding;
         position: relative;
         transition: color $transition-time;
         transition: all $transition-time ease;
+        text-shadow: 0px 0.5px 1px rgb(116, 115, 115);
+
       }
 
       .navbar-link:hover{
@@ -88,7 +73,7 @@
           height: 2px;
           bottom: 0;
           left: 0;
-          background-color: $link-color;
+          background-color: $accent-color;
           visibility: hidden;
           transition: all $transition-time ease-in-out;
         }
@@ -112,12 +97,8 @@
     .navbar-list {
       .navbar-item {
         margin: 0 0.5rem;
-        font-size: 0.9rem;
+        // font-size: 0.9rem;
 
-        .inscribed {
-          width: 80px;
-          height: 80px;
-        }
 
         .hindi {
           font-size: 2rem;
@@ -130,11 +111,12 @@
 @media (max-width: 768px) {
   .navbar {
     width: 80%;
-    max-height: 4vh;
-    margin: 1.2rem auto;
+    max-height: 5vh;
+    margin: 1rem auto;
     display: flex;
     flex-direction: row;
     margin-top: 30px;
+    box-shadow: 0px 0.5px 1px rgb(116, 115, 115);
 
 
     .navbar-list {
@@ -143,22 +125,13 @@
       align-items: center;
 
       .navbar-item {
-        margin: 0.5rem 1rem;
+        margin: 0.3rem 1rem;
         // font-size: 0.9rem;
-
-        .inscribed {
-          width: 100px;
-          height: 100px;
-          font-size: 20px;
-          overflow: visible;
-          
           .hindi {
             font-family: 'Dekko', cursive;
             font-size: 2.5rem;
             text-align: center;
             color: #fff; 
-          }
-
         }
 
         .hindi {

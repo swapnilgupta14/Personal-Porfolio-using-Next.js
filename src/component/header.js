@@ -32,11 +32,13 @@ const Header = () => {
               </a>
             </li> : null}
             <li className="navbar-item">
-              <div className='inscribed'>
+              {!isMobile && !isTablet ? <div>
                 <a href="#" className="navbar-link hindi">
                   <p>स्वप्निल</p>
                 </a>
-              </div>
+              </div> : <div>
+                <span className="navbar-link" style={{marginLeft: "-15px"}}><Icon/></span>
+              </div>}
             </li>
             <li className="navbar-item">
               <a href="#" className="navbar-link hover">
@@ -44,10 +46,10 @@ const Header = () => {
               </a>
             </li>
             {!isTablet && !isMobile ? <><li className="navbar-item">
-                <a href="#" className="navbar-link hover">
-                  Contact
-                </a>
-              </li></> : (null)
+              <a href="#" className="navbar-link hover">
+                Contact
+              </a>
+            </li></> : (null)
             }
           </ul>
         </div>

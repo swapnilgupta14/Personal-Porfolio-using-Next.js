@@ -1,0 +1,90 @@
+.frontpage-container {
+    min-height: calc(100vh - 30vh);
+    max-height: calc(100vh - 30vh);
+    background-color: $accent-color;
+    margin: 5vh 15vh 5vh 15vh;
+    border-radius: 15px;
+    color: $accent-color;
+    display: flex;
+    flex-direction: row;
+
+    .left {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .upper-left-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+
+            .circle-container {
+                background-color: $secondary-color;
+                border-radius: 50%;
+                height: 35vh;
+                width: 35vh;
+                align-items: center;
+                margin: 5vh 2vh 2vh 0vh;
+            }
+        }
+    }
+
+    .right {
+        flex: 1;
+        background-color: $secondary-color;
+        border-radius: 15px;
+
+        .right-text {
+            margin: 5vh;
+            font-size: 1.5rem;
+            font-family: "LXGW WenKai Mono TC", monospace;
+            text-align: justify;
+            color: $accent-color;
+        }
+    }
+
+}
+
+
+@media (max-width: 768px) {
+    .frontpage-container {
+        margin: 5vh;
+        min-height: calc(100vh - 50vh);
+        max-height: calc(100vh - 50vh);
+        display: flex;
+        flex-direction: column;
+
+        .left {
+            flex: 2;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+
+            .upper-left-container {
+    
+                .circle-container {
+                    background-color: $secondary-color;
+                    border-radius: 50%;
+                    height: 20vh;
+                    width: 20vh;
+                    align-items: center;
+                    margin: 5vh 2vh 5vh 2vh;
+                }
+            }
+        }
+
+        .right {
+            flex: 1;
+
+            .right-text {
+                margin: 0vh;
+                font-size: 1rem;
+                font-family: "LXGW WenKai Mono TC", monospace;
+                text-align: center;
+                justify-content: center;
+            }
+        }
+
+    }
+}

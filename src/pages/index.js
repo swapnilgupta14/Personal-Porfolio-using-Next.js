@@ -1,11 +1,7 @@
 import { useState, useEffect } from "react";
-import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
 import Header from "@/component/header";
-
-const inter = Inter({ subsets: ["latin"] });
+import Homepage from "@/component/Homepage";
+import Projects from "@/component/Project";
 
 export default function Home() {
   const [showWelcome, setShowWelcome] = useState(true);
@@ -42,7 +38,11 @@ export default function Home() {
             </div>
           </div>
         ) : (
+          <>
           <Header />
+          <Homepage />
+          <Projects/>
+          </>
         )}
         {!showWelcome && (
           <style jsx global>{`
