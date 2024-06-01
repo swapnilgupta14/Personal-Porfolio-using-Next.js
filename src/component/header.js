@@ -4,6 +4,7 @@ import { Icon } from './icon/icon';
 const Header = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -16,41 +17,61 @@ const Header = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
   return (
     <header>
       <nav className={`navbar ${isMobile ? 'mobile' : ''} ${isTablet ? 'tablet' : ''}`}>
         <div className="navbar-tray">
           <ul className="navbar-list">
             <li className="navbar-item">
-              <a href="#" className="navbar-link hover" >
+              <a href="#" className="navbar-link hover">
                 Home
               </a>
             </li>
-            {!isTablet && !isMobile ? <li className="navbar-item">
-              <a href="#" className="navbar-link hover" >
-                About
-              </a>
-            </li> : null}
-            <li className="navbar-item">
-              {!isMobile && !isTablet ? <div>
-                <a href="#" className="navbar-link hindi">
-                  <p>स्वप्निल</p>
+            {!isTablet && !isMobile && (
+              <li className="navbar-item">
+                <a href="#" className="navbar-link hover">
+                  About
                 </a>
-              </div> : <div>
-                <span className="navbar-link" style={{marginLeft: "-15px"}}><Icon/></span>
-              </div>}
+              </li>
+            )}
+            <li className="navbar-item">
+              {!isMobile && !isTablet && (
+                <div>
+                  <a href="#" className="navbar-link hindi">
+                    <p>स्वप्निल</p>
+                  </a>
+                </div>
+              )}
             </li>
             <li className="navbar-item">
               <a href="#" className="navbar-link hover">
                 Projects
               </a>
             </li>
-            {!isTablet && !isMobile ? <><li className="navbar-item">
-              <a href="#" className="navbar-link hover">
-                Contact
-              </a>
-            </li></> : (null)
-            }
+            {!isTablet && !isMobile ? (
+              <li className="navbar-item">
+                <a href="#" className="navbar-link hover">
+                  Contact
+                </a>
+              </li>
+            ) : (
+              <li className="navbar-item">
+                <div onClick={toggleDropdown} className="navbar-link navbar-link-icon">
+                  <Icon height={42} width={42} />
+                </div>
+                {isDropdownOpen && (
+                  <div className="dropdown-menu">
+                    <a href="#" className="dropdown-item">Dropdown Item 1</a>
+                    <a href="#" className="dropdown-item">Dropdown Item 2</a>
+                    <a href="#" className="dropdown-item">Dropdown Item 3</a>
+                  </div>
+                )}
+              </li>
+            )}
           </ul>
         </div>
       </nav>
@@ -59,12 +80,3 @@ const Header = () => {
 };
 
 export default Header;
-
-
-{/* <>
-<li className="navbar-item">
-  <a href="#" className="navbar-link hover">
-    <Icon width={20} height={20} />
-  </a>
-</li>
-</> */}

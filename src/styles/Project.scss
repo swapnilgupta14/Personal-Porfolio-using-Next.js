@@ -56,7 +56,7 @@
     .project-container {
         min-height: fit-content;
         max-height: fit-content;
-        min-width: 40vh;
+        min-width: calc(33% - 40px);
         background-color: $accent-color;
         border-radius: 15px;
         color: $accent-color;
