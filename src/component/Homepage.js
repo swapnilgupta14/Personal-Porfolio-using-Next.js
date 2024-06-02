@@ -6,7 +6,7 @@ const Homepage = () => {
         <div className='frontpage-container'>
             <div className='left'>
                 <div className='upper-left-container'>
-                    <div className='circle-container'></div>
+                    <img src='./IMG_1.jpg' className='profile profile-mobile'/>
                 </div>
             </div>
             <div className='right'>

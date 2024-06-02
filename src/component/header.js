@@ -74,7 +74,7 @@ const Header = () => {
             ) : (
               <li className="navbar-item">
                 <div onClick={toggleDropdown} className="navbar-link navbar-link-icon">
-                  <Icon height={42} width={42} />
+                  <Icon height={32} width={32} />
                 </div>
                 {isDropdownOpen && (
                   <div className="dropdown-menu">

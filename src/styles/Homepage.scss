@@ -19,8 +19,8 @@
             flex-direction: row;
             justify-content: center;
 
-            .circle-container {
-                background-color: $secondary-color;
+            .profile {
+                // background-color: $secondary-color;
                 border-radius: 50%;
                 height: 35vh;
                 width: 35vh;
@@ -82,14 +82,17 @@
             justify-content: center;
 
             .upper-left-container {
+                margin-bottom: -10px;
 
-                .circle-container {
-                    background-color: $secondary-color;
-                    border-radius: 50%;
-                    height: 20vh;
-                    width: 20vh;
+                .profile {
+                    border-top-left-radius: 15px;
+                    border-top-right-radius: 15px;
+                    border-bottom-left-radius: 0%;
+                    border-bottom-right-radius: 0%;
+                    height: 100%;
+                    width: 100%;
                     align-items: center;
-                    margin: 5vh 2vh 5vh 2vh;
+                    margin: 0vh;
                 }
             }
         }
@@ -118,12 +121,12 @@
     width: 100%;
 
     .buttons {
-        background-color: $accent-color;
+        background-color: $base-color;
         border-radius: 10px;
         margin: 10px;
         font-size: 16px;
         font-weight: bold;
         padding: 1vh 3vh;
-        color: $secondary-color;
+        color: $accent-color;
     }
 }
