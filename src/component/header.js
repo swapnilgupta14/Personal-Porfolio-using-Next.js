@@ -35,7 +35,7 @@ const Header = () => {
   };
 
   return (
-    <header>
+    <header className='app-header app-header-large'>
       <nav className={`navbar ${isMobile ? 'mobile' : ''} ${isTablet ? 'tablet' : ''}`}>
         <div className="navbar-tray">
           <ul className="navbar-list">

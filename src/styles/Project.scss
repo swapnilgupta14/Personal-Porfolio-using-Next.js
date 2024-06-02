@@ -8,22 +8,25 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     padding: 20px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease;
+    position: relative;
+
+
 
     .project-card {
         background-color: $accent-color;
         margin: 2vh 2vh;
         padding: 20px;
         color: $secondary-color;
-        overflow-x: auto;
         height: fit-content;
         width: calc(33% - 40px);
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
+
 
         &:hover {
             transform: translateY(-10px);
@@ -57,28 +60,68 @@
 
 @media (max-width: 768px) {
     .project-container {
-        min-height: fit-content;
-        max-height: fit-content;
-        min-width: fit-content;
-        background-color: $secondary-color;
-        border-radius: 15px;
-        color: $accent-color;
-        display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        align-items: center;
         margin: 2vh;
-        padding: 20px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        transition: background-color 0.3s ease;
+        box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+        padding: 10px;
+        border-left: none;
+        padding-top: 5vh;
+
+        .timeline {
+            position: absolute;
+            left: 50.5%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: $accent-color;
+            z-index: 0;
+        }
+
+        .timeline-indicator {
+            position: absolute;
+            left: 51%;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background-color: $secondary-color;
+            transform: translateX(-50%);
+            z-index: 1;
+            background-image: url('/icons8-mandala-100.png');
+            background-size: contain; 
+            background-repeat: no-repeat;
+            background-position: center;
+        }
 
         .project-card {
-            background-color: $accent-color;
+            width: 90%;
+            margin: 5vh 0;
+            padding: 15px;
+            font-size: 14px;
+            box-shadow: none;
+            position: relative;
+            background-color: $secondary-color;
+            color: $accent-color;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            color: $secondary-color;
-            width: 100%;
-            margin: 2vh 0;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
 
-          
+            &:nth-of-type(n + 2) .timeline-indicator {
+                /* Indicators starting from the second card */
+                top: -60px;
+                /* Positioned above each card */
+            }
+
+            h2 {
+                color: $accent-color;
+            }
+
+            p,
+            a {
+                margin: 0;
+            }
         }
     }
 }

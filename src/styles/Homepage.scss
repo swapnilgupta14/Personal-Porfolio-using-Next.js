@@ -63,6 +63,8 @@
 
                     .icon {
                         margin: 0px 10px;
+                        width: 30px;
+                        height: 30px;
                     }
                 }
             }
@@ -130,7 +132,12 @@
                 border-radius: 10px;
                 margin: 10px;
                 font-size: 16px;
-                padding: 5px 20px;
+                padding: 0px 20px;
+
+                p{
+                    padding: 5px 10px;
+                    margin: 0;
+                }
             }
         }
 
@@ -149,7 +156,7 @@
         margin: 10px;
         font-size: 16px;
         // font-weight: bold;
-        padding: 1vh 3vh;
+        padding: 0vh 2vh;
         color: $secondary-color;
     }
 }
