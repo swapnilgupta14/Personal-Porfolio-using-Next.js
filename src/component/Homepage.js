@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
-
+import { Linkedin, Github, Mail, Leetcode, HackerRank } from './icon/icon';
+import Link from 'next/link';
 const Homepage = () => {
 
     return (
@@ -11,7 +12,7 @@ const Homepage = () => {
             </div>
             <div className='right'>
                 <div className='right-text'>
-                    <h1>Hi! I'm Swapnil </h1>
+                    <h1 className='caveat-cursive-regular'>Hi! I'm Swapnil Gupta</h1>
                     <div>
                         <h2>About Me</h2>
                         <p>Born & brought up in Kanpur, Uttar Pradesh, I completed my schooling there.
@@ -20,18 +21,18 @@ const Homepage = () => {
                             Graphic designing.
                         </p>
                     </div>
-                    <div>
-                        <ul className="social-nav">
-                            <li><a href="https://www.facebook.com/rishabh.gupta.9083477" ></a></li>
-                            <li><a href="https://github.com/rishotics"></a></li>
-                            <li><a href="https://www.youtube.com/user/rishabhgupta05" target="_blank"></a></li>
-                            <li><a href="https://www.linkedin.com/in/rishotics"></a></li>
-                        </ul>
+                    <div className='social-nav-container'>
+                        <div className="social-nav">
+                            <a className="icon" href="https://www.facebook.com/rishabh.gupta.9083477"><Leetcode width={20} height={20}/></a>
+                            <a  className="icon"  href="https://github.com/rishotics"><Github width={20} height={20}/></a>
+                            <a className="icon"  href="https://www.youtube.com/user/rishabhgupta05"><HackerRank width={20} height={20}/></a>
+                            <a  className="icon"  href="https://www.linkedin.com/in/rishotics"><Linkedin width={20} height={20}/></a>
+                        </div>
                     </div>
                     <div>
                         <div className='button-container'>
-                            <button className='buttons'>Download CV</button>
-                            <button className='buttons'>Mail Me</button>
+                            <button className='buttons'>Resume</button>
+                            <button className='buttons'>Contact</button>
                         </div>
                     </div>
                 </div>

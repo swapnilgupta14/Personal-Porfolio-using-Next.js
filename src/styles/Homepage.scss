@@ -45,14 +45,26 @@
             margin: 5vh;
             font-size: 1.5rem;
             text-align: left;
-
             color: $accent-color;
             font-weight: normal;
             font-size: 16px;
 
-            .social-nav {
-                display: flex;
-                justify-content: space-between;
+            h1{
+                // background-color: red;
+                margin-top: 0vh;
+                font-size: 2rem;
+            }
+
+            .social-nav-container {
+
+                .social-nav {
+                    display: flex;
+                    justify-content: center;
+
+                    .icon {
+                        margin: 0px 10px;
+                    }
+                }
             }
         }
 
@@ -109,6 +121,16 @@
                 justify-content: center;
                 padding: 2vh;
 
+                .icon {
+                    margin: 0px 5px;
+                }
+            }
+
+            .buttons {
+                border-radius: 10px;
+                margin: 10px;
+                font-size: 16px;
+                padding: 5px 20px;
             }
         }
 
@@ -119,14 +141,15 @@
     display: flex;
     justify-content: center;
     width: 100%;
+    margin-top: 15px;
 
     .buttons {
-        background-color: $base-color;
+        background-color: $accent-color;
         border-radius: 10px;
         margin: 10px;
         font-size: 16px;
-        font-weight: bold;
+        // font-weight: bold;
         padding: 1vh 3vh;
-        color: $accent-color;
+        color: $secondary-color;
     }
 }

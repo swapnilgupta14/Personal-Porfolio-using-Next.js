@@ -80,6 +80,8 @@
 
         &:hover::before {
           visibility: visible;
+          background-color: $accent-color;
+          color: $secondary-color;
           width: 100%;
         }
       }
