@@ -4,6 +4,19 @@ import Homepage from "@/component/Homepage";
 import Projects from "@/component/Project";
 
 export default function Home() {
+  
+  useEffect(() => {
+    const handleCopy = (e) => {
+      e.preventDefault();
+    };
+
+    document.addEventListener('copy', handleCopy);
+
+    return () => {
+      document.removeEventListener('copy', handleCopy);
+    };
+  }, []);
+
   const [showWelcome, setShowWelcome] = useState(true);
 
   useEffect(() => {
