@@ -1,7 +1,7 @@
 .loader-container {
 
     min-height: 100vh;
-    background: $base-color;
+    background: $secondary-color;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,7 +20,7 @@
     
     .loader {
         --path: #1c1f25;
-        --dot: #ec9926;
+        --dot: #DC5F00;
         --duration: 3s;
         width: 44px;
         height: 44px;
