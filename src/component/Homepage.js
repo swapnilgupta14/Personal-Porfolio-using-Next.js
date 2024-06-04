@@ -14,11 +14,6 @@ const Homepage = () => {
                 <div className='right-text'>
                     <h1 className='caveat-cursive-regular'>Hi! I'm Swapnil Gupta</h1>
                     <div>
-                        <p >Born & brought up in Kanpur, Uttar Pradesh, I completed my schooling there.
-                            I have completing my under-graduation from PSIT, Kanpur. Apart from academics,
-                            my interests lie in building scalable applications - frontend & backend, UI/UX,
-                            Graphic designing.
-                        </p>
                     </div>
                     <div className='social-nav-container'>
                         <div className="social-nav">

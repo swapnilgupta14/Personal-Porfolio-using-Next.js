@@ -2,125 +2,131 @@
 @import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dekko&display=swap');
 
-.app-header{
-.navbar {
-  width: 70%;
-  margin: 2rem auto;
-  padding: $padding-default;
-  background: $secondary-color;
-  backdrop-filter: blur(10px);
-  border-radius: $border-radius;
-  box-shadow: 0px 0.5px 1px rgb(116, 115, 115);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-height: 7vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
+.app-header {
 
-  .navbar-list {
-    list-style: none;
-    display: flex;
-    width: 100%;
-    padding: 0;
-    margin: 0;
+  margin-bottom: 15vh;
+  background-color: red !important;
 
-    .navbar-item {
-      margin: 0 1rem;
-      display: flex;
-      font-size: 1rem;
-      flex-direction: column;
-      justify-content: center;
-
-      .hindi {
-        font-family: 'Dekko', cursive;
-        font-size: 2.0rem;
-        overflow: auto;
-        text-align: center;
-        color: $accent-color;
-      }
-
-      .hindi p {
-        color: $accent-color;
-        text-shadow: 1px 1px 2px rgb(116, 115, 115);
-      }
-
-      // .hindi:hover{
-      //   color: #f0f0f0;
-      //   text-shadow: 2px 2px 4px rgb(0, 0, 0);
-      // }
-
-      .navbar-link {
-        text-decoration: none;
-        color: $accent-color;
-        font-weight: 600;
-        margin: 10px;
-        padding: $link-padding;
-        position: relative;
-        transition: color $transition-time;
-        transition: all $transition-time ease;
-        text-shadow: 0px 0.5px 1px rgb(116, 115, 115);
-
-      }
-
-      .navbar-link:hover {
-        transform: scale(1.1);
-      }
-
-      .hover {
-        &::before {
-          content: '';
-          position: absolute;
-          width: 0%;
-          height: 2px;
-          bottom: 0;
-          left: 0;
-          background-color: $accent-color;
-          visibility: hidden;
-          transition: all $transition-time ease-in-out;
-        }
-
-        &:hover::before {
-          visibility: visible;
-          background-color: $accent-color;
-          color: $secondary-color;
-          width: 100%;
-        }
-      }
-    }
-  }
-}
-}
-
-@media (max-width: 1024px) {
   .navbar {
-    width: 90%;
-    max-height: 5vh;
-    margin: 1.5rem auto;
-    padding: 15px;
+    width: 70%;
+    margin: 2rem auto;
+    padding: $padding-default;
+    background: $secondary-color;
+    backdrop-filter: blur(10px);
+    border-radius: $border-radius;
+    box-shadow: 0px 0.5px 1px rgb(116, 115, 115);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 7vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
 
     .navbar-list {
-      .navbar-item {
-        margin: 0 0.5rem;
-        // font-size: 0.9rem;
+      list-style: none;
+      display: flex;
+      width: 100%;
+      padding: 0;
+      margin: 0;
 
+      .navbar-item {
+        margin: 0 2rem;
+        display: flex;
+        font-size: 1rem;
+        flex-direction: column;
+        justify-content: center;
 
         .hindi {
-          font-size: 2rem;
+          font-family: 'Dekko', cursive;
+          font-size: 2.0rem;
+          overflow: auto;
+          text-align: center;
+          color: $accent-color;
+        }
+
+        .hindi p {
+          color: $accent-color;
+          text-shadow: 1px 1px 2px rgb(116, 115, 115);
+        }
+
+        // .hindi:hover{
+        //   color: #f0f0f0;
+        //   text-shadow: 2px 2px 4px rgb(0, 0, 0);
+        // }
+
+        .navbar-link {
+          text-decoration: none;
+          color: $accent-color;
+          font-weight: 600;
+          margin: 15px;
+          padding: $link-padding;
+          position: relative;
+          transition: color $transition-time;
+          transition: all $transition-time ease;
+          text-shadow: 0px 0.5px 1px rgb(116, 115, 115);
+
+        }
+
+        .navbar-link:hover {
+          transform: scale(1.1);
+          color: $base-color;
+        }
+
+        .hover {
+          &::before {
+            content: '';
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: $secondary-color;
+            visibility: hidden;
+            transition: all $transition-time ease-in-out;
+          }
+
+          &:hover::before {
+            visibility: visible;
+            background-color: $base-color;
+            color: $secondary-color;
+            width: 100%;
+          }
         }
       }
     }
   }
 }
+
+// @media (max-width: 1024px) {
+//   .navbar {
+//     width: 90%;
+//     max-height: 5vh;
+//     margin: 1.5rem auto;
+//     padding: 15px;
+
+//     .navbar-list {
+//       .navbar-item {
+//         margin: 0 0.5rem;
+//         // font-size: 0.9rem;
+
+
+//         .hindi {
+//           font-size: 2rem;
+//         }
+//       }
+//     }
+//   }
+// }
 
 @media (max-width: 768px) {
 
   .app-header {
+
     max-height: 6vh;
-    background: transparent;
+    // background: transparent;
     margin-bottom: 8vh;
 
     .navbar {
@@ -133,6 +139,8 @@
       left: 0;
       right: 0;
       z-index: 1000;
+      // background-color: red;
+
 
 
       .navbar-list {
@@ -188,18 +196,23 @@
             display: flex;
             width: 100%;
             justify-content: center;
+            border-radius: 15px;
             color: $accent-color;
             border-bottom: lighten($accent-color, 50%) 1px solid;
             transition: all $transition-time ease;
 
             &:hover {
               background-color: lighten($secondary-color, 10%);
+              border-radius: 15px;
+              color: $base-color;
+
             }
 
             .dropdown-item-text {
               align-items: flex-end;
               justify-content: center;
               display: flex;
+              border-radius: 15px;
               flex-direction: column;
               flex: 3;
               font-size: 1.2rem;
@@ -217,6 +230,8 @@
             background-color: $secondary-color;
             height: fit-content;
             transition: all 1s ease;
+            border-radius: 15px;
+
           }
 
           .sub-dropdown-item {
@@ -225,6 +240,7 @@
             height: fit-content;
             display: flex;
             width: 100%;
+            border-radius: 15px;
             // background-color: red;
             align-items: flex-end;
             color: $accent-color;
@@ -232,7 +248,8 @@
             cursor: pointer;
 
             &:hover {
-              background-color: lighten($secondary-color, 10%);
+              background-color: $accent-color;
+              color: $secondary-color;
             }
           }
 

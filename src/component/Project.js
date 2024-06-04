@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 // src/data/projectsData.js
 
 const projectsData = [
@@ -41,16 +41,51 @@ const projectsData = [
 ];
 
 const Project = () => {
+  const [visibleProjects, setVisibleProjects] = useState([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisibleProjects((prevVisibleProjects) => [
+              ...prevVisibleProjects,
+              entry.target.dataset.index
+            ]);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.1
+      }
+    );
+
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach((card) => {
+      observer.observe(card);
+    });
+
+    return () => {
+      projectCards.forEach((card) => {
+        observer.unobserve(card);
+      });
+    };
+  }, []);
+
   return (
-    <div className='project-container'>
-      <div className='timeline'></div>
+    <div className="project-container">
+      <div className="timeline"></div>
       {projectsData.map((project, index) => (
-        <div key={index} className='project-card'>
-          <div className='timeline-indicator'></div>
+        <div
+          key={index}
+          className={`project-card ${visibleProjects.includes(index.toString()) ? 'visible' : ''}`}
+          data-index={index}
+        >
+          <div className="timeline-indicator"></div>
           <h2>{project.title}</h2>
           <p>{project.description}</p>
           <p><strong>Technologies:</strong> {project.technologies.join(', ')}</p>
-          <a href={project.link} target="_blank" rel="noopener noreferrer">View Project</a>
         </div>
       ))}
     </div>

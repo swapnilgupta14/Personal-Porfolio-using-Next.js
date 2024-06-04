@@ -9,9 +9,9 @@ const Header = () => {
   const [selectedItem, setSelectedItem] = useState(null);
 
   const dropdownItems = [
-    { id: 1, label: 'Dropdown Item 1', subItems: ['Sub Item 1.1', 'Sub Item 1.2', 'Sub Item 1.3'] },
-    { id: 2, label: 'Dropdown Item 2', subItems: ['Sub Item 2.1', 'Sub Item 2.2', 'Sub Item 2.3'] },
-    { id: 3, label: 'Dropdown Item 3', subItems: ['Sub Item 3.1', 'Sub Item 3.2', 'Sub Item 3.3'] }
+    { id: 1, label: 'Experience', subItems: [] },
+    { id: 2, label: 'Skills', subItems: ['Sub Item 2.1', 'Sub Item 2.2', 'Sub Item 2.3'] },
+    { id: 3, label: 'Hire Me', subItems: ['Sub Item 3.1', 'Sub Item 3.2', 'Sub Item 3.3'] }
   ];
 
 
@@ -23,7 +23,7 @@ const Header = () => {
     const handleResize = () => {
       const width = window.innerWidth;
       setIsMobile(width <= 768);
-      setIsTablet(width > 768 && width <= 1024);
+      // setIsTablet(width > 768 && width <= 1024);
     };
     handleResize();
     window.addEventListener('resize', handleResize);
@@ -44,7 +44,7 @@ const Header = () => {
                 Home
               </a>
             </li>
-            {!isTablet && !isMobile && (
+            {!isMobile && (
               <li className="navbar-item">
                 <a href="#" className="navbar-link hover">
                   About
@@ -52,20 +52,11 @@ const Header = () => {
               </li>
             )}
             <li className="navbar-item">
-              {!isMobile && !isTablet && (
-                <div>
-                  <a href="#" className="navbar-link hindi">
-                    <p>Swapnil</p>
-                  </a>
-                </div>
-              )}
-            </li>
-            <li className="navbar-item">
               <a href="#" className="navbar-link hover">
                 Projects
               </a>
             </li>
-            {!isTablet && !isMobile ? (
+            {!isMobile ? (
               <li className="navbar-item">
                 <a href="#" className="navbar-link hover">
                   Contact
@@ -104,6 +95,13 @@ const Header = () => {
                     ))}
                   </div>
                 )}
+              </li>
+            )}
+            {!isMobile && (
+              <li className="navbar-item">
+                <a href="#" className="navbar-link hover">
+                  Skills
+                </a>
               </li>
             )}
           </ul>
