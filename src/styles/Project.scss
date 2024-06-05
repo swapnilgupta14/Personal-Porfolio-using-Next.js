@@ -33,7 +33,6 @@
 .project-card.visible {
     opacity: 1;
     transform: scale(1);
-
 }
 
 .project-card:hover {
@@ -60,7 +59,7 @@
             z-index: 0;
           
             box-shadow:
-              0 0 0 1.5px $accent-color, 
+              0 0 0 1px $accent-color, 
           }
           
 
