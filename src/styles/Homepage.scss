@@ -1,6 +1,6 @@
 .frontpage-container {
-    min-height: calc(100vh - 30vh);
-    max-height: calc(100vh - 30vh);
+    min-height: calc(100vh);
+    max-height: calc(100vh);
     background-color: $accent-color;
     margin: 5vh 15vh 5vh 15vh;
     border-radius: 15px;
@@ -83,8 +83,6 @@
 @media (max-width: 768px) {
     .frontpage-container {
         margin: 0vh;
-        min-height: fit-content;
-        max-height: fit-content;
         display: flex;
         flex-direction: column;
         text-align: left;
