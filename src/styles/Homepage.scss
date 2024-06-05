@@ -13,6 +13,8 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        position: relative;
+        transition: background-color 1s ease;
 
         .upper-left-container {
             display: flex;
@@ -30,6 +32,12 @@
         }
     }
 
+    .left.visible {
+        opacity: 1;
+        transform: scale(1);
+    }
+    
+
     .right {
         flex: 1;
         background-color: $secondary-color;
@@ -39,6 +47,8 @@
         justify-content: flex-start;
         font-family: 'Roboto-mono', monospace;
         text-align: left;
+        position: relative;
+        transition: background-color 2s ease;
 
 
         .right-text {
@@ -48,6 +58,7 @@
             color: $accent-color;
             font-weight: normal;
             font-size: 16px;
+            transition: background-color 0.7s ease;
 
             h1 {
                 // background-color: red;
@@ -77,6 +88,12 @@
         }
     }
 
+    .right.visible {
+        opacity: 1;
+        transform: scale(1);
+    }
+    
+
 }
 
 
@@ -94,6 +111,10 @@
             flex-direction: row;
             justify-content: center;
             border-radius: 0px;
+            position: relative;
+
+            transition: background-color 0.7s ease;
+
 
 
             .upper-left-container {
@@ -115,6 +136,8 @@
         .right {
             flex: 1;
             // font-family: 'Roboto-mono', monospace;
+            position: relative;
+            transition: background-color 0.7s ease;
             padding: 1vh;
             border-radius: 0px;
             background-color: $accent-color;
