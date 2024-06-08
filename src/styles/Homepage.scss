@@ -29,7 +29,7 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
     font-family: "Lilita One", sans-serif;
     min-height: 100vh;
     max-height: 100vh;
-    margin: -5vh 0vh 15vh 0vh;
+    margin: -5vh 0vh 5vh 0vh;
     color: #e5e5e5;
     display: flex;
     flex-direction: column;
@@ -123,11 +123,11 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
     }
 
     .animationOnLoad {
-        animation: animationDivReveal 2s ease-in-out forwards;
+        animation: animationDivReveal 4s ease-in-out forwards;
     }
 
     .animation div:first-child {
-        animation: text-animation 8s infinite;
+        animation: text-animation 10s infinite;
         // animation: animationDivReveal 2s ease-in-out forwards;
     }
 
@@ -141,15 +141,20 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
 
     .first div {
         background-color: #20a7d8db;
+        border-radius: 10px;
     }
 
     .second div {
         background-color: #dc5f00c1;
+        border-radius: 10px;
+
     }
 
     .third div {
         background-color: #c10527df;
         min-height: 5.2rem;
+        border-radius: 10px;
+
     }
 
     @keyframes text-animation {
@@ -183,6 +188,8 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
 
 @media (max-width: 768px) {
     .frontpage-container {
+        // background-color: red;
+        margin-top: 0;
         margin: 0vh;
         display: flex;
         flex-direction: column;
@@ -287,3 +294,61 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
         transform: translateY(0);
     }
 }
+
+.button-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px; 
+    height: 50px; 
+    cursor: pointer;
+    color: secondary-color;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .button-wrapper p {
+    margin: 0;
+    font-size: 16px;
+    // color: #ff0000;
+    transition: opacity 0.3s ease;
+  }
+
+  .button-wrapper p:hover {
+    transform: scale(1.2);
+  }
+  
+  .loading-bar {
+    width: 100%;
+    min-height: 10px;
+    max-height: 10px;
+    background-color: $secondary-color;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .loading-bar-progress {
+    width: 0;
+    height: 100%;
+    background-color: $base-color;
+    position: absolute;
+    animation: load 1s forwards;
+  }
+  
+  @keyframes load {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  .success-icon {
+    width: 50px; 
+    height: 50px;
+    transition: opacity 0.3s ease;
+  }
+  

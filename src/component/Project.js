@@ -1,17 +1,40 @@
 import React, { useEffect, useState } from 'react';
+import {
+  CIcon,
+  TypeScriptIcon,
+  ExpressIcon,
+  NodeJSIcon,
+  PostmanIcon,
+  DartIcon,
+  FlutterIcon,
+  ReactNativeIcon,
+  HTMLIcon,
+  CSSIcon,
+  BootstrapIcon,
+  ReduxIcon,
+  SassIcon,
+  JavaScriptIcon,
+  TailwindCSSIcon,
+  ReactIcon,
+  MySQLIcon,
+  MongoDBIcon,
+  HerokuIcon,
+  GitIcon,
+  FirebaseIcon,
+} from './icon/icon';
 // src/data/projectsData.js
 
 const projectsData = [
-  
+
   {
-    title: "Geospatial-Remote-Sensing-application",
+    title: "Geospatial-Remote-Sensing-application - In Developement",
     description: "An e-commerce platform with a customizable product catalog.",
     technologies: ["Next.js", "Node.js", "MongoDB"],
     img: "./p6.webp",
     link: "https://github.com/swapnilgupta14/Geospatial-Remote-Sensing-application"
   },
   {
-    title: "Electronic Medical Record application using MERN",
+    title: "Electronic Medical Record application using Next.js, FAST API and MySQL with cloud as AWS.",
     description: "A web application that allows users to track their daily tasks.",
     technologies: ["React", "Redux", "CSS"],
     img: "./p1.webp",
@@ -25,26 +48,50 @@ const projectsData = [
     link: "https://github.com/swapnilgupta14/CNN-Based-Neural-Network-for-the-Autonomous-Vehicle-based-on-ResNet50-Architecture"
   },
   {
-    title: "Personal-Portfolio using Next.js",
+    title: "Fully responsive personal-portfolio using Next.js & Sass with custom animations, build from scratch.",
     description: "A social media application with real-time messaging.",
     technologies: ["React", "Firebase", "Tailwind CSS"],
     img: "./p3.webp",
     link: "https://github.com/swapnilgupta14/next-personal-portfolio"
   },
   {
-    title: "Stock Price Prediction using LSTM",
+    title: "Stock Price Prediction using LSTM.",
     description: "A blogging platform with markdown support and user authentication.",
     technologies: ["Gatsby", "GraphQL", "Netlify"],
     img: "./p2.webp",
     link: "https://github.com/swapnilgupta14/Stock-Growth-Prediction-Project-using-LSTM"
   },
   {
-    title: "IP Address Tracker",
+    title: "IP Address Tracker using HTML, CSS, JavaScript",
     description: "A portfolio website showcasing various web development projects.",
     technologies: ["HTML", "CSS", "JavaScript"],
     img: "./p5.webp",
     link: "https://github.com/swapnilgupta14/IP-Address-Tracker"
   }
+];
+
+const icons = [
+  { Component: CIcon, label: 'C Language' },
+  { Component: TypeScriptIcon, label: 'TypeScript' },
+  { Component: ExpressIcon, label: 'Express' },
+  { Component: NodeJSIcon, label: 'NodeJS' },
+  { Component: PostmanIcon, label: 'Postman' },
+  { Component: DartIcon, label: 'Dart' },
+  { Component: FlutterIcon, label: 'Flutter' },
+  { Component: ReactNativeIcon, label: 'React Native' },
+  { Component: HTMLIcon, label: 'HTML' },
+  { Component: CSSIcon, label: 'CSS' },
+  { Component: BootstrapIcon, label: 'Bootstrap' },
+  { Component: ReduxIcon, label: 'Redux' },
+  { Component: SassIcon, label: 'Sass' },
+  { Component: JavaScriptIcon, label: 'JavaScript' },
+  { Component: TailwindCSSIcon, label: 'Tailwind CSS' },
+  { Component: ReactIcon, label: 'React' },
+  { Component: MySQLIcon, label: 'MySQL' },
+  { Component: MongoDBIcon, label: 'MongoDB' },
+  { Component: HerokuIcon, label: 'Heroku' },
+  { Component: GitIcon, label: 'Git' },
+  { Component: FirebaseIcon, label: 'Firebase' },
 ];
 
 const Project = () => {
@@ -83,26 +130,38 @@ const Project = () => {
   return (
     <>
       <div className="detail-container">
+        <div className='container-title'><h2>PROJECTS</h2></div>
         <div className='project-container'>
-          <div className='container-title'><h1>PROJECTS</h1></div>
-          <div className="timeline"></div>
           {projectsData.map((project, index) => (
-            <div
-              key={index}
-              className={`project-card ${visibleProjects.includes(index.toString()) ? 'visible' : ''}`}
-              data-index={index}
-            >
-              <div className="timeline-indicator"></div>
-              <img className="project-image" src={project.img} alt="image" />
-              <h2>{project.title}</h2>
-            </div>
+            <React.Fragment key={index}>
+              {index === 1 && <div className="timeline"></div>}
+              <div
+                className={`project-card ${visibleProjects.includes(index.toString()) ? 'visible' : ''}`}
+                data-index={index}
+              >
+                <div className="timeline-indicator"></div>
+                <img className="project-image" src={project.img} alt="image" />
+                <h2>{project.title}</h2>
+              </div>
+              {index === projectsData.length - 2 && <div className="timeline"></div>}
+            </React.Fragment>
           ))}
         </div>
-        <div className='project-container'>
-          <div className='container-title-second'><h1>EXPERIENCE</h1></div>
-
+        <div className='experience-container'>
+          <div className='container-title'><h2>EXPERIENCE</h2></div>
+          <div className='skill-container'>
+            <h4>Skill I have Acquired - </h4>
+            <div className="wrapper">
+              {icons.map(({ Component, label }, index) => (
+                <div key={index} className="icon-container">
+                  <Component />
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
+
     </>
   );
 }

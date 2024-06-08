@@ -3,6 +3,7 @@ import Header from "@/component/header";
 import Footer from "@/component/footer";
 import Homepage from "@/component/Homepage";
 import Projects from "@/component/Project";
+import AddButton from "@/component/utils/addButton";
 
 export default function Home() {
   
@@ -55,6 +56,7 @@ export default function Home() {
           <>
           <Header />
           <Homepage />
+          <AddButton />
           <Projects/>
           <Footer/>
           </>

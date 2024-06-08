@@ -1,10 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import { Linkedin, Github, Mail, Leetcode, HackerRank } from './icon/icon';
+import { IndicatorIcon } from './icon/icon';
 
 const Homepage = () => {
 
     const [isSmallScreen, setIsSmallScreen] = useState(false);
-    
+    const [isLoading, setIsLoading] = useState(false);
+    const [isSuccess, setIsSuccess] = useState(false);
+
+    const handleButtonClick = () => {
+        setIsLoading(true);
+        setTimeout(() => {
+            setIsLoading(false);
+            setIsSuccess(true);
+            setTimeout(() => {
+                const link = document.createElement('a');
+                link.href = 'https://drive.google.com/file/d/10Aq7BljScKLy-G8FTlHwjYk874xG7YOL/view?usp=sharing'; 
+                link.download = 'swapnil_gupta.pdf'; 
+                link.click();
+            }, 1000);
+        }, 3000);
+    };
+
 
     useEffect(() => {
         const handleResize = () => {
@@ -112,8 +129,16 @@ const Homepage = () => {
                         <a className="icon" href="https://www.hackerrank.com/dashboard"><HackerRank /></a>
                     </div>
                 </div>
-                <div className='button-wrapper'>
-                    <p>Check Out my Resume</p>
+                <div className='button-wrapper' onClick={handleButtonClick}>
+                    {isLoading ? (
+                        <div className='loading-bar'>
+                            <div className='loading-bar-progress'></div>
+                        </div>
+                    ) : isSuccess ? (
+                       ` Loading....`
+                    ) : (
+                        <p>Check Out my Resume</p>
+                    )}
                 </div>
             </div>
         </div>
