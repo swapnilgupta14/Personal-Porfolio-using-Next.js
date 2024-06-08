@@ -29,7 +29,7 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
     font-family: "Lilita One", sans-serif;
     min-height: 100vh;
     max-height: 100vh;
-    margin: -5vh 0vh 0vh 0vh;
+    margin: -5vh 0vh 15vh 0vh;
     color: #e5e5e5;
     display: flex;
     flex-direction: column;
@@ -71,11 +71,6 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
             animation: revealName 1.5s ease-in-out forwards;
         }
 
-        .name-float {
-            animation: floatAnimation 3s ease infinite;
-        }
-
-
         .name-color {
             font-size: 8rem;
             color: #e5e5e5;
@@ -94,6 +89,14 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
                     margin: 0px 10px;
                     animation: floatAnimation 3s ease infinite;
                 }
+            }
+        }
+
+        .button-wrapper{
+            font-size: 1rem;
+            margin: 2rem 0 0 0;
+            .contact-button{
+
             }
         }
     }
@@ -295,6 +298,10 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
     0% {
         opacity: 0;
         transform: translateY(20px);
+    }
+
+    50% {
+        opacity: 0.5;
     }
 
     100% {

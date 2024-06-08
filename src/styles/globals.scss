@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Lilita+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
 
 @import './header.scss';
 @import './variables';
@@ -9,10 +11,12 @@
 @import './footer.scss';
 @import './component/draggableDiv.scss';
 
+
 body {
   background-color: #1c1f25;
   color: $accent-color;
-  font-family: 'Roboto-mono', monospace;
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;  
   font-weight: bold;
   margin: 0;
   padding: 0;
@@ -20,19 +24,4 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-
-  .cedarville-cursive-regular {
-    font-family: "Cedarville Cursive", cursive;
-    font-weight: 600;
-    font-style: normal;
-  }
-
-  .caveat-cursive-regular {
-    font-family: "Caveat", cursive;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: normal;
-  }
-
-
 }
