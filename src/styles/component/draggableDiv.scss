@@ -1,0 +1,8 @@
+.draggable-div {
+    position: absolute;
+    width: 100px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
+    background-color: lightblue; /* Adjust color as needed */
+    cursor: grab;
+    z-index: 1000; /* Ensure it's above other elements */
+}
