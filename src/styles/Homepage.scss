@@ -69,6 +69,7 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
             color: #e5e5e5;
             text-align: left;
             animation: revealName 1.5s ease-in-out forwards;
+
         }
 
         .name-color {
@@ -201,44 +202,6 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
             justify-content: center;
             text-align: left;
 
-            .floating-div {
-                width: 50px;
-                /* Adjust size as needed */
-                height: 50px;
-                /* Adjust size as needed */
-                border-radius: 50%;
-                /* Make it circular */
-                background-color: #4A90E2;
-                /* Set background color */
-                position: absolute;
-                /* Position it relative to the container */
-                top: 50px;
-                /* Adjust initial position */
-                left: 50px;
-                /* Adjust initial position */
-                cursor: move;
-                /* Set cursor to indicate draggable */
-                z-index: 999;
-                /* Ensure it's above other elements */
-                display: flex;
-                /* Use flexbox for centering content */
-                align-items: center;
-                /* Center vertically */
-                justify-content: center;
-                /* Center horizontally */
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-                /* Add shadow for depth */
-                background-color: #4A90E2;
-            }
-
-            /* Style when being dragged */
-            .floating-div:active,
-            .floating-div.dragging {
-                opacity: 0.7;
-                /* Reduce opacity to indicate dragging */
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-                /* Increase shadow for depth */
-            }
 
             .text {
                 padding: 20px;
@@ -255,7 +218,6 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
                 margin: 0;
                 color: #e5e5e5;
                 margin-bottom: -2rem;
-
             }
 
             .name-color {
