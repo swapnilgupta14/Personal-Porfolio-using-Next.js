@@ -29,7 +29,7 @@ const FrontpageContainer = () => {
                 </div>
                 <section className="animation">
                     <div className="first"><div>Full Stack {isSmallScreen && <><br /></>} Developer</div></div>
-                    <div className="second"><div>Machine Learning {isSmallScreen && <><br /></>} Enthusiast</div></div>
+                    <div className="second"><div>UI/UX{isSmallScreen && <><br /></>} Designer</div></div>
                     <div className="third"><div>Web3 Enthusiast</div></div>
                 </section>
             </div>

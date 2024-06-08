@@ -62,7 +62,7 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
         margin-bottom: 3rem;
         display: inline-block;
         font-size: 3rem;
-        text-shadow: #000000 0px 0px 5px;
+        text-shadow: #000000d5 0px 0px 1px;
         font-weight: bold;
         line-height: 3rem;
         white-space: nowrap;
@@ -85,7 +85,7 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
     }
 
     .second div {
-        background-color: #cd931ee3;
+        background-color: #dc5f00c1;
     }
 
     .third div {
@@ -178,11 +178,19 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
     }
 }
 
-.button-container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-top: 15px;
+.name {
+    animation: floatAnimation 3s ease infinite;
+}
 
-   
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+        transform: teanslateX(5px);
+    }
 }
