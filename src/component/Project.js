@@ -11,14 +11,14 @@ const Project = () => {
       title: "Electronic Medical Record application using MERN",
       description: "A web application that allows users to track their daily tasks.",
       technologies: ["React", "Redux", "CSS"],
-      img: "./p1.png",
+      img: "./p1 (1).png",
       link: "https://project-one.example.com"
     },
     {
       title: "Project Two",
       description: "An e-commerce platform with a customizable product catalog.",
       technologies: ["Next.js", "Node.js", "MongoDB"],
-      img: "./p1.png",
+      img: "./p1 (1).png",
 
       link: "https://project-two.example.com"
     },
@@ -26,7 +26,7 @@ const Project = () => {
       title: "Project Three",
       description: "A social media application with real-time messaging.",
       technologies: ["React", "Firebase", "Tailwind CSS"],
-      img: "./p1.png",
+      img: "./p1 (1).png",
 
       link: "https://project-three.example.com"
     },
@@ -34,21 +34,21 @@ const Project = () => {
       title: "Project Four",
       description: "A mobile app for managing personal finances and budgeting.",
       technologies: ["React Native", "Expo", "SQLite"],
-      img: "./p1.png",
+      img: "./p1 (1).png",
       link: "https://project-four.example.com"
     },
     {
       title: "Project Five",
       description: "A blogging platform with markdown support and user authentication.",
       technologies: ["Gatsby", "GraphQL", "Netlify"],
-      img: "./p1.png",
+      img: "./p1 (1).png",
       link: "https://project-five.example.com"
     },
     {
       title: "Project Six",
       description: "A portfolio website showcasing various web development projects.",
       technologies: ["HTML", "CSS", "JavaScript"],
-      img: "./p1.png",
+      img: "./p1 (1).png",
       link: "https://project-six.example.com"
     }
   ];
