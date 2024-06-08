@@ -41,25 +41,33 @@ const Header = () => {
           <ul className="navbar-list">
             <li className="navbar-item">
               <a href="#" className="navbar-link hover">
-                Home
+                HOME
               </a>
             </li>
             {!isMobile && (
               <li className="navbar-item">
                 <a href="#" className="navbar-link hover">
-                  About
+                  ABOUT
+                </a>
+              </li>
+            )}
+             {!isMobile && (
+              <li className="navbar-item">
+                <a href="#" className="navbar-link hover">
+                  EXPERIENCE
                 </a>
               </li>
             )}
             <li className="navbar-item">
               <a href="#" className="navbar-link hover">
-                Projects
+                PROJECTS
               </a>
             </li>
+           
             {!isMobile ? (
               <li className="navbar-item">
                 <a href="#" className="navbar-link hover">
-                  Contact
+                  CONTACT
                 </a>
               </li>
             ) : (
@@ -97,13 +105,7 @@ const Header = () => {
                 )}
               </li>
             )}
-            {!isMobile && (
-              <li className="navbar-item">
-                <a href="#" className="navbar-link hover">
-                  Skills
-                </a>
-              </li>
-            )}
+            
           </ul>
         </div>
       </nav>

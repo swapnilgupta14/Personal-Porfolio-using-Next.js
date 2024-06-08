@@ -4,6 +4,7 @@ import { Linkedin, Github, Mail, Leetcode, HackerRank } from './icon/icon';
 const Homepage = () => {
 
     const [isSmallScreen, setIsSmallScreen] = useState(false);
+    
 
     useEffect(() => {
         const handleResize = () => {
@@ -80,7 +81,7 @@ const Homepage = () => {
         };
 
         frontpageContainer.addEventListener('mousemove', handleMouseMove);
-        const glowInterval = setInterval(randomlyGlowStar, 1500); 
+        const glowInterval = setInterval(randomlyGlowStar, 1500);
 
         return () => {
             frontpageContainer.removeEventListener('mousemove', handleMouseMove);
@@ -110,6 +111,12 @@ const Homepage = () => {
                         <a className="icon" href="#"><Leetcode /></a>
                         <a className="icon" href="https://www.hackerrank.com/dashboard"><HackerRank /></a>
                     </div>
+                </div>
+                <div className='button-wrapper'>
+                    <p>Check Out my Resume</p>
+                    <button className="contact-button">
+                        Grab a Copy
+                    </button>
                 </div>
             </div>
         </div>
