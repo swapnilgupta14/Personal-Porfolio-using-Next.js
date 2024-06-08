@@ -18,7 +18,6 @@ const Homepage = () => {
         const frontpageContainer = document.querySelector('.frontpage-container');
         const starsContainer = frontpageContainer.querySelector('.stars');
         const starsCount = isSmallScreen ? 60 : 120;
-
         const glowRadius = 100;
         let glowTimeout;
 
@@ -30,8 +29,8 @@ const Homepage = () => {
             starsContainer.appendChild(star);
 
             const moveStar = () => {
-                const deltaX = (Math.random() * 20 - 10) + 'px';
-                const deltaY = (Math.random() * 20 - 10) + 'px';
+                const deltaX = (Math.random() * 20 - Math.random()) + 'px';
+                const deltaY = (Math.random() * 20 - Math.random()) + 'px';
                 star.style.transform = `translate(${deltaX}, ${deltaY})`;
                 setTimeout(moveStar, Math.random() * 2000 + 1000);
             };
@@ -42,6 +41,18 @@ const Homepage = () => {
         for (let i = 0; i < starsCount; i++) {
             createStar();
         }
+
+        const randomlyGlowStar = () => {
+            const stars = starsContainer.querySelectorAll('.star');
+            const randomIndex = Math.floor(Math.random() * stars.length);
+            const randomStar = stars[randomIndex];
+
+            randomStar.classList.add('glow');
+
+            setTimeout(() => {
+                randomStar.classList.remove('glow');
+            }, 500);
+        };
 
         const handleMouseMove = (event) => {
             clearTimeout(glowTimeout);
@@ -65,13 +76,15 @@ const Homepage = () => {
                 stars.forEach(star => {
                     star.classList.remove('glow');
                 });
-            }, 500); // Adjust the timeout value as needed
+            }, 500);
         };
 
         frontpageContainer.addEventListener('mousemove', handleMouseMove);
+        const glowInterval = setInterval(randomlyGlowStar, 1500); 
 
         return () => {
             frontpageContainer.removeEventListener('mousemove', handleMouseMove);
+            clearInterval(glowInterval);
         };
     }, []);
 
