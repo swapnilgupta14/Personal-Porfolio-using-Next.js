@@ -1,13 +1,11 @@
 // $accent-color: #4A90E2;
 $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accent-color 100%);
 
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Lilita+One&display=swap');
-
 .frontpage-container {
     font-family: "Lilita One", sans-serif;
     min-height: 100vh;
     max-height: 100vh;
-    margin: -15vh 0vh 0vh 0vh;
+    margin: -5vh 0vh 0vh 0vh;
     color: #e5e5e5;
     display: flex;
     flex-direction: column;
@@ -40,11 +38,34 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
             font-weight: bold;
             margin: 0;
             color: #e5e5e5;
+            text-align: left;
+            animation: revealName 1.5s ease-in-out forwards;
         }
+
+        .name-float {
+            animation: floatAnimation 3s ease infinite;
+        }
+        
 
         .name-color {
             font-size: 8rem;
             color: #e5e5e5;
+        }
+
+        .social-nav-container {
+
+            .social-nav {
+                display: flex;
+                justify-content: center;
+                margin: 5vh 0vh 0vh 0vh;
+
+                .icon {
+                    width: 40px;
+                    height: 40px;
+                    margin: 0px 10px;
+                    animation: floatAnimation 3s ease infinite;
+                }
+            }
         }
     }
 
@@ -68,8 +89,13 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
         white-space: nowrap;
     }
 
+    .animationOnLoad{
+        animation: animationDivReveal 2s ease-in-out forwards;
+    }
+
     .animation div:first-child {
         animation: text-animation 8s infinite;
+        // animation: animationDivReveal 2s ease-in-out forwards;
     }
 
     .second{
@@ -129,7 +155,7 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
         flex-direction: column;
         text-align: left;
         border-radius: 0px;
-        min-height: 95vh;
+        min-height: 93vh;
 
         .container {
             color: #e5e5e5;
@@ -155,6 +181,8 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
                 font-weight: bold;
                 margin: 0;
                 color: #e5e5e5;
+                margin-bottom: -2rem;
+
             }
     
             .name-color {
@@ -167,7 +195,7 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
             min-height: 3rem;
             min-height: fit-content;
             margin-bottom: 3rem;
-            font-size: 2rem;
+            font-size: 1.7rem;
             line-height: 2rem;
         }
 
@@ -178,19 +206,40 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
     }
 }
 
-.name {
-    animation: floatAnimation 3s ease infinite;
-}
 
 @keyframes floatAnimation {
     0% {
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-10px);
+        transform: translateY(-4px);
     }
     100% {
         transform: translateY(0);
-        transform: teanslateX(5px);
+    }
+}
+
+@keyframes revealName {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes animationDivReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

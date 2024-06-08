@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Header from "@/component/header";
+import Footer from "@/component/footer";
 import Homepage from "@/component/Homepage";
 import Projects from "@/component/Project";
 
@@ -22,7 +23,7 @@ export default function Home() {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setShowWelcome(false);
-    }, 1000);
+    }, 2500);
     return () => clearTimeout(timeout);
   }, []);
 
@@ -55,6 +56,7 @@ export default function Home() {
           <Header />
           <Homepage />
           <Projects/>
+          <Footer/>
           </>
         )}
         {!showWelcome && (

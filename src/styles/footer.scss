@@ -1,0 +1,13 @@
+.footer-container{
+    background-color: $secondary-color;
+    color: $accent-color;
+    display: flex;
+    margin: 2vh 0vh;
+    justify-content: center;
+
+    .bottom-text{
+        font-size: 1rem;
+        padding: 0.5rem;
+        text-align: center;
+    }
+}
