@@ -2,8 +2,8 @@ import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
   return (
-    <Html lang="en" title="Swapnil Gupta">
-      <Head />
+    <Html lang="en" >
+      <Head title="Swapnil Gupta"/>
       <body>
         <Main />
         <NextScript />
