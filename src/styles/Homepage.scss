@@ -1,6 +1,30 @@
 // $accent-color: #4A90E2;
 $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accent-color 100%);
 
+.frontpage-container .stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.frontpage-container .star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.4;
+    transition: opacity 0.3s, box-shadow 0.3s, transform 1s ease-in-out;
+}
+
+.frontpage-container .star.glow {
+    opacity: 1;
+    box-shadow: 0 0 13px white;
+}
+
 .frontpage-container {
     font-family: "Lilita One", sans-serif;
     min-height: 100vh;
@@ -12,6 +36,8 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
     align-items: center;
     justify-content: center;
     padding: 20px;
+    position: relative;
+    overflow: hidden;
 
     .container {
         color: #e5e5e5;
@@ -22,6 +48,9 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
         align-items: center;
         justify-content: center;
         text-align: center;
+        position: relative;
+        z-index: 2;
+        pointer-events: auto;
 
         .text {
             padding: 20px;
@@ -45,7 +74,7 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
         .name-float {
             animation: floatAnimation 3s ease infinite;
         }
-        
+
 
         .name-color {
             font-size: 8rem;
@@ -73,7 +102,7 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
         height: 5rem;
         overflow: hidden;
         margin-top: 1rem;
-        
+
     }
 
     .animation>div>div {
@@ -89,7 +118,7 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
         white-space: nowrap;
     }
 
-    .animationOnLoad{
+    .animationOnLoad {
         animation: animationDivReveal 2s ease-in-out forwards;
     }
 
@@ -98,11 +127,11 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
         // animation: animationDivReveal 2s ease-in-out forwards;
     }
 
-    .second{
+    .second {
         margin-top: 0.5rem;
     }
-    
-    .third{
+
+    .third {
         margin-top: -0.9rem;
     }
 
@@ -157,6 +186,8 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
         border-radius: 0px;
         min-height: 93vh;
 
+
+
         .container {
             color: #e5e5e5;
             font-size: 2.26rem;
@@ -167,6 +198,45 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
             justify-content: center;
             text-align: left;
 
+            .floating-div {
+                width: 50px;
+                /* Adjust size as needed */
+                height: 50px;
+                /* Adjust size as needed */
+                border-radius: 50%;
+                /* Make it circular */
+                background-color: #4A90E2;
+                /* Set background color */
+                position: absolute;
+                /* Position it relative to the container */
+                top: 50px;
+                /* Adjust initial position */
+                left: 50px;
+                /* Adjust initial position */
+                cursor: move;
+                /* Set cursor to indicate draggable */
+                z-index: 999;
+                /* Ensure it's above other elements */
+                display: flex;
+                /* Use flexbox for centering content */
+                align-items: center;
+                /* Center vertically */
+                justify-content: center;
+                /* Center horizontally */
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+                /* Add shadow for depth */
+                background-color: #4A90E2;
+            }
+
+            /* Style when being dragged */
+            .floating-div:active,
+            .floating-div.dragging {
+                opacity: 0.7;
+                /* Reduce opacity to indicate dragging */
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+                /* Increase shadow for depth */
+            }
+
             .text {
                 padding: 20px;
                 display: flex;
@@ -175,7 +245,7 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
                 align-items: center;
                 text-shadow: #000000 0px 0px 7px;
             }
-    
+
             .name {
                 font-size: 3rem;
                 font-weight: bold;
@@ -184,7 +254,7 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
                 margin-bottom: -2rem;
 
             }
-    
+
             .name-color {
                 font-size: 5rem;
                 color: #e5e5e5;
@@ -199,7 +269,7 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
             line-height: 2rem;
         }
 
-        .second{
+        .second {
             min-height: fit-content;
             margin-top: 1rem;
         }
@@ -211,9 +281,11 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
     0% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-4px);
     }
+
     100% {
         transform: translateY(0);
     }
@@ -224,6 +296,7 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
         opacity: 0;
         transform: translateY(20px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
@@ -235,9 +308,11 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
         opacity: 0;
         transform: translateY(20px);
     }
+
     50% {
         opacity: 0.5;
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
