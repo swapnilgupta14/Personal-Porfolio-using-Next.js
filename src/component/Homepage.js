@@ -114,9 +114,6 @@ const Homepage = () => {
                 </div>
                 <div className='button-wrapper'>
                     <p>Check Out my Resume</p>
-                    <button className="contact-button">
-                        Grab a Copy
-                    </button>
                 </div>
             </div>
         </div>
