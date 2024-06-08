@@ -1,57 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-<<<<<<< HEAD
 import LazyLoad from 'react-lazyload';
-=======
-// src/data/projectsData.js
-
-const projectsData = [
-  {
-    title: "Electronic Medical Record application using MERN",
-    description: "A web application that allows users to track their daily tasks.",
-    technologies: ["React", "Redux", "CSS"],
-    img: "./p1 (1).png",
-    link: "https://project-one.example.com"
-  },
-  {
-    title: "Project Two",
-    description: "An e-commerce platform with a customizable product catalog.",
-    technologies: ["Next.js", "Node.js", "MongoDB"],
-    img: "./p1 (1).png",
-
-    link: "https://project-two.example.com"
-  },
-  {
-    title: "Project Three",
-    description: "A social media application with real-time messaging.",
-    technologies: ["React", "Firebase", "Tailwind CSS"],
-    img: "./p1 (1).png",
-
-    link: "https://project-three.example.com"
-  },
-  {
-    title: "Project Four",
-    description: "A mobile app for managing personal finances and budgeting.",
-    technologies: ["React Native", "Expo", "SQLite"],
-    img: "./p1 (1).png",
-    link: "https://project-four.example.com"
-  },
-  {
-    title: "Project Five",
-    description: "A blogging platform with markdown support and user authentication.",
-    technologies: ["Gatsby", "GraphQL", "Netlify"],
-    img: "./p1 (1).png",
-    link: "https://project-five.example.com"
-  },
-  {
-    title: "Project Six",
-    description: "A portfolio website showcasing various web development projects.",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    img: "./p1 (1).png",
-    link: "https://project-six.example.com"
-  }
-];
->>>>>>> c50316dd6ddeed6cb6c9d0198f872f905db371b1
 
 const Project = () => {
   const [visibleProjects, setVisibleProjects] = useState([]);
