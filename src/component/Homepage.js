@@ -17,8 +17,11 @@ const Homepage = () => {
     useEffect(() => {
         const frontpageContainer = document.querySelector('.frontpage-container');
         const starsContainer = frontpageContainer.querySelector('.stars');
-        const starsCount = 150; 
-        const glowRadius = 100; 
+        const starsCount = isSmallScreen ? 60 : 120;
+
+        const glowRadius = 100;
+        let glowTimeout;
+
         const createStar = () => {
             const star = document.createElement('div');
             star.classList.add('star');
@@ -41,6 +44,7 @@ const Homepage = () => {
         }
 
         const handleMouseMove = (event) => {
+            clearTimeout(glowTimeout);
             const { clientX, clientY } = event;
             const stars = starsContainer.querySelectorAll('.star');
 
@@ -56,6 +60,12 @@ const Homepage = () => {
                     star.classList.remove('glow');
                 }
             });
+
+            glowTimeout = setTimeout(() => {
+                stars.forEach(star => {
+                    star.classList.remove('glow');
+                });
+            }, 500); // Adjust the timeout value as needed
         };
 
         frontpageContainer.addEventListener('mousemove', handleMouseMove);
