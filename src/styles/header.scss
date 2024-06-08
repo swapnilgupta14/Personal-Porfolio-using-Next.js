@@ -5,7 +5,7 @@
 .app-header {
 
   margin-bottom: 15vh;
-  background-color: red !important;
+  background-color: linear-gradient(270deg, $secondary-accent-color 0%, $accent-color 100%);
 
   .navbar {
     width: 70%;

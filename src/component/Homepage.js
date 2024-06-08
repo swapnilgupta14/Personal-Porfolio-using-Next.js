@@ -1,70 +1,40 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Linkedin, Github, Mail, Leetcode, HackerRank } from './icon/icon';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-const Homepage = () => {
 
-    const [visibleProjects, setVisibleProjects] = useState([]);
+const FrontpageContainer = () => {
+    const [isSmallScreen, setIsSmallScreen] = useState(false);
 
     useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        setVisibleProjects((prevVisibleProjects) => [
-                            ...prevVisibleProjects,
-                            entry.target.dataset.index
-                        ]);
-                        observer.unobserve(entry.target);
-                    }
-                });
-            },
-            {
-                threshold: 0.1
-            }
-        );
-
-        const projectCards = document.querySelectorAll('.left .right');
-        projectCards.forEach((card) => {
-            observer.observe(card);
-        });
-
-        return () => {
-            projectCards.forEach((card) => {
-                observer.unobserve(card);
-            });
+        const handleResize = () => {
+            setIsSmallScreen(window.innerWidth <= 768); // Adjust the breakpoint as needed
         };
+
+        window.addEventListener('resize', handleResize);
+
+        // Initial check
+        handleResize();
+
+        return () => window.removeEventListener('resize', handleResize);
     }, []);
 
     return (
-        <div className='frontpage-container'>
-            <div key={1} className={`left ${visibleProjects.includes(1) ? 'visible' : ''}`}>
-                <div className='upper-left-container'>
-                    <img src='./IMG_1.jpg' className='profile profile-mobile' />
-                </div>
-            </div>
-            <div key={2} className={`right ${visibleProjects.includes(2) ? 'visible' : ''}`}>
-                <div className='right-text'>
-                    <h1 className='caveat-cursive-regular'>Hi! I'm Swapnil Gupta</h1>
-                    <div>
-                    </div>
-                    <div className='social-nav-container'>
-                        <div className="social-nav">
-                            <a className="icon" href="#"><Leetcode /></a>
-                            <a className="icon" href="#"><Github /></a>
-                            <a className="icon" href="#"><HackerRank /></a>
-                            <a className="icon" href="#"><Linkedin /></a>
-                        </div>
-                    </div>
-                    <div>
-                        <div className='button-container'>
-                            <button className='buttons'><p>Resume</p></button>
-                            <button className='buttons'><p>Contact</p></button>
-                        </div>
+        <div className="frontpage-container">
+            <div className="container">
+                <div className="text">
+                    <div className="name">
+                        Hello, {isSmallScreen && <><br /></>} I'm <br />
+                        <span className="name-color">Swapnil {isSmallScreen && <><br /></>} Gupta</span>
+                       
                     </div>
                 </div>
+                <section className="animation">
+                    <div className="first"><div>Full Stack {isSmallScreen && <><br /></>} Developer</div></div>
+                    <div className="second"><div>Machine Learning {isSmallScreen && <><br /></>} Enthusiast</div></div>
+                    <div className="third"><div>Web3 Enthusiast</div></div>
+                </section>
             </div>
         </div>
     );
 };
 
-export default Homepage;
+export default FrontpageContainer;

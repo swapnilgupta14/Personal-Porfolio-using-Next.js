@@ -1,101 +1,126 @@
+// $accent-color: #4A90E2;
+$background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accent-color 100%);
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Lilita+One&display=swap');
+
 .frontpage-container {
-    min-height: calc(100vh);
-    max-height: calc(100vh);
-    background-color: $accent-color;
-    margin: 5vh 15vh 5vh 15vh;
-    border-radius: 15px;
-    color: $accent-color;
+    font-family: "Lilita One", sans-serif;
+    min-height: 100vh;
+    max-height: 100vh;
+    margin: -15vh 0vh 0vh 0vh;
+    color: #e5e5e5;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 
-    .left {
-        flex: 2;
+    .container {
+        color: #e5e5e5;
+        font-size: 2.26rem;
+        text-transform: uppercase;
         display: flex;
         flex-direction: column;
+        align-items: center;
         justify-content: center;
-        position: relative;
-        transition: background-color 1s ease;
+        text-align: center;
 
-        .upper-left-container {
+        .text {
+            padding: 20px;
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             justify-content: center;
+            align-items: center;
+            text-shadow: #000000 0px 0px 7px;
 
-            .profile {
-                // background-color: $secondary-color;
-                border-radius: 50%;
-                height: 35vh;
-                width: 35vh;
-                align-items: center;
-                margin: 5vh 2vh 2vh 0vh;
-            }
+        }
+
+        .name {
+            font-size: 6rem;
+            font-weight: bold;
+            margin: 0;
+            color: #e5e5e5;
+        }
+
+        .name-color {
+            font-size: 8rem;
+            color: #e5e5e5;
         }
     }
 
-    .left.visible {
-        opacity: 1;
-        transform: scale(1);
+    .animation {
+        height: 5rem;
+        overflow: hidden;
+        margin-top: 1rem;
+        
+    }
+
+    .animation>div>div {
+        padding: 0.25rem 1.5rem;
+        min-height: 3rem;
+        min-width: fit-content;
+        margin-bottom: 3rem;
+        display: inline-block;
+        font-size: 3rem;
+        text-shadow: #000000 0px 0px 5px;
+        font-weight: bold;
+        line-height: 3rem;
+        white-space: nowrap;
+    }
+
+    .animation div:first-child {
+        animation: text-animation 8s infinite;
+    }
+
+    .second{
+        margin-top: 0.5rem;
     }
     
-
-    .right {
-        flex: 1;
-        background-color: $secondary-color;
-        border-radius: 15px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        font-family: 'Roboto-mono', monospace;
-        text-align: left;
-        position: relative;
-        transition: background-color 2s ease;
-
-
-        .right-text {
-            margin: 5vh;
-            font-size: 1.5rem;
-            text-align: left;
-            color: $accent-color;
-            font-weight: normal;
-            font-size: 16px;
-            transition: background-color 0.7s ease;
-
-            h1 {
-                // background-color: red;
-                margin-top: 0vh;
-                font-size: 2rem;
-            }
-
-            .social-nav-container {
-
-                .social-nav {
-                    display: flex;
-                    justify-content: center;
-
-                    .icon {
-                        margin: 0px 10px;
-                        width: 30px;
-                        height: 30px;
-                    }
-                }
-            }
-        }
-
-        .right-text h1 {
-            font-size: 2rem;
-            text-align: center;
-            justify-content: center;
-        }
+    .third{
+        margin-top: -0.9rem;
     }
 
-    .right.visible {
-        opacity: 1;
-        transform: scale(1);
+    .first div {
+        background-color: #20a7d8db;
     }
-    
 
+    .second div {
+        background-color: #cd931ee3;
+    }
+
+    .third div {
+        background-color: #c10527df;
+        min-height: 5.2rem;
+    }
+
+    @keyframes text-animation {
+
+        0%,
+        10% {
+            margin-top: 0;
+        }
+
+        20%,
+        30% {
+            margin-top: -5rem;
+        }
+
+        40%,
+        60% {
+            margin-top: -10.25rem;
+        }
+
+        70%,
+        80% {
+            margin-top: -5rem;
+        }
+
+        90%,
+        100% {
+            margin-top: 0;
+        }
+    }
 }
-
 
 @media (max-width: 768px) {
     .frontpage-container {
@@ -104,74 +129,52 @@
         flex-direction: column;
         text-align: left;
         border-radius: 0px;
+        min-height: 95vh;
 
-        .left {
-            flex: 2;
+        .container {
+            color: #e5e5e5;
+            font-size: 2.26rem;
+            text-transform: uppercase;
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
+            align-items: center;
             justify-content: center;
-            border-radius: 0px;
-            position: relative;
+            text-align: left;
 
-            transition: background-color 0.7s ease;
-
-
-
-            .upper-left-container {
-                margin-bottom: -10px;
-                border-radius: 0px;
-
-
-                .profile {
-                    align-items: center;
-                    margin: 2vh;
-                    border-radius: 50%;
-                    height: 20vh;
-                    width: 20vh;
-
-                }
-            }
-        }
-
-        .right {
-            flex: 1;
-            // font-family: 'Roboto-mono', monospace;
-            position: relative;
-            transition: background-color 0.7s ease;
-            padding: 1vh;
-            border-radius: 0px;
-            background-color: $accent-color;
-
-
-            .right-text {
-                margin: 0vh;
-                font-size: 1rem;
-                text-align: left;
+            .text {
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
                 justify-content: center;
-                padding: 2vh;
-                color: $secondary-color;
-
-
-                .icon {
-                    margin: 0px 5px;
-                }
+                align-items: center;
+                text-shadow: #000000 0px 0px 7px;
             }
-
-            .buttons {
-                border-radius: 10px;
-                margin: 10px;
-                font-size: 16px;
-                padding: 0px 20px;
-                background-color: $secondary-color;
-
-                p {
-                    color: $accent-color;
-                    padding: 5px 10px;
-                    margin: 0;
-                }
+    
+            .name {
+                font-size: 3rem;
+                font-weight: bold;
+                margin: 0;
+                color: #e5e5e5;
+            }
+    
+            .name-color {
+                font-size: 5rem;
+                color: #e5e5e5;
             }
         }
 
+        .animation>div>div {
+            min-height: 3rem;
+            min-height: fit-content;
+            margin-bottom: 3rem;
+            font-size: 2rem;
+            line-height: 2rem;
+        }
+
+        .second{
+            min-height: fit-content;
+            margin-top: 1rem;
+        }
     }
 }
 
@@ -181,13 +184,5 @@
     width: 100%;
     margin-top: 15px;
 
-    .buttons {
-        background-color: $accent-color;
-        border-radius: 10px;
-        margin: 10px;
-        font-size: 16px;
-        // font-weight: bold;
-        padding: 0vh 2vh;
-        color: $secondary-color;
-    }
+   
 }
