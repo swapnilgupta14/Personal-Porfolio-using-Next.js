@@ -2,49 +2,48 @@ import React, { useEffect, useState } from 'react';
 // src/data/projectsData.js
 
 const projectsData = [
+  
+  {
+    title: "Geospatial-Remote-Sensing-application",
+    description: "An e-commerce platform with a customizable product catalog.",
+    technologies: ["Next.js", "Node.js", "MongoDB"],
+    img: "./p6.webp",
+    link: "https://github.com/swapnilgupta14/Geospatial-Remote-Sensing-application"
+  },
   {
     title: "Electronic Medical Record application using MERN",
     description: "A web application that allows users to track their daily tasks.",
     technologies: ["React", "Redux", "CSS"],
-    img: "./p1.png",
-    link: "https://project-one.example.com"
+    img: "./p1.webp",
+    link: "https://github.com/swapnilgupta14/Mediblock"
   },
   {
-    title: "Project Two",
-    description: "An e-commerce platform with a customizable product catalog.",
-    technologies: ["Next.js", "Node.js", "MongoDB"],
-    img: "./p1.png",
-
-    link: "https://project-two.example.com"
-  },
-  {
-    title: "Project Three",
-    description: "A social media application with real-time messaging.",
-    technologies: ["React", "Firebase", "Tailwind CSS"],
-    img: "./p1.png",
-
-    link: "https://project-three.example.com"
-  },
-  {
-    title: "Project Four",
+    title: "CNN-Based-Neural-Network-based-on-ResNet50-Architecture ",
     description: "A mobile app for managing personal finances and budgeting.",
     technologies: ["React Native", "Expo", "SQLite"],
-    img: "./p1.png",
-    link: "https://project-four.example.com"
+    img: "./p4.webp",
+    link: "https://github.com/swapnilgupta14/CNN-Based-Neural-Network-for-the-Autonomous-Vehicle-based-on-ResNet50-Architecture"
   },
   {
-    title: "Project Five",
+    title: "Personal-Portfolio using Next.js",
+    description: "A social media application with real-time messaging.",
+    technologies: ["React", "Firebase", "Tailwind CSS"],
+    img: "./p3.webp",
+    link: "https://github.com/swapnilgupta14/next-personal-portfolio"
+  },
+  {
+    title: "Stock Price Prediction using LSTM",
     description: "A blogging platform with markdown support and user authentication.",
     technologies: ["Gatsby", "GraphQL", "Netlify"],
-    img: "./p1.png",
-    link: "https://project-five.example.com"
+    img: "./p2.webp",
+    link: "https://github.com/swapnilgupta14/Stock-Growth-Prediction-Project-using-LSTM"
   },
   {
-    title: "Project Six",
+    title: "IP Address Tracker",
     description: "A portfolio website showcasing various web development projects.",
     technologies: ["HTML", "CSS", "JavaScript"],
-    img: "./p1.png",
-    link: "https://project-six.example.com"
+    img: "./p5.webp",
+    link: "https://github.com/swapnilgupta14/IP-Address-Tracker"
   }
 ];
 
