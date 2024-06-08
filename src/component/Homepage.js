@@ -95,7 +95,7 @@ const Homepage = () => {
             <div className="container" id="otherElement">
                 <div className="text">
                     <div className="name name-float">
-                        Hello, {isSmallScreen && <><br /></>} I'm <br />
+                        <span className='color-diff2'>Hello, </span>{isSmallScreen && <><br /></>} <span className='color-diff'>I'm</span><br />
                         <span className="name-color">Swapnil {isSmallScreen && <><br /></>} Gupta</span>
                     </div>
                 </div>
