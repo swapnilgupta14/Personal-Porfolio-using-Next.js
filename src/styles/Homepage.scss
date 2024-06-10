@@ -12,8 +12,8 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
 
 .frontpage-container .star {
     position: absolute;
-    width: 2px;
-    height: 2px;
+    width: 3px;
+    height: 3px;
     background: white;
     border-radius: 50%;
     opacity: 0.4;
@@ -187,6 +187,12 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
 }
 
 @media (max-width: 768px) {
+
+    .frontpage-container .star {
+        width: 2px;
+        height: 2px;
+    }
+
     .frontpage-container {
         // background-color: red;
         margin-top: 0;
@@ -316,13 +322,13 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
         background-color: $secondary-color;
         color: $base-color;
         border: $accent-color 2px solid;
-        transition: all 0.3s ease;
+        transition: all 0.9s ease;
         display: flex;
         align-items: center;
         justify-content: center;
 
         .icon-1 {
-            transition: all 0.3s ease;
+            transition: all 0.7s ease;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -333,12 +339,13 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
         }
 
         &:hover {
-            transform: scale(0.9);
+            transform: scale(0.7);
             background-color: $base-color;
             color: $secondary-color;
             display: flex;
             align-items: center;
             justify-content: center;
+            width: 100%;
 
             .icon-1 {
                 transform: scale(1.2);
@@ -349,8 +356,8 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
 
 .loading-bar {
     width: 100%;
-    min-height: 10px;
-    max-height: 10px;
+    min-height: 5px;
+    max-height: 5px;
     background-color: $secondary-color;
     border-radius: 5px;
     overflow: hidden;
