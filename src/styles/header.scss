@@ -11,10 +11,10 @@
     width: 70%;
     margin: 2rem auto;
     padding: $padding-default;
-    background: $secondary-color;
-    backdrop-filter: blur(10px);
+    background: #2d313d5d;
+    /* Bluish tint with 20% opacity */
+    backdrop-filter: blur(100px);    backdrop-filter: blur(100px);
     border-radius: $border-radius;
-    box-shadow: 0px 0.5px 1px rgb(116, 115, 115);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,15 +42,14 @@
   
         .navbar-link {
           text-decoration: none;
-          color: $accent-color;
+          color: $secondary-color;
           font-weight: 600;
           margin: 15px;
           padding: $link-padding;
           position: relative;
           transition: color $transition-time;
           transition: all $transition-time ease;
-          text-shadow: 0px 0.5px 1px rgb(116, 115, 115);
-
+          text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
 
         .navbar-link:hover {
@@ -96,7 +95,6 @@
       margin-top: 1rem;
       margin-bottom: 0;
       flex-direction: row;
-      box-shadow: 0px 0.5px 1px rgb(116, 115, 115);
       position: fixed;
       left: 0;
       right: 0;
