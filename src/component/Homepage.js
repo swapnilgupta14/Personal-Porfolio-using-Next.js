@@ -9,12 +9,18 @@ const Homepage = () => {
     const [isSuccess, setIsSuccess] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
 
+    let isMobile = false;
+    if(typeof window !== "undefined" && window.innerWidth <= 768){
+        isMobile = true;
+    }
+
 
     const handleButtonClick = () => {
         setIsLoading(true);
         setTimeout(() => {
             setIsLoading(false);
             setIsSuccess(true);
+            setIsHovered(false);
             setTimeout(() => {
                 const link = document.createElement('a');
                 link.href = 'https://drive.google.com/file/d/10Aq7BljScKLy-G8FTlHwjYk874xG7YOL/view?usp=sharing';
@@ -145,7 +151,7 @@ const Homepage = () => {
                             onMouseLeave={() => setIsHovered(false)}
                         >
                             {!isHovered && <span className='text-1'>Check Out my Resume</span>}
-                            {isHovered && <span className='icon-1'><DownloadIcon width={20} height={20} /></span>}
+                          {!isMobile ? (isHovered && <span className='icon-1'><DownloadIcon width={20} height={20} /></span>) : null}
                         </button>
                     )}
                 </div>

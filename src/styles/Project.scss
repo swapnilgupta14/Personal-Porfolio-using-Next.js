@@ -1,199 +1,228 @@
 .container-title {
-    margin: 0vh 15vh 5vh 15vh;
-    color: $secondary-color;
-    text-shadow: #000000 0px 1px 1px;
-    border-bottom: #d4cfcf 1px solid;
-    font-family: "Lilita One", sans-serif;
+  margin: 0vh 15vh 5vh 15vh;
+  color: $secondary-color;
+  text-shadow: #000000 0px 1px 1px;
+  border-bottom: #d4cfcf 1px solid;
+  font-family: "Lilita One", sans-serif;
 }
 
 .project-container {
-    min-height: fit-content;
-    max-height: fit-content;
-    margin: 0vh 15vh 15vh 15vh;
-    border-radius: 15px;
-    padding: 20px;
+  min-height: fit-content;
+  max-height: fit-content;
+  margin: 0vh 15vh 15vh 15vh;
+  border-radius: 15px;
+  padding: 20px;
 
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
 
-    transition: background-color 0.7s ease;
-    position: relative;
-    overflow: hidden;
+  transition: background-color 0.7s ease;
+  position: relative;
+  overflow: hidden;
 
-    background: #444b586a;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+  background: #444b586a;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
 .project-card {
-    color: $secondary-color;
+  color: $secondary-color;
 
-    margin: 2vh 2vh;
-    padding: 20px;
-    height: fit-content;
-    width: calc(33% - 40px);
+  margin: 2vh 2vh;
+  padding: 20px;
+  height: fit-content;
+  width: calc(33% - 40px);
 
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  background: $secondary-color;
+  color: $accent-color;
+  z-index: 9;
+
+  opacity: 0;
+  transform: scale(0.90);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
-    background: $secondary-color;
-    color: $accent-color;
     z-index: 9;
 
-    opacity: 0;
-    transform: scale(0.90);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 10px;
-        z-index: 9;
-
-    }
+  }
 }
 
 
 .project-card.visible {
-    opacity: 1;
-    transform: scale(1);
+  opacity: 1;
+  transform: scale(1);
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
+
+// ---------------------------------------------------
 
 @media (max-width: 768px) {
-    .container-title {
-        margin: 0vh 5vh 0vh 5vh;
-        color: $secondary-color;
-        text-shadow: #000000 0px 1px 1px;
-        border-bottom: #d4cfcf 1px solid;
-        font-family: "Lilita One", sans-serif;
-    }
-
-    .project-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 0;
-        padding: 0px 10px;
-        // padding-top: 5vh;
-        background: $accent-color;
-        backdrop-filter: none;
-        position: relative;
-      
-        .timeline {
-          position: absolute;
-          left: 50.5%;
-          top: calc(5vh + 20px); /* Adjust based on your layout */
-          bottom: 5vh; /* Adjust based on your layout */
-          width: 1px;
-          z-index: 1;
-          box-shadow: 0 0 0 1px #d4cfcf;
-          background-color: #d4cfcf; /* Add background color to the timeline */
-        }
-      
-        .timeline-indicator {
-          position: absolute;
-          left: 51%;
-          width: 22px;
-          height: 22px;
-          border-radius: 50%;
-          transform: translateX(-50%);
-          z-index: 1;
-          background-color: $secondary-color;
-          background-image: url('/icons8-mandala-100.png');
-          background-size: contain;
-          background-repeat: no-repeat;
-          background-position: center;
-          box-shadow: 0 0 0 1px $base-color, 0 0 0 3px $accent-color, 0 0 0 4px $secondary-color;
-      
-          &:nth-of-type(n + 2) {
-            top: -55px; /* Adjust based on your layout */
-          }
-        }
-      
-        .project-card {
-          width: 90%;
-          margin: 5vh 0;
-          padding: 15px;
-          font-size: 14px;
-          position: relative;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          z-index: 3;
-      
-          &:nth-of-type(n + 2) .timeline-indicator {
-            top: -55px; /* Adjust based on your layout */
-          }
-        }
-      
-        .project-card:hover {
-          color: $base-color;
-        }
-      }
-      
-}
-.experience-container {
   .container-title {
-    text-align: left;
-    margin-bottom: 2rem;
+    margin: 0vh 5vh 0vh 5vh;
 
-    h2 {
-      font-size: 2rem;
-      color: $secondary-color;
-    }
+    color: $secondary-color;
+    text-shadow: #000000 0px 1px 1px;
+    border-bottom: #d4cfcf 1px solid;
+    font-family: "Lilita One", sans-serif;
   }
 
-  .skill-container {
-    min-height: fit-content;
-    max-height: fit-content;
-    margin: 0vh 15vh 15vh 15vh;
-    border-radius: 15px;
-    padding: 20px;
+  .project-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: $secondary-color;
-    color: $accent-color;
+    margin: 0;
+    padding: 0px 10px;
+    // padding-top: 5vh;
+    background: $accent-color;
+    backdrop-filter: none;
+    position: relative;
+
+    .timeline {
+      position: absolute;
+      left: 50.5%;
+      top: calc(5vh + 20px);
+      /* Adjust based on your layout */
+      bottom: 5vh;
+      /* Adjust based on your layout */
+      width: 1px;
+      z-index: 1;
+      box-shadow: 0 0 0 1px #d4cfcf;
+      background-color: #d4cfcf;
+      /* Add background color to the timeline */
+    }
+
+    .timeline-indicator {
+      position: absolute;
+      left: 51%;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      background-color: $secondary-color;
+      background-image: url('/icons8-mandala-100.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      box-shadow: 0 0 0 1px $base-color, 0 0 0 3px $accent-color, 0 0 0 4px $secondary-color;
+
+      &:nth-of-type(n + 2) {
+        top: -55px;
+        /* Adjust based on your layout */
+      }
+    }
+
+    .project-card {
+      width: 90%;
+      margin: 5vh 0;
+      padding: 15px;
+      font-size: 14px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 3;
+
+      &:nth-of-type(n + 2) .timeline-indicator {
+        top: -55px;
+        /* Adjust based on your layout */
+      }
+    }
+
+    .project-card:hover {
+      color: $base-color;
+    }
+  }
+
+}
+
+// ----------------------------------------------
+
+.container-title {
+  text-align: left;
+  margin-bottom: 2rem;
+
+  h2 {
+    font-size: 2rem;
+    color: $secondary-color;
+  }
+}
+
+.experience-container {
+  display: flex;
+  flex-direction: row;
+
+  .experience-sub-container {
+    color: $secondary-color;
+    border-bottom: 1px solid $secondary-color;
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+    margin-bottom: 2rem;
+  }
+
+  .skill-container {
+    flex: 1;
+    width: 100%;
+
+    min-height: fit-content;
+    max-height: fit-content;
+
+    margin: 0vh 3vh 10vh 15vh;
+
+    border-radius: 15px;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: #444b586a;
+    backdrop-filter: blur(10px);
+
+    color: $secondary-color;
     transition: background-color 0.7s ease;
     position: relative;
     overflow: hidden;
 
-    h4 {
-        color: $accent-color;
-        border-bottom: 1px solid $accent-color;
-      width: 100%;
-      padding: 10px;
-      text-align: left;
-      margin-bottom: 2rem;
-    }
 
     .wrapper {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 1.5rem;
       width: 100%;
+
+      p {
+        color: $accent-color;
+      }
 
       .icon-container {
         display: flex;
         flex-direction: column;
         align-items: center;
-        background: #ffffff30;
+        background: $secondary-color;
         border-radius: 10px;
         padding: 10px;
         transition: transform 0.3s ease, background-color 0.3s ease;
 
         &:hover {
           transform: scale(1.1);
-          background-color: #ffffff50;
+          background-color: lighten($accent-color, $amount: 80);
         }
 
         img {
@@ -209,18 +238,151 @@
     }
   }
 
-  @media (max-width: 768px) {
-    .container-title {
-      margin: 0vh 5vh 5vh 5vh;
+  .companies-container {
+    flex: 1;
+    width: 100%;
+    font-style: normal;
+
+    min-height: fit-content;
+    max-height: fit-content;
+    margin: 0vh 15vh 10vh 3vh;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: #444b586a;
+    backdrop-filter: blur(10px);
+
+    color: $secondary-color;
+    transition: background-color 0.7s ease;
+    position: relative;
+    overflow: hidden;
+
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
     }
+
+    .experience-card {
+      width: 100%;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+
+      background: rgba(255, 255, 255, 0.074);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+      position: relative;
+    }
+
+    .company-title {
+      // font-size: 24px;
+      margin-bottom: 10px;
+      color: $secondary-color;
+    }
+
+    .experience-details {
+      position: relative;
+      font-style: normal;
+      margin-left: 20px;
+    }
+
+    .job-detail {
+      display: flex;
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .line {
+      width: 1.5px;
+      background-color: $secondary-color;
+      margin-left: 0px;
+      margin-bottom: -10px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+    }
+
+    .content {
+      flex: 1;
+      padding-left: 21px;
+      margin: 0 0 0 0;
+      position: relative;
+    }
+
+    .job-title {
+      color: $base-color;
+      position: relative;
+      font-weight: 400;
+    }
+
+    .job-title::before {
+      content: '';
+      position: absolute;
+      left: -25px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 10px;
+      height: 10px;
+      background-color: $base-color;
+      border-radius: 50%;
+    }
+
+    .duration {
+      margin: 0;
+      font-weight: 400;
+      color: $secondary-color;
+    }
+
+  }
+}
+
+@media (max-width: 768px) {
+  .experience-container {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    font-style: normal;
 
     .skill-container {
       width: calc(100% - 4rem);
-      margin: 0px 2rem;
+      margin: 1rem 2rem;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+
+      .wrapper {
+        grid-template-columns: repeat(3, 3fr);
+
+        .icon-container {
+          width: 100%;
+
+          p{
+            font-size: 0.7rem;
+          }
+
+          img {
+            width: 30px;
+            height: 30px;
+          }
+  
+          .icon-label {
+            margin-top: 0.5rem;
+          }
+        }
+      }
     }
 
-    .wrapper {
-      grid-template-columns: 1fr;
+    .companies-container {
+      width: calc(100% - 4rem);
+      margin: 1rem 2rem;
+      font-style: normal;
     }
   }
 }

@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import {
   CIcon,
-  TypeScriptIcon,
-  ExpressIcon,
+  // TypeScriptIcon,
+  // ExpressIcon,
   NodeJSIcon,
   PostmanIcon,
-  DartIcon,
-  FlutterIcon,
-  ReactNativeIcon,
+  // DartIcon,
+  // FlutterIcon,
+  // ReactNativeIcon,
   HTMLIcon,
   CSSIcon,
-  BootstrapIcon,
+  // BootstrapIcon,
   ReduxIcon,
   SassIcon,
   JavaScriptIcon,
@@ -18,7 +18,7 @@ import {
   ReactIcon,
   MySQLIcon,
   MongoDBIcon,
-  HerokuIcon,
+  // HerokuIcon,
   GitIcon,
   FirebaseIcon,
 } from './icon/icon';
@@ -70,18 +70,41 @@ const projectsData = [
   }
 ];
 
+const experienceData = [
+  {
+    companyTitle: "Wyvate Tech Services Pvt. Ltd.",
+    img: "",
+    detail: [
+      {
+        jobTitle: "Web Developer Intern",
+        description: "",
+        technologies: [],
+        link: "",
+        duration: { from: "2021-06", to: "2021-08" }
+      },
+      {
+        jobTitle: "Student Intern",
+        description: "",
+        technologies: [],
+        link: "",
+        duration: { from: "2021-06", to: "2021-08" }
+      }
+    ]
+  },
+]
+
 const icons = [
   { Component: CIcon, label: 'C Language' },
-  { Component: TypeScriptIcon, label: 'TypeScript' },
-  { Component: ExpressIcon, label: 'Express' },
-  { Component: NodeJSIcon, label: 'NodeJS' },
+  // { Component: TypeScriptIcon, label: 'TypeScript' },
+  // { Component: ExpressIcon, label: 'Express' },
+  // { Component: NodeJSIcon, label: 'NodeJS' },
   { Component: PostmanIcon, label: 'Postman' },
-  { Component: DartIcon, label: 'Dart' },
-  { Component: FlutterIcon, label: 'Flutter' },
-  { Component: ReactNativeIcon, label: 'React Native' },
+  // { Component: DartIcon, label: 'Dart' },
+  // { Component: FlutterIcon, label: 'Flutter' },
+  // { Component: ReactNativeIcon, label: 'React Native' },
   { Component: HTMLIcon, label: 'HTML' },
   { Component: CSSIcon, label: 'CSS' },
-  { Component: BootstrapIcon, label: 'Bootstrap' },
+  // { Component: BootstrapIcon, label: 'Bootstrap' },
   { Component: ReduxIcon, label: 'Redux' },
   { Component: SassIcon, label: 'Sass' },
   { Component: JavaScriptIcon, label: 'JavaScript' },
@@ -89,13 +112,14 @@ const icons = [
   { Component: ReactIcon, label: 'React' },
   { Component: MySQLIcon, label: 'MySQL' },
   { Component: MongoDBIcon, label: 'MongoDB' },
-  { Component: HerokuIcon, label: 'Heroku' },
+  // { Component: HerokuIcon, label: 'Heroku' },
   { Component: GitIcon, label: 'Git' },
   { Component: FirebaseIcon, label: 'Firebase' },
 ];
 
 const Project = () => {
   const [visibleProjects, setVisibleProjects] = useState([]);
+  const [visibleExperience, setVisibleExperience] = useState([]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -127,7 +151,9 @@ const Project = () => {
 
   return (
     <div className="detail-container">
+
       <div className='container-title'><h2>PROJECTS</h2></div>
+
       <div className='project-container'>
         {projectsData.map((project, index) => (
           <React.Fragment key={index}>
@@ -144,19 +170,58 @@ const Project = () => {
           </React.Fragment>
         ))}
       </div>
+
+      <div className='container-title'><h2>EXPERIENCE</h2></div>
+
       <div className='experience-container'>
-        <div className='container-title'><h2>EXPERIENCE</h2></div>
+
         <div className='skill-container'>
-          <h4>Skill I have Acquired - </h4>
+          <h4 className='experience-sub-container'>Skill I have Acquired - </h4>
           <div className="wrapper">
             {icons.map(({ Component, label }, index) => (
               <div key={index} className="icon-container">
                 <Component />
+                <p>{label}</p>
               </div>
             ))}
           </div>
         </div>
+
+        <div className='companies-container'>
+          <h4 className='experience-sub-container'>Work Experience</h4>
+          <div className="wrapper">
+            {experienceData.map((experience, index) => (
+              <div
+                key={index}
+                className={`experience-card ${visibleExperience.includes(index.toString()) ? 'visible' : ''}`}
+                data-index={index}
+              >
+                <h3 className="company-title">{experience.companyTitle}</h3>
+                {experience.img && <img className="company-image" src={experience.img} alt="image" />}
+                <div className="experience-details">
+                  {experience.detail.map((detail, detailIndex) => (
+                    <div key={detailIndex} className="job-detail">
+                      <div className="line"></div>
+                      <div className="content">
+                        <h4 className="job-title">{detail.jobTitle}</h4>
+                        <p className="description">{detail.description}</p>
+                        <div className="technologies">
+                          {detail.technologies.map((technology, technologyIndex) => (
+                            <span key={technologyIndex} className="technology">{technology}</span>
+                          ))}
+                        </div>
+                        <p className="duration">{`${detail.duration.from} - ${detail.duration.to}`}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
+
     </div>
   );
 }

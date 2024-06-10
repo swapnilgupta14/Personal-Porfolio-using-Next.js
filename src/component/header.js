@@ -51,7 +51,7 @@ const Header = () => {
                 </a>
               </li>
             )}
-             {!isMobile && (
+            {!isMobile && (
               <li className="navbar-item">
                 <a href="#" className="navbar-link hover">
                   EXPERIENCE
@@ -63,7 +63,7 @@ const Header = () => {
                 PROJECTS
               </a>
             </li>
-           
+
             {!isMobile ? (
               <li className="navbar-item">
                 <a href="#" className="navbar-link hover">
@@ -76,36 +76,38 @@ const Header = () => {
                   <Icon height={32} width={32} />
                 </div>
                 {isDropdownOpen && (
-                  <div className="dropdown-menu">
-                    {dropdownItems.map(item => (
-                      <div key={item.id} className="dropdown-item-wrapper">
-                        <a
-                          href="#"
-                          className="dropdown-item "
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            handleDropdownItemClick(item);
-                          }}
-                        >
-                          <div className='dropdown-item-text'>{item.label}</div>
-                          <div className={`dropdown-item-icon ${selectedItem && selectedItem.id === item.id ? 'rotate-icon' : 'rotate-icon-again'}`}>
-                            <DropDown height={45} width={45} />
-                          </div>
-                        </a>
-                        {selectedItem && selectedItem.id === item.id && (
-                          <div className="sub-dropdown-menu">
-                            {item.subItems.map((subItem, index) => (
-                              <a key={index} href="#" className="sub-dropdown-item">{subItem}</a>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    ))}
+                  <div className='blurred-wrapper'>
+                    <div className="dropdown-menu">
+                      {dropdownItems.map(item => (
+                        <div key={item.id} className="dropdown-item-wrapper">
+                          <a
+                            href="#"
+                            className="dropdown-item "
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleDropdownItemClick(item);
+                            }}
+                          >
+                            <div className='dropdown-item-text'>{item.label}</div>
+                            <div className={`dropdown-item-icon ${selectedItem && selectedItem.id === item.id ? 'rotate-icon' : 'rotate-icon-again'}`}>
+                              <DropDown height={45} width={45} />
+                            </div>
+                          </a>
+                          {selectedItem && selectedItem.id === item.id && (
+                            <div className="sub-dropdown-menu">
+                              {item.subItems.map((subItem, index) => (
+                                <a key={index} href="#" className="sub-dropdown-item">{subItem}</a>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 )}
               </li>
             )}
-            
+
           </ul>
         </div>
       </nav>
