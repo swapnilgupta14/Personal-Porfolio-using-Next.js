@@ -42,13 +42,13 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
     .container {
         color: #e5e5e5;
         font-size: 2.26rem;
-        text-transform: uppercase;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         text-align: center;
         position: relative;
+        text-transform: uppercase;
         z-index: 2;
         pointer-events: auto;
 
@@ -75,6 +75,7 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
         .name-color {
             font-size: 8rem;
             color: #e5e5e5;
+
         }
 
         .social-nav-container {
@@ -93,12 +94,11 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
             }
         }
 
-        .button-wrapper{
+        .button-wrapper {
             font-size: 1rem;
             margin: 2rem 0 0 0;
-            .contact-button{
 
-            }
+            .contact-button {}
         }
     }
 
@@ -202,7 +202,6 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
         .container {
             color: #e5e5e5;
             font-size: 2.26rem;
-            text-transform: uppercase;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -230,6 +229,8 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
             .name-color {
                 font-size: 5rem;
                 color: #e5e5e5;
+                text-transform: uppercase;
+
             }
         }
 
@@ -299,27 +300,54 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 200px; 
-    height: 50px; 
+    width: 200px;
+    height: 50px;
     cursor: pointer;
     color: secondary-color;
     border-radius: 5px;
     overflow: hidden;
     transition: all 0.3s ease;
-  }
-  
-  .button-wrapper p {
-    margin: 0;
-    font-size: 16px;
-    // color: #ff0000;
-    transition: opacity 0.3s ease;
-  }
 
-  .button-wrapper p:hover {
-    transform: scale(1.2);
-  }
-  
-  .loading-bar {
+    .button {
+        padding: 10px 15px;
+        font-family: inherit;
+        font-size: 14px;
+        border-radius: 30px;
+        background-color: $secondary-color;
+        color: $base-color;
+        border: $accent-color 2px solid;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .icon-1 {
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $secondary-color;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+        }
+
+        &:hover {
+            transform: scale(0.9);
+            background-color: $base-color;
+            color: $secondary-color;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .icon-1 {
+                transform: scale(1.2);
+            }
+        }
+    }
+}
+
+.loading-bar {
     width: 100%;
     min-height: 10px;
     max-height: 10px;
@@ -327,28 +355,28 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
     border-radius: 5px;
     overflow: hidden;
     position: relative;
-  }
-  
-  .loading-bar-progress {
+}
+
+.loading-bar-progress {
     width: 0;
     height: 100%;
     background-color: $base-color;
     position: absolute;
     animation: load 1s forwards;
-  }
-  
-  @keyframes load {
+}
+
+@keyframes load {
     from {
-      width: 0%;
+        width: 0%;
     }
+
     to {
-      width: 100%;
+        width: 100%;
     }
-  }
-  
-  .success-icon {
-    width: 50px; 
+}
+
+.success-icon {
+    width: 50px;
     height: 50px;
     transition: opacity 0.3s ease;
-  }
-  
+}

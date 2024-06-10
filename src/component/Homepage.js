@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Linkedin, Github, Mail, Leetcode, HackerRank } from './icon/icon';
+import { Linkedin, Github, Mail, Leetcode, HackerRank, DownloadIcon } from './icon/icon';
 import { IndicatorIcon } from './icon/icon';
 
 const Homepage = () => {
@@ -7,6 +7,8 @@ const Homepage = () => {
     const [isSmallScreen, setIsSmallScreen] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
+    const [isHovered, setIsHovered] = useState(false);
+
 
     const handleButtonClick = () => {
         setIsLoading(true);
@@ -15,11 +17,13 @@ const Homepage = () => {
             setIsSuccess(true);
             setTimeout(() => {
                 const link = document.createElement('a');
-                link.href = 'https://drive.google.com/file/d/10Aq7BljScKLy-G8FTlHwjYk874xG7YOL/view?usp=sharing'; 
-                link.download = 'swapnil_gupta.pdf'; 
+                link.href = 'https://drive.google.com/file/d/10Aq7BljScKLy-G8FTlHwjYk874xG7YOL/view?usp=sharing';
+                link.target = '_blank';
+                link.download = 'swapnil_gupta.pdf';
                 link.click();
-            }, 1000);
-        }, 3000);
+                setIsSuccess(false);
+            }, 2000);
+        }, 2000);
     };
 
 
@@ -134,10 +138,15 @@ const Homepage = () => {
                         <div className='loading-bar'>
                             <div className='loading-bar-progress'></div>
                         </div>
-                    ) : isSuccess ? (
-                       ` Loading....`
                     ) : (
-                        <p>Check Out my Resume</p>
+                        <button
+                            className='button'
+                            onMouseEnter={() => setIsHovered(true)}
+                            onMouseLeave={() => setIsHovered(false)}
+                        >
+                            {!isHovered && <span className='text-1'>Check Out my Resume</span>}
+                            {isHovered && <span className='icon-1'><DownloadIcon width={20} height={20} /></span>}
+                        </button>
                     )}
                 </div>
             </div>
