@@ -121,48 +121,43 @@ const Project = () => {
     });
 
     return () => {
-      projectCards.forEach((card) => {
-        observer.unobserve(card);
-      });
+      observer.disconnect();
     };
   }, []);
 
   return (
-    <>
-      <div className="detail-container">
-        <div className='container-title'><h2>PROJECTS</h2></div>
-        <div className='project-container'>
-          {projectsData.map((project, index) => (
-            <React.Fragment key={index}>
-              {index === 1 && <div className="timeline"></div>}
-              <div
-                className={`project-card ${visibleProjects.includes(index.toString()) ? 'visible' : ''}`}
-                data-index={index}
-              >
-                <div className="timeline-indicator"></div>
-                <img className="project-image" src={project.img} alt="image" />
-                <h2>{project.title}</h2>
-              </div>
-              {index === projectsData.length - 2 && <div className="timeline"></div>}
-            </React.Fragment>
-          ))}
-        </div>
-        <div className='experience-container'>
-          <div className='container-title'><h2>EXPERIENCE</h2></div>
-          <div className='skill-container'>
-            <h4>Skill I have Acquired - </h4>
-            <div className="wrapper">
-              {icons.map(({ Component, label }, index) => (
-                <div key={index} className="icon-container">
-                  <Component />
-                </div>
-              ))}
+    <div className="detail-container">
+      <div className='container-title'><h2>PROJECTS</h2></div>
+      <div className='project-container'>
+        {projectsData.map((project, index) => (
+          <React.Fragment key={index}>
+            {index === 1 && <div className="timeline"></div>}
+            <div
+              className={`project-card ${visibleProjects.includes(index.toString()) ? 'visible' : ''}`}
+              data-index={index}
+            >
+              <div className="timeline-indicator"></div>
+              <img className="project-image" src={project.img} alt="image" />
+              <h2>{project.title}</h2>
             </div>
+            {index === projectsData.length - 2 && <div className="timeline"></div>}
+          </React.Fragment>
+        ))}
+      </div>
+      <div className='experience-container'>
+        <div className='container-title'><h2>EXPERIENCE</h2></div>
+        <div className='skill-container'>
+          <h4>Skill I have Acquired - </h4>
+          <div className="wrapper">
+            {icons.map(({ Component, label }, index) => (
+              <div key={index} className="icon-container">
+                <Component />
+              </div>
+            ))}
           </div>
         </div>
       </div>
-
-    </>
+    </div>
   );
 }
 

@@ -6,7 +6,7 @@ import Projects from "@/component/Project";
 import AddButton from "@/component/utils/addButton";
 
 export default function Home() {
-  
+
   useEffect(() => {
     const handleCopy = (e) => {
       e.preventDefault();
@@ -27,6 +27,11 @@ export default function Home() {
     }, 2500);
     return () => clearTimeout(timeout);
   }, []);
+
+  let isMobile;
+  if (typeof window !== "undefined") {
+    isMobile = window.innerWidth <= 768;
+  }
 
   return (
     <>
@@ -54,11 +59,11 @@ export default function Home() {
           </div>
         ) : (
           <>
-          <Header />
-          <Homepage />
-          <AddButton />
-          <Projects/>
-          <Footer/>
+            <Header />
+            <Homepage />
+            {isMobile ? null : <AddButton />}
+            <Projects />
+            <Footer />
           </>
         )}
         {!showWelcome && (
