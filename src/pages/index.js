@@ -4,6 +4,7 @@ import Footer from "@/component/footer";
 import Homepage from "@/component/Homepage";
 import Projects from "@/component/Project";
 import AddButton from "@/component/utils/addButton";
+import Misc from "@/component/Misc";
 
 export default function Home() {
 
@@ -63,6 +64,7 @@ export default function Home() {
             <Homepage />
             {isMobile ? null : <AddButton />}
             <Projects />
+            <Misc/>
             <Footer />
           </>
         )}
