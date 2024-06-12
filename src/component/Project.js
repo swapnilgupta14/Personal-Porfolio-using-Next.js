@@ -80,17 +80,30 @@ const experienceData = [
         description: "",
         technologies: [],
         link: "",
-        duration: { from: "2021-06", to: "2021-08" }
+        duration: { from: "12/2023", to: "Present" }
       },
       {
         jobTitle: "Student Intern",
         description: "",
         technologies: [],
         link: "",
-        duration: { from: "2021-06", to: "2021-08" }
+        duration: { from: "09/2023", to: "12/2023" }
       }
     ]
   },
+  {
+    companyTitle: "Euphelity Pvt. Ltd.",
+    img: "",
+    detail: [
+      {
+        jobTitle: "Graphic Designer Intern",
+        description: "Worked on the The Special School Project to design mind maps fro their students.",
+        technologies: [],
+        link: "",
+        duration: { from: "06/2023", to: "09/2023" }
+      },
+    ]
+  }
 ]
 
 const icons = [
@@ -204,13 +217,16 @@ const Project = () => {
                       <div className="line"></div>
                       <div className="content">
                         <h4 className="job-title">{detail.jobTitle}</h4>
+                        <p className="duration">{`${detail.duration.from} - ${detail.duration.to}`}</p>
+
                         <p className="description">{detail.description}</p>
+
                         <div className="technologies">
                           {detail.technologies.map((technology, technologyIndex) => (
                             <span key={technologyIndex} className="technology">{technology}</span>
                           ))}
                         </div>
-                        <p className="duration">{`${detail.duration.from} - ${detail.duration.to}`}</p>
+
                       </div>
                     </div>
                   ))}

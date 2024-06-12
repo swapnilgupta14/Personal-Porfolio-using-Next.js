@@ -171,7 +171,7 @@
   flex-direction: row;
 
   .experience-sub-container {
-    color: $secondary-color;
+    color: $base-color;
     border-bottom: 1px solid $secondary-color;
     width: 100%;
     padding: 10px;
@@ -316,24 +316,45 @@
       padding-left: 21px;
       margin: 0 0 0 0;
       position: relative;
+      font-size: 14px;
+
+      .duration{
+        margin: 0;
+        margin-top: -15px;
+        margin-bottom: 15px;
+        font-weight: 400;
+
+      }
+
+      .description{
+        margin: 5px 0px;
+        font-weight: 400;
+
+      }
     }
 
     .job-title {
       color: $base-color;
       position: relative;
-      font-weight: 400;
+      font-weight: 500;
+
     }
 
     .job-title::before {
       content: '';
       position: absolute;
-      left: -25px;
+      left: -27.5px;
       top: 50%;
       transform: translateY(-50%);
-      width: 10px;
-      height: 10px;
-      background-color: $base-color;
+      width: 15px;
+      height: 15px;
+      background-color: $secondary-color;
       border-radius: 50%;
+      border: $base-color 3px solid;
+
+      background-image: url('/icons8-mandala-100.png');
+      background-size: contain;
+      background-repeat: no-repeat;
     }
 
     .duration {
