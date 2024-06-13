@@ -39,7 +39,6 @@ export default function Home() {
   useEffect(() => {
     let currentScroll = window.scrollY;
     window.addEventListener('scroll', () => {
-      console.log(currentScroll, "scrolling")
       currentScroll = window.scrollY;
       setCurrentScroll(currentScroll);
     }
@@ -50,9 +49,7 @@ export default function Home() {
     let section = document.getElementById(id);
     if (section) {
       setTimeout(() => {
-        console.log(currentScroll, "currentScroll")
         let sectionTop = section.getBoundingClientRect().top + window.scrollY;
-        console.log(sectionTop, "sectionTop")
         if (sectionTop > currentScroll) {
           section.scrollIntoView({
             behavior: 'smooth',

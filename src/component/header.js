@@ -56,11 +56,6 @@ const Header = ({ isDropdownOpen, setIsDropdownOpen, scrollToSection }) => {
             {!isMobile && (
               <>
                 <li className="navbar-item">
-                  <p className="navbar-link hover" onClick={() => scrollToSection('about')}>
-                    ABOUT
-                  </p>
-                </li>
-                <li className="navbar-item">
                   <p className="navbar-link hover" onClick={() => scrollToSection('experience')}>
                     EXPERIENCE
                   </p>
@@ -74,11 +69,18 @@ const Header = ({ isDropdownOpen, setIsDropdownOpen, scrollToSection }) => {
             )}
 
             {!isMobile ? (
-              <li className="navbar-item">
-                <p className="navbar-link hover" onClick={() => scrollToSection('contact')}>
-                  CONTACT
-                </p>
-              </li>
+              <>
+                <li className="navbar-item">
+                  <p className="navbar-link hover" onClick={() => scrollToSection('contact')}>
+                    CONTACT
+                  </p>
+                </li>
+                <li className="navbar-item">
+                  <p className="navbar-link hover" onClick={() => scrollToSection('about')}>
+                    ABOUT
+                  </p>
+                </li>
+              </>
             ) : (
               <li className="navbar-item">
                 <div className="navbar-link-icon">
@@ -100,10 +102,12 @@ const Header = ({ isDropdownOpen, setIsDropdownOpen, scrollToSection }) => {
           <h1>Menu</h1>
           <ul>
             <li><p onClick={() => { scrollToSection('home'); toggleDropdown(); }}>HOME</p></li>
-            <li><p onClick={() => { scrollToSection('about'); toggleDropdown(); }}>ABOUT</p></li>
+            <li><span className='line'></span></li>
             <li><p onClick={() => { scrollToSection('experience'); toggleDropdown(); }}>EXPERIENCE</p></li>
             <li><p onClick={() => { scrollToSection('projects'); toggleDropdown(); }}>PROJECTS</p></li>
             <li><p onClick={() => { scrollToSection('publication'); toggleDropdown(); }}>MY PUBLICATION</p></li>
+            <li><span className='line'></span></li>
+            <li><p onClick={() => { scrollToSection('about'); toggleDropdown(); }}>ABOUT DEVELOPER</p></li>
             <li><p onClick={() => { scrollToSection('contact'); toggleDropdown(); }}>CONTACT</p></li>
             <li><p onClick={() => { scrollToSection('buy-cofee'); toggleDropdown(); }}>BUY ME COFEE</p></li>
 
