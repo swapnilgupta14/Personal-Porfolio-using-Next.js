@@ -165,9 +165,9 @@ const Project = () => {
   return (
     <div className="detail-container">
 
-      <div className='container-title'><h2>PROJECTS</h2></div>
+      <div className='container-title' id ='projects'><h2>PROJECTS</h2></div>
 
-      <div className='project-container'>
+      <div className='project-container' >
         {projectsData.map((project, index) => (
           <React.Fragment key={index}>
             {index === 1 && <div className="timeline"></div>}
@@ -184,7 +184,7 @@ const Project = () => {
         ))}
       </div>
 
-      <div className='container-title'><h2>EXPERIENCE</h2></div>
+      <div className='container-title' id ='experience'><h2>EXPERIENCE</h2></div>
 
       <div className='experience-container'>
 
@@ -200,7 +200,7 @@ const Project = () => {
           </div>
         </div>
 
-        <div className='companies-container'>
+        <div className='companies-container' >
           <h4 className='experience-sub-container'>Work Experience</h4>
           <div className="wrapper">
             {experienceData.map((experience, index) => (

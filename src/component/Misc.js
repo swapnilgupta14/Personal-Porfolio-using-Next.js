@@ -24,7 +24,7 @@ const Misc = () => {
 
     return (
         <div className="misc-container">
-            <div className="container-title">
+            <div className="container-title" id='publication'>
                 <h2>PUBLICATION</h2>
             </div>
             <div className="publications">
@@ -43,7 +43,7 @@ const Misc = () => {
                 </div>
             </div>
 
-            <div className="container-title">
+            <div className="container-title" id='contact'>
                 <h2>Contact Me</h2>
             </div>
             <div className="contact-container">
@@ -62,7 +62,7 @@ const Misc = () => {
                     </form>
                 </div>
                 <div className="buy">
-                    <h4 className="experience-sub-container">Buy Me a Cofee - </h4>
+                    <h4 className="experience-sub-container" id='buy-cofee'>Buy Me a Cofee - </h4>
                     <div className='buy-container'>
                         <img src="./bmc_qr.png" alt="Buy Me a Coffee" />
                         <p>https://buymeacoffee.com/14guptaswapnil</p>

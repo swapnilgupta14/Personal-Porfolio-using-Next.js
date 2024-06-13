@@ -35,6 +35,43 @@ export default function Home() {
     isMobile = window.innerWidth <= 768;
   }
 
+  const [currentScroll, setCurrentScroll] = useState(0);
+  useEffect(() => {
+    let currentScroll = window.scrollY;
+    window.addEventListener('scroll', () => {
+      console.log(currentScroll, "scrolling")
+      currentScroll = window.scrollY;
+      setCurrentScroll(currentScroll);
+    }
+    );
+  }, [currentScroll]);
+
+  const scrollToSection = (id) => {
+    let section = document.getElementById(id);
+    if (section) {
+      setTimeout(() => {
+        console.log(currentScroll, "currentScroll")
+        let sectionTop = section.getBoundingClientRect().top + window.scrollY;
+        console.log(sectionTop, "sectionTop")
+        if (sectionTop > currentScroll) {
+          section.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+            inline: 'nearest'
+          });
+        } else {
+          window.scrollTo({
+            top: sectionTop,
+            behavior: 'smooth'
+          });
+        }
+        setIsDropdownOpen(false);
+      }, 200);
+    }
+  };
+
+
+
   return (
     <>
       <div>
@@ -61,7 +98,7 @@ export default function Home() {
           </div>
         ) : (
           <>
-            <Header isDropdownOpen={isDropdownOpen} setIsDropdownOpen={setIsDropdownOpen} />            
+            <Header isDropdownOpen={isDropdownOpen} setIsDropdownOpen={setIsDropdownOpen} scrollToSection={scrollToSection} />
             <Homepage />
             {isMobile ? null : <AddButton />}
             <Projects />

@@ -117,7 +117,7 @@ const Homepage = () => {
     }, []);
 
     return (
-        <div className="frontpage-container">
+        <div className="frontpage-container" id='home'>
             <div className="stars"></div>
             <div className="container" id="otherElement">
                 <div className="text">
