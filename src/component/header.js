@@ -1,37 +1,46 @@
 import React, { useState, useEffect } from 'react';
-import { Icon } from './icon/icon';
-import { DropDown } from './icon/icon';
+import { Tray, DropDown, Sun, Cross, sunAnimatedTray } from './icon/icon';
 
-const Header = () => {
+const Header = ({ isDropdownOpen, setIsDropdownOpen }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
+  const [fill, setFill] = useState('#ffffff');
+  const [rotation, setRotation] = useState(0);
+  const [direction, setDirection] = useState(1);
+  const [showMenu, setShowMenu] = useState(false); 
 
-  const dropdownItems = [
-    { id: 1, label: 'Experience', subItems: [] },
-    { id: 2, label: 'Skills', subItems: ['Sub Item 2.1', 'Sub Item 2.2', 'Sub Item 2.3'] },
-    { id: 3, label: 'Hire Me', subItems: ['Sub Item 3.1', 'Sub Item 3.2', 'Sub Item 3.3'] }
-  ];
-
-
-  const handleDropdownItemClick = (item) => {
-    setSelectedItem(selectedItem && selectedItem.id === item.id ? null : item);
+  const rotateSunIcon = () => {
+    setRotation(rotation + (145 * direction));
+    setDirection(direction * -1);
   };
 
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
       setIsMobile(width <= 768);
-      // setIsTablet(width > 768 && width <= 1024);
     };
     handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  useEffect(() => {
+    if (isDropdownOpen) {
+      document.body.classList.add('noscroll');
+      setShowMenu(true);
+    } else {
+      document.body.classList.remove('noscroll');
+      setShowMenu(false);
+    }
+  }, [isDropdownOpen]);
+
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const toggleColor = () => {
+    setFill(fill === '#DC5F00' ? '#ffffff' : '#DC5F00');
   };
 
   return (
@@ -39,78 +48,67 @@ const Header = () => {
       <nav className={`navbar ${isMobile ? 'mobile' : ''} ${isTablet ? 'tablet' : ''}`}>
         <div className="navbar-tray">
           <ul className="navbar-list">
-            <li className="navbar-item">
-              <a href="#" className="navbar-link hover">
-                HOME
-              </a>
-            </li>
-            {!isMobile && (
+            <>
               <li className="navbar-item">
                 <a href="#" className="navbar-link hover">
-                  ABOUT
+                  HOME
                 </a>
               </li>
-            )}
-            {!isMobile && (
-              <li className="navbar-item">
-                <a href="#" className="navbar-link hover">
-                  EXPERIENCE
-                </a>
-              </li>
-            )}
-            <li className="navbar-item">
-              <a href="#" className="navbar-link hover">
-                PROJECTS
-              </a>
-            </li>
+              {!isMobile && (
+                <>
+                  <li className="navbar-item">
+                    <a href="#" className="navbar-link hover">
+                      ABOUT
+                    </a>
+                  </li>
+                  <li className="navbar-item">
+                    <a href="#" className="navbar-link hover">
+                      EXPERIENCE
+                    </a>
+                  </li>
+                  <li className="navbar-item">
+                    <a href="#" className="navbar-link hover">
+                      PROJECTS
+                    </a>
+                  </li>
+                </>
+              )}
 
-            {!isMobile ? (
-              <li className="navbar-item">
-                <a href="#" className="navbar-link hover">
-                  CONTACT
-                </a>
-              </li>
-            ) : (
-              <li className="navbar-item">
-                <div onClick={toggleDropdown} className="navbar-link navbar-link-icon">
-                  <Icon height={32} width={32} />
-                </div>
-                {isDropdownOpen && (
-                  <div className='blurred-wrapper'>
-                    <div className="dropdown-menu">
-                      {dropdownItems.map(item => (
-                        <div key={item.id} className="dropdown-item-wrapper">
-                          <a
-                            href="#"
-                            className="dropdown-item "
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              handleDropdownItemClick(item);
-                            }}
-                          >
-                            <div className='dropdown-item-text'>{item.label}</div>
-                            <div className={`dropdown-item-icon ${selectedItem && selectedItem.id === item.id ? 'rotate-icon' : 'rotate-icon-again'}`}>
-                              <DropDown height={45} width={45} />
-                            </div>
-                          </a>
-                          {selectedItem && selectedItem.id === item.id && (
-                            <div className="sub-dropdown-menu">
-                              {item.subItems.map((subItem, index) => (
-                                <a key={index} href="#" className="sub-dropdown-item">{subItem}</a>
-                              ))}
-                            </div>
-                          )}
-                        </div>
-                      ))}
-                    </div>
+              {!isMobile ? (
+                <li className="navbar-item">
+                  <a href="#" className="navbar-link hover">
+                    CONTACT
+                  </a>
+                </li>
+              ) : (
+                <li className="navbar-item">
+                  <div className="navbar-link-icon">
+                    <span onClick={() => { toggleColor(); rotateSunIcon(); }} className='nightMode' style={{ transform: `rotate(${rotation}deg)` }}>
+                      <Sun height={26} width={26} fill={fill} />
+                    </span>
+                    <span onClick={toggleDropdown} className={`menuTray ${isDropdownOpen ? 'trayOpen' : ''}`}>
+                      {!isDropdownOpen ? <Tray height={20} width={20} /> : <Cross height={23} width={23} />}
+                    </span>
                   </div>
-                )}
-              </li>
-            )}
-
+                </li>
+              )}
+            </>
           </ul>
         </div>
       </nav>
+
+      <div className={`fullscreen-menu ${showMenu ? 'visible' : ''}`}>
+        <div className="fullscreen-menu-content">
+          <h1>Menu</h1>
+          <ul>
+            <li><a href="#" onClick={toggleDropdown}>HOME</a></li>
+            <li><a href="#" onClick={toggleDropdown}>ABOUT</a></li>
+            <li><a href="#" onClick={toggleDropdown}>EXPERIENCE</a></li>
+            <li><a href="#" onClick={toggleDropdown}>PROJECTS</a></li>
+            <li><a href="#" onClick={toggleDropdown}>CONTACT</a></li>
+          </ul>
+        </div>
+      </div>
     </header>
   );
 };

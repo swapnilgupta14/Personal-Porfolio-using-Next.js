@@ -7,6 +7,7 @@ import AddButton from "@/component/utils/addButton";
 import Misc from "@/component/Misc";
 
 export default function Home() {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleCopy = (e) => {
@@ -60,11 +61,11 @@ export default function Home() {
           </div>
         ) : (
           <>
-            <Header />
+            <Header isDropdownOpen={isDropdownOpen} setIsDropdownOpen={setIsDropdownOpen} />            
             <Homepage />
             {isMobile ? null : <AddButton />}
             <Projects />
-            <Misc/>
+            <Misc />
             <Footer />
           </>
         )}
