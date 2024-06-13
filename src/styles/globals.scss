@@ -13,7 +13,7 @@
 @import './misc.scss';
 
 body {
-  background-color: #121919;
+  background-color: $accent-color;
   color: $accent-color;
   font-family: "Josefin Sans", sans-serif;
   font-optical-sizing: auto;  

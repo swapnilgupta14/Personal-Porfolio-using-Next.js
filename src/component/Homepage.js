@@ -127,8 +127,8 @@ const Homepage = () => {
                     </div>
                 </div>
                 <section className="animation animationOnLoad">
-                    <div className="first"><div>Full Stack Developer</div></div>
-                    <div className="second"><div>UI/UX Designer</div></div>
+                    <div className="first"><div>Web Developer</div></div>
+                    <div className="second"><div>Full Stack Developer</div></div>
                     <div className="third"><div>Web3 Enthusiast</div></div>
                 </section>
                 <div className='social-nav-container'>
