@@ -6,16 +6,6 @@
   font-family: "Lilita One", sans-serif;
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px); /* Initial position: 20px up */
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0); /* Animate to original position */
-  }
-}
 
 .project-container {
   min-height: fit-content;
@@ -56,9 +46,9 @@
   background-color: $accent-color;
   backdrop-filter: blur(10px);
   
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  opacity: 0;
-  transform: translateY(20px);
+  // transition: transform 0.3s ease, opacity 0.3s ease;
+  // opacity: 0;
+  // transform: translateY(20px);
 
   img {
     width: 100%;
@@ -71,10 +61,10 @@
 }
 
 
-.project-card.visible {
-  opacity: 1;
-  transform: scale(1);
-}
+// .project-card.visible {
+//   opacity: 1;
+//   transform: scale(1);
+// }
 
 .project-card .hover-bg {
   position: absolute;
@@ -365,7 +355,7 @@
       position: absolute;
       left: -27.5px;
       top: 50%;
-      transform: translateY(-50%);
+      // transform: translateY(-50%);
       width: 15px;
       height: 15px;
       background-color: $secondary-color;
