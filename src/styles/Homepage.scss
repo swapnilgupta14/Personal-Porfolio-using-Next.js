@@ -29,7 +29,7 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
     font-family: "Lilita One", sans-serif;
     min-height: 100vh;
     max-height: 100vh;
-    margin: -5vh 0vh 5vh 0vh;
+    margin: -15vh 0vh 5vh 0vh;
     color: #e5e5e5;
     display: flex;
     flex-direction: column;
@@ -42,6 +42,7 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
     .container {
         color: #e5e5e5;
         font-size: 2.26rem;
+        margin-top: 5vh;
         display: flex;
         flex-direction: column;
         align-items: center;

@@ -8,81 +8,6 @@
 .misc-container {
     width: 100%;
 
-    .publications {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        margin: 0vh 15vh 10vh 15vh;
-        min-height: fit-content;
-        max-height: fit-content;
-        border-radius: 15px;
-        background: #444b586a;
-        padding: 20px;
-        backdrop-filter: blur(10px);
-        color: $secondary-color;
-
-        .publication-image {
-            width: 200px;
-            height: auto;
-            background-color: red;
-            margin: 20px;
-            border-radius: 5px;
-        }
-
-        .publication {
-            display: flex;
-            flex-direction: column;
-            padding: 10px;
-
-            .publication-details {
-                display: flex;
-                flex-direction: column;
-
-                h4 {
-                    font-size: 1.2em;
-                    margin: 0;
-                    display: flex;
-                    color: $base-color;
-                    justify-content: space-between;
-                    align-items: baseline;
-
-                    a {
-                        font-size: 0.8em;
-                        color: $base-color;
-                        text-decoration: none;
-
-                        &:hover {
-                            text-decoration: underline;
-                        }
-                    }
-                }
-
-                .publication-date {
-                    font-size: 0.9em;
-                    color: #666;
-                    margin-bottom: 10px;
-                    align-self: flex-end;
-                }
-
-                p {
-                    margin: 10px 0;
-                    font-size: 1em;
-                }
-
-                ul {
-                    padding-left: 20px;
-
-                    li {
-                        margin-bottom: 10px;
-                        font-size: 1em;
-                    }
-                }
-            }
-        }
-    }
-
-
     .contact-container {
         display: flex;
         flex-direction: row-reverse;
@@ -101,7 +26,6 @@
             margin: 1rem 1rem 0rem 1rem;
             margin-bottom: 2rem;
             text-align: left;
-            // height: 100%;
         }
 
         .contact-me {
@@ -113,6 +37,8 @@
             margin: 10px 0rem;
             display: flex;
             flex-direction: column;
+            height: 460px;
+
 
             .contact-form {
                 display: flex;
@@ -188,7 +114,6 @@
         }
 
         .buy {
-            flex: 1; // Added flex: 1 to take available space
             padding: 10px;
             margin: 10px;
             margin-right: 10px;
