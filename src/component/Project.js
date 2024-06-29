@@ -135,23 +135,9 @@ const icons = [
 ];
 
 const Project = () => {
-  const [visibleProjects, setVisibleProjects] = useState([]);
-  const [visibleExperience, setVisibleExperience] = useState([]);
+  // const [visibleProjects, setVisibleProjects] = useState([]);
+  // const [visibleExperience, setVisibleExperience] = useState([]);
   const cardRefs = useRef([]);
-
-  const { ref, inView: isContainerInView } = useInView({ threshold: 0.5 });
-  const [areCardsAnimated, setAreCardsAnimated] = useState(false);
-  useEffect(() => {
-    if (isContainerInView) {
-      setAreCardsAnimated(true);
-    }
-  }, [isContainerInView]);
-
-  useEffect(() => {
-    if (isContainerInView) {
-      setAreCardsAnimated(true);
-    }
-  }, [isContainerInView]);
 
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   useEffect(() => {
@@ -159,35 +145,6 @@ const Project = () => {
       setIsMobile(window.innerWidth <= 768);
     }
     );
-  }, []);
-
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setVisibleProjects((prevVisibleProjects) => [
-              ...prevVisibleProjects,
-              entry.target.dataset.index
-            ]);
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.1
-      }
-    );
-
-    const projectCards = document.querySelectorAll('.project-card');
-    projectCards.forEach((card) => {
-      observer.observe(card);
-    });
-
-    return () => {
-      observer.disconnect();
-    };
   }, []);
 
   return (
@@ -199,7 +156,7 @@ const Project = () => {
         {projectsData.map((project, index) => (
           <React.Fragment key={index}>
             <div
-              className={`project-card ${visibleProjects.includes(index.toString()) ? 'visible' : ''}`}
+              className={`project-card`}
               data-index={index}
               onMouseMove={(e) => {
                 if (!isMobile) {
@@ -214,6 +171,7 @@ const Project = () => {
               ref={(el) => (cardRefs.current[index] = el)}
             >
               <img className="project-image" src={project.img} alt="image" />
+
               {isMobile ? (
                 <h2>
                   <a href={project.link}>{project.title}</a>
@@ -238,14 +196,14 @@ const Project = () => {
 
       <div className='experience-container'>
 
-        <div className='skill-container' ref={ref}>
+        <div className='skill-container'>
           <h4 className='experience-sub-container'>Skill I have Acquired - </h4>
 
           <div className="wrapper">
             {icons.map(({ Component, label }, index) => (
               <div
                 key={index}
-                className={`icon-container ${areCardsAnimated ? 'animated' : ''}`}
+                className={`icon-container`}
               >
                 <Component />
                 <p>{label}</p>

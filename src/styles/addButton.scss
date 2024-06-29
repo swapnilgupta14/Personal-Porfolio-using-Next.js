@@ -77,11 +77,15 @@
     &:hover {
         transform: scale(1) rotate(45deg);
         transition: transform .4s ease .1s;
+
         &:before {
             transform: translate(-50%, -50%) scaleY(.86) scaleX(3);
+            background: transparent;
         }
         &:after {
             transform: translate(-50%, -50%) rotate(90deg) scaleY(.86) scaleX(3);
+            background: transparent;
+
         }
         a {
             --scale: 1;
