@@ -14,35 +14,13 @@ const Misc = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-
-        // No need for email sending logic here
         console.log('Form submitted:', formData);
-
-        setFormData({ name: '', email: '', message: '' }); // Reset form after submission
+        setFormData({ name: '', email: '', message: '' }); 
     };
 
 
     return (
         <div className="misc-container">
-            <div className="container-title" id='publication'>
-                <h2>PUBLICATION</h2>
-            </div>
-            <div className="publications">
-                <img src="./wiley.svg" alt="Publication Image" className="publication-image" />
-                <div className="publication">
-                    <div className="publication-details">
-                        <h4>Decentralized Systems and Distributed Computing, Scrivener Publishing, Wiley </h4>
-
-                        <span className="publication-date"><span>Mar 2023 - July 2023</span></span>
-                        <p><strong>Chapter Title:</strong> Introduction to Next-Generation Internet and Distributed Systems.</p>
-                        <ul>
-                            <li>Analyzed diverse distributed system architectures: client-server, p2p, microservices, focusing on scalability and fault tolerance.</li>
-                            <li>SDN, its architecture, network virtualization, and programmable control plane for dynamic control.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
             <div className="container-title" id='contact'>
                 <h2>Contact Me</h2>
             </div>

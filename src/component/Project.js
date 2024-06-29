@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import {
   CIcon,
   // TypeScriptIcon,
@@ -21,6 +21,7 @@ import {
   // HerokuIcon,
   GitIcon,
   FirebaseIcon,
+  Github,
 } from './icon/icon';
 // src/data/projectsData.js
 
@@ -134,6 +135,9 @@ const Project = () => {
   const [visibleProjects, setVisibleProjects] = useState([]);
   const [visibleExperience, setVisibleExperience] = useState([]);
 
+  const cardRefs = useRef([]);
+
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -165,26 +169,43 @@ const Project = () => {
   return (
     <div className="detail-container">
 
-      <div className='container-title' id ='projects'><h2>PROJECTS</h2></div>
+      <div className='container-title' id='projects'><h2>PROJECTS</h2></div>
 
-      <div className='project-container' >
+      <div className='project-container'>
         {projectsData.map((project, index) => (
           <React.Fragment key={index}>
             {index === 1 && <div className="timeline"></div>}
             <div
               className={`project-card ${visibleProjects.includes(index.toString()) ? 'visible' : ''}`}
               data-index={index}
+              onMouseMove={(e) => {
+                const card = cardRefs.current[index];
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left - 35;
+                const y = e.clientY - rect.top - 35;
+                card.querySelector('.button').style.left = `${x}px`;
+                card.querySelector('.button').style.top = `${y}px`;
+              }}
+              ref={(el) => (cardRefs.current[index] = el)}
             >
               <div className="timeline-indicator"></div>
               <img className="project-image" src={project.img} alt="image" />
               <h2>{project.title}</h2>
+              <div className="hover-bg">
+                <a
+                  href={project.link}
+                  className="button"
+                >
+                  <Github color={'#000000'} width={30} height={30}/>
+                </a>
+              </div>
             </div>
             {index === projectsData.length - 2 && <div className="timeline"></div>}
           </React.Fragment>
         ))}
       </div>
 
-      <div className='container-title' id ='experience'><h2>EXPERIENCE</h2></div>
+      <div className='container-title' id='experience'><h2>EXPERIENCE</h2></div>
 
       <div className='experience-container'>
 
