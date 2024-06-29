@@ -1,4 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { useInView } from 'react-intersection-observer';
+
 import {
   CIcon,
   // TypeScriptIcon,
@@ -23,6 +25,7 @@ import {
   FirebaseIcon,
   Github,
 } from './icon/icon';
+import Link from 'next/link';
 // src/data/projectsData.js
 
 const projectsData = [
@@ -134,8 +137,29 @@ const icons = [
 const Project = () => {
   const [visibleProjects, setVisibleProjects] = useState([]);
   const [visibleExperience, setVisibleExperience] = useState([]);
-
   const cardRefs = useRef([]);
+
+  const { ref, inView: isContainerInView } = useInView({ threshold: 0.5 });
+  const [areCardsAnimated, setAreCardsAnimated] = useState(false);
+  useEffect(() => {
+    if (isContainerInView) {
+      setAreCardsAnimated(true);
+    }
+  }, [isContainerInView]);
+
+  useEffect(() => {
+    if (isContainerInView) {
+      setAreCardsAnimated(true);
+    }
+  }, [isContainerInView]);
+
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  useEffect(() => {
+    window.addEventListener('resize', () => {
+      setIsMobile(window.innerWidth <= 768);
+    }
+    );
+  }, []);
 
 
   useEffect(() => {
@@ -174,33 +198,38 @@ const Project = () => {
       <div className='project-container'>
         {projectsData.map((project, index) => (
           <React.Fragment key={index}>
-            {index === 1 && <div className="timeline"></div>}
             <div
               className={`project-card ${visibleProjects.includes(index.toString()) ? 'visible' : ''}`}
               data-index={index}
               onMouseMove={(e) => {
-                const card = cardRefs.current[index];
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left - 35;
-                const y = e.clientY - rect.top - 35;
-                card.querySelector('.button').style.left = `${x}px`;
-                card.querySelector('.button').style.top = `${y}px`;
+                if (!isMobile) {
+                  const card = cardRefs.current[index];
+                  const rect = card.getBoundingClientRect();
+                  const x = e.clientX - rect.left - 35;
+                  const y = e.clientY - rect.top - 35;
+                  card.querySelector('.button').style.left = `${x}px`;
+                  card.querySelector('.button').style.top = `${y}px`;
+                }
               }}
               ref={(el) => (cardRefs.current[index] = el)}
             >
-              <div className="timeline-indicator"></div>
               <img className="project-image" src={project.img} alt="image" />
-              <h2>{project.title}</h2>
-              <div className="hover-bg">
+              {isMobile ? (
+                <h2>
+                  <a href={project.link}>{project.title}</a>
+                </h2>
+              ) : (
+                <h2>{project.title}</h2>
+              )}
+              {!isMobile && (<div className="hover-bg">
                 <a
                   href={project.link}
                   className="button"
                 >
-                  <Github color={'#000000'} width={30} height={30}/>
+                  <Github color={'#000000'} width={30} height={30} />
                 </a>
-              </div>
+              </div>)}
             </div>
-            {index === projectsData.length - 2 && <div className="timeline"></div>}
           </React.Fragment>
         ))}
       </div>
@@ -209,11 +238,15 @@ const Project = () => {
 
       <div className='experience-container'>
 
-        <div className='skill-container'>
+        <div className='skill-container' ref={ref}>
           <h4 className='experience-sub-container'>Skill I have Acquired - </h4>
+
           <div className="wrapper">
             {icons.map(({ Component, label }, index) => (
-              <div key={index} className="icon-container">
+              <div
+                key={index}
+                className={`icon-container ${areCardsAnimated ? 'animated' : ''}`}
+              >
                 <Component />
                 <p>{label}</p>
               </div>
@@ -227,7 +260,7 @@ const Project = () => {
             {experienceData.map((experience, index) => (
               <div
                 key={index}
-                className={`experience-card ${visibleExperience.includes(index.toString()) ? 'visible' : ''}`}
+                className={`experience-card`}
                 data-index={index}
               >
                 <h3 className="company-title">{experience.companyTitle}</h3>

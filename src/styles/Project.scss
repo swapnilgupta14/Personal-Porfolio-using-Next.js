@@ -6,6 +6,17 @@
   font-family: "Lilita One", sans-serif;
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Initial position: 20px up */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Animate to original position */
+  }
+}
+
 .project-container {
   min-height: fit-content;
   max-height: fit-content;
@@ -108,7 +119,6 @@
 @media (max-width: 768px) {
   .container-title {
     margin: 0vh 5vh 0vh 5vh;
-
     color: $secondary-color;
     text-shadow: #000000 0px 1px 1px;
     border-bottom: #d4cfcf 1px solid;
@@ -121,65 +131,40 @@
     align-items: center;
     margin: 0;
     padding: 0px 10px;
-    // padding-top: 5vh;
-    background: $accent-color;
     backdrop-filter: none;
+    background: none;
     position: relative;
-
-    .timeline {
-      position: absolute;
-      left: 50.5%;
-      top: calc(5vh + 20px);
-      /* Adjust based on your layout */
-      bottom: 5vh;
-      /* Adjust based on your layout */
-      width: 1px;
-      z-index: 1;
-      box-shadow: 0 0 0 1px #d4cfcf;
-      background-color: #d4cfcf;
-      /* Add background color to the timeline */
-    }
-
-    .timeline-indicator {
-      position: absolute;
-      left: 51%;
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      transform: translateX(-50%);
-      z-index: 1;
-      background-color: $secondary-color;
-      background-image: url('/icons8-mandala-100.png');
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      box-shadow: 0 0 0 1px $base-color, 0 0 0 3px $accent-color, 0 0 0 4px $secondary-color;
-
-      &:nth-of-type(n + 2) {
-        top: -55px;
-        /* Adjust based on your layout */
-      }
-    }
 
     .project-card {
       width: 90%;
-      margin: 5vh 0;
+      // margin: 5vh 0;
+      color: $accent-color;
       padding: 15px;
-      font-size: 14px;
-      position: relative;
+      font-size: 13px;
       display: flex;
       flex-direction: column;
+      background: $secondary-color;
       align-items: center;
       z-index: 3;
+      font-style: normal !important;
 
-      &:nth-of-type(n + 2) .timeline-indicator {
-        top: -55px;
-        /* Adjust based on your layout */
+      :hover{
+        color: $base-color;
+
       }
-    }
-
-    .project-card:hover {
-      color: $base-color;
+      a {
+        color: inherit; /* Use the inherited color, which is $accent-color */
+        text-decoration: none; /* Remove underline */
+    
+        &:hover,
+        &:focus {
+          color: inherit; /* Maintain the same color on hover and focus */
+        }
+    
+        &:active {
+          color: inherit; /* Maintain the same color when clicked */
+        }
+      }
     }
   }
 
@@ -233,6 +218,10 @@
     transition: background-color 0.7s ease;
     position: relative;
     overflow: hidden;
+
+    .animated {
+      animation: fadeInUp 0.5s ease-in-out forwards; /* Animation name and properties */
+    }
 
 
     .wrapper {
