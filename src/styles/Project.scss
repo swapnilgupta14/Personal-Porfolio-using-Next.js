@@ -6,7 +6,6 @@
   font-family: "Lilita One", sans-serif;
 }
 
-
 .project-container {
   min-height: fit-content;
   max-height: fit-content;
@@ -23,10 +22,6 @@
   transition: background-color 0.7s ease;
   position: relative;
   overflow: hidden;
-
-  background: #444b586a;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
 }
 
 .project-card {
@@ -41,14 +36,9 @@
   overflow: hidden;
 
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
-  background-color: $accent-color;
-  backdrop-filter: blur(10px);
-  
-  // transition: transform 0.3s ease, opacity 0.3s ease;
-  // opacity: 0;
-  // transform: translateY(20px);
+  background: rgba(255, 255, 255, 0.064);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
 
   img {
     width: 100%;
@@ -56,10 +46,8 @@
     object-fit: cover;
     border-radius: 10px;
     z-index: 9;
-
   }
 }
-
 
 // .project-card.visible {
 //   opacity: 1;
@@ -138,26 +126,24 @@
       z-index: 3;
       font-style: normal !important;
 
-      :hover{
+      :hover {
         color: $base-color;
-
       }
       a {
         color: inherit; /* Use the inherited color, which is $accent-color */
         text-decoration: none; /* Remove underline */
-    
+
         &:hover,
         &:focus {
           color: inherit; /* Maintain the same color on hover and focus */
         }
-    
+
         &:active {
           color: inherit; /* Maintain the same color when clicked */
         }
       }
     }
   }
-
 }
 
 // ----------------------------------------------
@@ -201,7 +187,7 @@
     flex-direction: column;
     align-items: center;
 
-    background: #444b586a;
+    // background: #444b586a;
     backdrop-filter: blur(10px);
 
     color: $secondary-color;
@@ -212,7 +198,6 @@
     .animated {
       animation: fadeInUp 0.5s ease-in-out forwards; /* Animation name and properties */
     }
-
 
     .wrapper {
       display: grid;
@@ -265,8 +250,8 @@
     flex-direction: column;
     align-items: center;
 
-    background: #444b586a;
-    backdrop-filter: blur(10px);
+    // background: #444b586a;
+    // backdrop-filter: blur(10px);
 
     color: $secondary-color;
     transition: background-color 0.7s ease;
@@ -286,9 +271,9 @@
       padding: 20px;
       margin-bottom: 20px;
 
-      background: rgba(255, 255, 255, 0.074);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background: rgba(255, 255, 255, 0.064);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
 
       position: relative;
     }
@@ -333,13 +318,11 @@
         margin-top: -15px;
         margin-bottom: 15px;
         font-weight: 400;
-
       }
 
       .description {
         margin: 5px 0px;
         font-weight: 400;
-
       }
     }
 
@@ -347,22 +330,21 @@
       color: $base-color;
       position: relative;
       font-weight: 500;
-
     }
 
     .job-title::before {
-      content: '';
+      content: "";
       position: absolute;
       left: -27.5px;
       top: 50%;
-      // transform: translateY(-50%);
+      transform: translateY(-50%);
       width: 15px;
       height: 15px;
       background-color: $secondary-color;
       border-radius: 50%;
       border: $base-color 3px solid;
 
-      background-image: url('/icons8-mandala-100.png');
+      background-image: url("/icons8-mandala-100.png");
       background-size: contain;
       background-repeat: no-repeat;
     }
@@ -372,7 +354,6 @@
       font-weight: 400;
       color: $secondary-color;
     }
-
   }
 }
 

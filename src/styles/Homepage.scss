@@ -196,15 +196,13 @@ $background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accen
 
     .frontpage-container {
         // background-color: red;
-        margin-top: 0;
         margin: 0vh;
         display: flex;
         flex-direction: column;
         text-align: left;
         border-radius: 0px;
         min-height: 93vh;
-
-
+        margin-top: -5vh;
 
         .container {
             color: #e5e5e5;
