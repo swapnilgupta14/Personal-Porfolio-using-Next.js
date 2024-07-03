@@ -14,8 +14,9 @@
         justify-content: center;
         align-items: flex-start;
         margin: 0vh 15vh 15vh 15vh;
-        background: #444b586a;
-        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.064);
+        backdrop-filter: blur(20px);
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
         border-radius: 15px;
         padding: 20px;
 
@@ -30,8 +31,7 @@
 
         .contact-me {
             flex: 2;
-            background: rgba(255, 255, 255, 0.074);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(30px);
             border-radius: 15px;
             padding: 20px;
             margin: 10px 0rem;
@@ -118,8 +118,8 @@
             margin: 10px;
             margin-right: 10px;
             border-radius: 15px;
-            background: rgba(255, 255, 255, 0.074);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(30px);
+            // backdrop-filter: blur(10px);
             display: flex;
             flex-direction: column;
 

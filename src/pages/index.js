@@ -95,12 +95,14 @@ export default function Home() {
           </div>
         ) : (
           <>
-            <Header isDropdownOpen={isDropdownOpen} setIsDropdownOpen={setIsDropdownOpen} scrollToSection={scrollToSection} />
-            <Homepage />
-            {isMobile ? null : <AddButton />}
-            <Projects />
-            <Misc />
-            <Footer />
+            <div className="global-bg">
+              <Header isDropdownOpen={isDropdownOpen} setIsDropdownOpen={setIsDropdownOpen} scrollToSection={scrollToSection} />
+              <Homepage />
+              {isMobile ? null : <AddButton />}
+              <Projects />
+              <Misc />
+              <Footer />
+            </div>
           </>
         )}
         {!showWelcome && (
