@@ -12,13 +12,10 @@
   margin: 0vh 10vh 15vh 10vh;
   border-radius: 15px;
   padding: 20px;
-  // background-color: red;
-
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
-
   transition: background-color 0.7s ease;
   position: relative;
   overflow: hidden;
@@ -26,15 +23,12 @@
 
 .project-card {
   color: $secondary-color;
-
   margin: 2vh 2vh;
   padding: 20px;
-  height: fit-content;
   width: calc(50% - 40px);
   height: auto;
   position: relative;
   overflow: hidden;
-
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.064);
   backdrop-filter: blur(20px);
@@ -49,17 +43,12 @@
   }
 }
 
-// .project-card.visible {
-//   opacity: 1;
-//   transform: scale(1);
-// }
-
 .project-card .hover-bg {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 90%;
   background-color: rgba(14, 15, 15, 0.9);
   display: flex;
   justify-content: center;
@@ -79,17 +68,36 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: #fff;
+  background-color: $secondary-color;
   display: flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  color: #000;
-  transition: transform 0.1s ease;
+  color: $accent-color;
+  transition: transform 0.1s ease, opacity 0.1s ease;
 }
 
-.project-card:hover .button {
-  transform: scale(1.1);
+.demo-button {
+  position: absolute;
+  bottom: -10%;
+  left: 50%;
+  width: inherit;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  background-color: $base-color;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: $secondary-color;
+  border-radius: 5px;
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .demo-button {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 // ---------------------------------------------------
@@ -132,11 +140,11 @@
 
         &:hover,
         &:focus {
-          color: inherit; 
+          color: inherit;
         }
 
         &:active {
-          color: inherit; 
+          color: inherit;
         }
       }
     }

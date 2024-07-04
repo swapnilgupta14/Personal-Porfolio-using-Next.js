@@ -53,8 +53,13 @@ const Header = ({ isDropdownOpen, setIsDropdownOpen, scrollToSection }) => {
                 HOME
               </p>
             </li>
-            {!isMobile && (
+            {!isMobile ? (
               <>
+                <li className="navbar-item">
+                  <p className="navbar-link hover" onClick={() => scrollToSection('about')}>
+                    ABOUT
+                  </p>
+                </li>
                 <li className="navbar-item">
                   <p className="navbar-link hover" onClick={() => scrollToSection('experience')}>
                     EXPERIENCE
@@ -65,21 +70,12 @@ const Header = ({ isDropdownOpen, setIsDropdownOpen, scrollToSection }) => {
                     PROJECTS
                   </p>
                 </li>
-              </>
-            )}
-
-            {!isMobile ? (
-              <>
                 <li className="navbar-item">
                   <p className="navbar-link hover" onClick={() => scrollToSection('contact')}>
                     CONTACT
                   </p>
                 </li>
-                <li className="navbar-item">
-                  <p className="navbar-link hover" onClick={() => scrollToSection('about')}>
-                    ABOUT
-                  </p>
-                </li>
+
               </>
             ) : (
               <li className="navbar-item">
