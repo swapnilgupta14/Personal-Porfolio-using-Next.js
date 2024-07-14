@@ -188,24 +188,21 @@ const Project = () => {
                 width={500}
                 height={300}
               />
-
-              {isMobile ? (
-                <h2>
-                  <a href={project.link}>{project.title}</a>
-                </h2>
-              ) : (
-                <h2>{project.title}</h2>
-              )}
               {!isMobile && (
                 <div className="hover-bg">
                   <a href={project.link} className="button">
                     <Github color={"#000000"} width={30} height={30} />
                   </a>
-                  <a href={project.demo} className="demo-button">
-                    <div>Demo</div>
-                    <div><HorArrow width={20} height={15} fill={'#ffffff'}/></div>
-                  </a>
                 </div>
+              )}
+            </div>
+            <div>
+            {isMobile ? (
+                <h2>
+                  <a href={project.link}>{project.title}</a>
+                </h2>
+              ) : (
+                <h2>{project.title}</h2>
               )}
             </div>
           </React.Fragment>

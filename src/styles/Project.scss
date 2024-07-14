@@ -3,7 +3,6 @@
   color: $secondary-color;
   text-shadow: #000000 0px 1px 1px;
   border-bottom: #d4cfcf 1px solid;
-  font-family: "Lilita One", sans-serif;
 }
 
 .project-container {
@@ -25,7 +24,7 @@
   color: $secondary-color;
   margin: 2vh 2vh;
   padding: 20px;
-  width: calc(50% - 40px);
+  width: calc(90%);
   height: auto;
   position: relative;
   overflow: hidden;
@@ -48,7 +47,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 90%;
+  height: 100%;
   background-color: rgba(14, 15, 15, 0.9);
   display: flex;
   justify-content: center;
@@ -77,29 +76,6 @@
   transition: transform 0.1s ease, opacity 0.1s ease;
 }
 
-.demo-button {
-  position: absolute;
-  bottom: -10%;
-  left: 50%;
-  width: inherit;
-  transform: translateX(-50%);
-  padding: 10px 20px;
-  background-color: $base-color;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  color: $secondary-color;
-  border-radius: 5px;
-  text-decoration: none;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.project-card:hover .demo-button {
-  opacity: 1;
-  pointer-events: auto;
-}
-
 // ---------------------------------------------------
 
 @media (max-width: 768px) {
@@ -108,7 +84,6 @@
     color: $secondary-color;
     text-shadow: #000000 0px 1px 1px;
     border-bottom: #d4cfcf 1px solid;
-    font-family: "Lilita One", sans-serif;
   }
 
   .project-container {

@@ -18,7 +18,7 @@
     justify-content: center;
     align-items: center;
     max-height: 7vh;
-    position: fixed;
+    // position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -43,7 +43,12 @@
 
         .navbar-link {
           text-decoration: none;
-          color: $secondary-color;
+          // color: $secondary-color;
+          background: linear-gradient(to right, #B6F492, 70% , #338B93);
+          -webkit-text-fill-color: transparent;
+          -webkit-background-clip: text;
+          background-clip: text;
+
           font-weight: 600;
           margin: 15px;
           padding: $link-padding;
