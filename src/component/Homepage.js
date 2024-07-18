@@ -10,7 +10,7 @@ const Homepage = () => {
     const [isHovered, setIsHovered] = useState(false);
 
     let isMobile = false;
-    if(typeof window !== "undefined" && window.innerWidth <= 768){
+    if (typeof window !== "undefined" && window.innerWidth <= 768) {
         isMobile = true;
     }
 
@@ -42,118 +42,96 @@ const Homepage = () => {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    // useEffect(() => {
-    //     const frontpageContainer = document.querySelector('.frontpage-container');
-    //     const starsContainer = frontpageContainer.querySelector('.stars');
-    //     const starsCount = isSmallScreen ? 60 : 120;
-    //     const glowRadius = 100;
-    //     let glowTimeout;
+    useEffect(() => {
+        const frontpageContainer = document.querySelector('.frontpage-container');
+        const starsContainer = frontpageContainer.querySelector('.stars');
+        const starsCount = isSmallScreen ? 60 : 120;
+        const glowRadius = 100;
+        let glowTimeout;
 
-    //     const createStar = () => {
-    //         const star = document.createElement('div');
-    //         star.classList.add('star');
-    //         star.style.top = `${Math.random() * 100}%`;
-    //         star.style.left = `${Math.random() * 100}%`;
-    //         starsContainer.appendChild(star);
+        const createStar = () => {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            star.style.top = `${Math.random() * 100}%`;
+            star.style.left = `${Math.random() * 100}%`;
+            starsContainer.appendChild(star);
 
-    //         const moveStar = () => {
-    //             const deltaX = (Math.random() * 20 - Math.random()) + 'px';
-    //             const deltaY = (Math.random() * 20 - Math.random()) + 'px';
-    //             star.style.transform = `translate(${deltaX}, ${deltaY})`;
-    //             setTimeout(moveStar, Math.random() * 2000 + 1000);
-    //         };
+            const moveStar = () => {
+                const deltaX = (Math.random() * 20 - Math.random()) + 'px';
+                const deltaY = (Math.random() * 20 - Math.random()) + 'px';
+                star.style.transform = `translate(${deltaX}, ${deltaY})`;
+                setTimeout(moveStar, Math.random() * 2000 + 1000);
+            };
 
-    //         moveStar();
-    //     };
+            moveStar();
+        };
 
-    //     for (let i = 0; i < starsCount; i++) {
-    //         createStar();
-    //     }
+        for (let i = 0; i < starsCount; i++) {
+            createStar();
+        }
 
-    //     const randomlyGlowStar = () => {
-    //         const stars = starsContainer.querySelectorAll('.star');
-    //         const randomIndex = Math.floor(Math.random() * stars.length);
-    //         const randomStar = stars[randomIndex];
+        const randomlyGlowStar = () => {
+            const stars = starsContainer.querySelectorAll('.star');
+            const randomIndex = Math.floor(Math.random() * stars.length);
+            const randomStar = stars[randomIndex];
 
-    //         randomStar.classList.add('glow');
+            randomStar.classList.add('glow');
 
-    //         setTimeout(() => {
-    //             randomStar.classList.remove('glow');
-    //         }, 500);
-    //     };
+            setTimeout(() => {
+                randomStar.classList.remove('glow');
+            }, 500);
+        };
 
-    //     const handleMouseMove = (event) => {
-    //         clearTimeout(glowTimeout);
-    //         const { clientX, clientY } = event;
-    //         const stars = starsContainer.querySelectorAll('.star');
+        const handleMouseMove = (event) => {
+            clearTimeout(glowTimeout);
+            const { clientX, clientY } = event;
+            const stars = starsContainer.querySelectorAll('.star');
 
-    //         stars.forEach(star => {
-    //             const rect = star.getBoundingClientRect();
-    //             const starX = rect.left + rect.width / 2;
-    //             const starY = rect.top + rect.height / 2;
-    //             const distance = Math.sqrt((starX - clientX) ** 2 + (starY - clientY) ** 2);
+            stars.forEach(star => {
+                const rect = star.getBoundingClientRect();
+                const starX = rect.left + rect.width / 2;
+                const starY = rect.top + rect.height / 2;
+                const distance = Math.sqrt((starX - clientX) ** 2 + (starY - clientY) ** 2);
 
-    //             if (distance < glowRadius) {
-    //                 star.classList.add('glow');
-    //             } else {
-    //                 star.classList.remove('glow');
-    //             }
-    //         });
+                if (distance < glowRadius) {
+                    star.classList.add('glow');
+                } else {
+                    star.classList.remove('glow');
+                }
+            });
 
-    //         glowTimeout = setTimeout(() => {
-    //             stars.forEach(star => {
-    //                 star.classList.remove('glow');
-    //             });
-    //         }, 500);
-    //     };
+            glowTimeout = setTimeout(() => {
+                stars.forEach(star => {
+                    star.classList.remove('glow');
+                });
+            }, 500);
+        };
 
-    //     frontpageContainer.addEventListener('mousemove', handleMouseMove);
-    //     const glowInterval = setInterval(randomlyGlowStar, 1500);
+        frontpageContainer.addEventListener('mousemove', handleMouseMove);
+        const glowInterval = setInterval(randomlyGlowStar, 1500);
 
-    //     return () => {
-    //         frontpageContainer.removeEventListener('mousemove', handleMouseMove);
-    //         clearInterval(glowInterval);
-    //     };
-    // }, []);
+        return () => {
+            frontpageContainer.removeEventListener('mousemove', handleMouseMove);
+            clearInterval(glowInterval);
+        };
+    }, []);
 
     return (
         <div className="frontpage-container" id='home'>
-            {/* <div className="stars"></div> */}
+            <div className="stars"></div>
             <div className="container" id="otherElement">
-                <div className="text">
-                    <div className="name name-float">
-                        <span className='color-diff2'>Hello, </span>{isSmallScreen && <><br /></>} <span className='color-diff'>I'm</span><br />
-                        <span className="name-color">Swapnil {isSmallScreen && <><br /></>} Gupta</span>
-                    </div>
+                <div className="name">
+                    <p className="iam">hello, {isSmallScreen && <><br /></>} i am</p><br />
+                    <p className="name-color comic-neue-bold">Swapnil {isSmallScreen && <><br /></>} Gupta</p>
+                    <p className="detail">A front-end developer passionate about building accessible <br /> and user friendly websites.</p>
                 </div>
-                <section className="animation animationOnLoad">
-                    <div className="first"><div>Web Developer</div></div>
-                    <div className="second"><div>Full Stack Developer</div></div>
-                    <div className="third"><div>Web3 Enthusiast</div></div>
-                </section>
-                <div className='social-nav-container'>
-                    <div className="social-nav">
-                        <a className="icon" href="https://www.linkedin.com/in/swapnilgupta-ln/"><Linkedin /></a>
-                        <a className="icon" href="https://github.com/swapnilgupta14"><Github /></a>
-                        <a className="icon" href="#"><Leetcode /></a>
-                        <a className="icon" href="https://www.hackerrank.com/dashboard"><HackerRank /></a>
-                    </div>
-                </div>
-                <div className='button-wrapper' onClick={handleButtonClick}>
-                    {isLoading ? (
-                        <div className='loading-bar'>
-                            <div className='loading-bar-progress'></div>
-                        </div>
-                    ) : (
-                        <button
-                            className='button'
-                            onMouseEnter={() => setIsHovered(true)}
-                            onMouseLeave={() => setIsHovered(false)}
-                        >
-                            {!isHovered && <span className='text-1'>Check Out my Resume</span>}
-                          {!isMobile ? (isHovered && <span className='icon-1'><DownloadIcon width={20} height={20} /></span>) : null}
-                        </button>
-                    )}
+                <div className="button-wrapper">
+                    <button className="download-button comic-neue-bold">Get in touch</button>
+                    <button className="download-button other comic-neue-bold">
+                        Download CV
+                    </button>
+                    <buttona className="icon" style={{ marginBottom: "-7px" }}><Linkedin width={35} height={35} /></buttona>
+                    <button className="icon"><Github width={35} height={35} /></button>
                 </div>
             </div>
         </div>

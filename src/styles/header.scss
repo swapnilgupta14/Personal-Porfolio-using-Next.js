@@ -4,14 +4,26 @@
 
 .app-header {
 
-  margin-bottom: 15vh;
-  background-color: linear-gradient(270deg, $secondary-accent-color 0%, $accent-color 100%);
+  // margin-bottom: 15vh;
+  background: linear-gradient(
+    to right,
+    rgba(51, 139, 147, 0.02),
+    60%,
+    rgba(182, 244, 146, 0.03)
+  );
+  
+  
 
   .navbar {
     width: 70%;
     margin: 2rem auto;
     padding: $padding-default;
-    background: #2f323c49;
+    background: linear-gradient(
+    to right,
+    rgba(51, 139, 147, 0.02),
+    60%,
+    rgba(182, 244, 146, 0.03)
+  );
     backdrop-filter: blur(30px);
     border-radius: $border-radius;
     display: flex;
@@ -22,7 +34,7 @@
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1001;
+    // z-index: 99999;
     overflow: hidden;
 
     .navbar-list {
@@ -38,12 +50,11 @@
         font-size: 1rem;
         flex-direction: column;
         justify-content: center;
-        cursor: pointer;
+        cursor: pointer !important;
 
 
         .navbar-link {
           text-decoration: none;
-          // color: $secondary-color;
           background: linear-gradient(to right, #B6F492, 70% , #338B93);
           -webkit-text-fill-color: transparent;
           -webkit-background-clip: text;
@@ -60,7 +71,6 @@
 
         .navbar-link:hover {
           transform: scale(1.1);
-          color: $base-color;
         }
 
         .hover {
@@ -71,15 +81,13 @@
             height: 2px;
             bottom: 0;
             left: 0;
-            background-color: $secondary-color;
             visibility: hidden;
             transition: all $transition-time ease-in-out;
           }
 
           &:hover::before {
             visibility: visible;
-            background-color: $base-color;
-            color: $secondary-color;
+            background-color: #B6F492;
             width: 100%;
           }
         }

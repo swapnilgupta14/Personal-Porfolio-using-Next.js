@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Lilita+One&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Lilita+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 
 @import './header.scss';
 @import './variables';
@@ -11,17 +11,50 @@
 @import './footer.scss';
 @import './addButton.scss';
 @import './misc.scss';
+@import './About.scss';
 
 body {
   background-color: #0C1821;
   color: #0C1821;
-  font-family: Poppins, sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   font-optical-sizing: auto;  
   font-weight: bold;
   margin: 0;
   padding: 0;
-  // -webkit-user-select: none;
-  // -moz-user-select: none;
-  // -ms-user-select: none;
-  // user-select: none;
+}
+
+.comic-neue-light {
+  font-family: "Comic Neue", cursive;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.comic-neue-regular {
+  font-family: "Comic Neue", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.comic-neue-bold {
+  font-family: "Comic Neue", cursive;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.comic-neue-light-italic {
+  font-family: "Comic Neue", cursive;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.comic-neue-regular-italic {
+  font-family: "Comic Neue", cursive;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.comic-neue-bold-italic {
+  font-family: "Comic Neue", cursive;
+  font-weight: 700;
+  font-style: italic;
 }

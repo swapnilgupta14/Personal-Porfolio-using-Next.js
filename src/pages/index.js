@@ -2,9 +2,11 @@ import { useState, useEffect } from "react";
 import Header from "@/component/header";
 import Footer from "@/component/footer";
 import Homepage from "@/component/Homepage";
-import Projects from "@/component/Project";
 import AddButton from "@/component/utils/addButton";
+import About from "@/component/About";
 import Misc from "@/component/Misc";
+import Experience from "@/component/Experience";
+import Projects from "@/component/Projects";
 
 export default function Home() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -99,7 +101,9 @@ export default function Home() {
               <Header isDropdownOpen={isDropdownOpen} setIsDropdownOpen={setIsDropdownOpen} scrollToSection={scrollToSection} />
               <Homepage />
               {isMobile ? null : <AddButton />}
+              <About/>
               <Projects />
+              <Experience />
               <Misc />
               <Footer />
             </div>

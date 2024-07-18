@@ -1,387 +1,260 @@
-// $accent-color: #4A90E2;
-$background-gradient: linear-gradient(270deg, $secondary-accent-color 0%, $accent-color 100%);
 
 .frontpage-container .stars {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
 
 .frontpage-container .star {
-    position: absolute;
-    width: 3px;
-    height: 3px;
-    background: white;
-    border-radius: 50%;
-    opacity: 0.4;
-    transition: opacity 0.3s, box-shadow 0.3s, transform 1s ease-in-out;
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.4;
+  transition: opacity 0.3s, box-shadow 0.3s, transform 1s ease-in-out;
 }
 
 .frontpage-container .star.glow {
-    opacity: 1;
-    box-shadow: 0 0 13px white;
+  opacity: 1;
+  box-shadow: 0 0 13px white;
 }
 
 .frontpage-container {
-    min-height: 100vh;
-    max-height: 100vh;
-    margin: -15vh 0vh 5vh 0vh;
-    color: #e5e5e5;
+  min-height: 90vh;
+  margin: -4vh 0vh 0vh 0vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    to right,
+    rgba(51, 139, 147, 0.02),
+    60%,
+    rgba(182, 244, 146, 0.03)
+  );
+  
+
+  .container {
+    font-size: 2.26rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
+    align-items: flex-start;
     position: relative;
-    overflow: hidden;
+    margin-left: 10vw;
+    margin-top: -10vh;
+    pointer-events: auto;
+    color: #e5e5e5;
 
-    .container {
-        color: #e5e5e5;
-        font-size: 2.26rem;
-        margin-top: 5vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        position: relative;
-        text-transform: uppercase;
-        z-index: 2;
-        pointer-events: auto;
+    .name {
+      font-size: 5rem;
+      font-weight: bold;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: left;
 
-        .text {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-shadow: #000000 0px 0px 7px;
+      p{
+        margin: 10px;
+      }
+    }
 
+    .iam {
+      font-size: 3rem;
+      font-weight: bold;
+      text-align: left;
+      display: flex;
+    }
+
+    .button-wrapper{
+      display: flex;
+      flex-direction: row; 
+      justify-content: center;
+      align-items: center;
+      margin: 2rem 0px;
+
+      .download-button {
+        background-color: $secondary-color;
+        padding: 8px 15px;
+        border-radius: 25px;
+        font-size: 16px;
+        margin-right: 1rem;
+        cursor: pointer;
+        transition: all 0.3s;
+
+        &:hover {
+          background-color: darken(#000000, 10%);
+          color: $secondary-color;
         }
+      }
 
-        .name {
-            font-size: 6rem;
-            font-weight: bold;
-            margin: 0;
-            color: #e5e5e5;
-            text-align: left;
-            animation: revealName 1.5s ease-in-out forwards;
+      .other{
+        background: transparent;
+        color: $secondary-color;
+        border: 1px solid $secondary-color;
 
+        &:hover {
+          background: $secondary-color;
+          color: #000000;
         }
+      }
 
-        .name-color {
-            font-size: 8rem;
-            color: #e5e5e5;
-
-        }
-
-        .social-nav-container {
-
-            .social-nav {
-                display: flex;
-                justify-content: center;
-                margin: 5vh 0vh 0vh 0vh;
-
-                .icon {
-                    width: 40px;
-                    height: 40px;
-                    margin: 0px 10px;
-                    animation: floatAnimation 3s ease infinite;
-                }
-            }
-        }
-
-        .button-wrapper {
-            font-size: 1rem;
-            margin: 2rem 0 0 0;
-
-            .contact-button {}
-        }
+      .icon{
+        background: none;
+        border: none;
+      }
     }
 
-    .animation {
-        height: 5rem;
-        overflow: hidden;
-        margin-top: 1rem;
+    .name-color {
+      font-size: 7rem;
+      font-weight: 600;
+     
+      background: linear-gradient(to right, #b6f492, 80%, #338b93);
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+   
+      text-shadow: 0px 0px 30px rgba(146, 244, 152, 0.3);
+      animation: anime 2s infinite alternate;
 
+      text-transform: uppercase;
+      padding: 0;     
+      margin-top: -5rem !important;
     }
 
-    .animation>div>div {
-        padding: 0.25rem 1.5rem;
-        min-height: 3rem;
-        min-width: fit-content;
-        margin-bottom: 3rem;
-        display: inline-block;
-        font-size: 3rem;
-        text-shadow: #000000d5 0px 0px 1px;
-        font-weight: bold;
-        line-height: 3rem;
-        white-space: nowrap;
+    @keyframes anime {
+      100%{
+        text-shadow: 0px 0px 30px rgba(17, 107, 140, 0.3);
+      }
+      
     }
 
-    .animationOnLoad {
-        animation: animationDivReveal 4s ease-in-out forwards;
+    .name .detail {
+      font-size: 1.5rem;
+      font-weight: 400;
     }
-
-    .animation div:first-child {
-        animation: text-animation 10s infinite;
-        // animation: animationDivReveal 2s ease-in-out forwards;
-    }
-
-    .second {
-        margin-top: 0.5rem;
-    }
-
-    .third {
-        margin-top: -0.9rem;
-    }
-
-    .first div {
-        background-color: #20a7d8db;
-        border-radius: 10px;
-    }
-
-    .second div {
-        background-color: #dc5f00c1;
-        border-radius: 10px;
-
-    }
-
-    .third div {
-        background-color: #c10527df;
-        min-height: 5.2rem;
-        border-radius: 10px;
-
-    }
-
-    @keyframes text-animation {
-
-        0%,
-        10% {
-            margin-top: 0;
-        }
-
-        20%,
-        30% {
-            margin-top: -5rem;
-        }
-
-        40%,
-        60% {
-            margin-top: -10.25rem;
-        }
-
-        70%,
-        80% {
-            margin-top: -5rem;
-        }
-
-        90%,
-        100% {
-            margin-top: 0;
-        }
-    }
+  }
 }
 
 @media (max-width: 768px) {
+  .frontpage-container .star {
+    width: 2px;
+    height: 2px;
+  }
 
-    .frontpage-container .star {
-        width: 2px;
-        height: 2px;
-    }
+  .frontpage-container {
+    margin: 0vh;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    border-radius: 0px;
+    min-height: 93vh;
+    margin-top: -5vh;
 
-    .frontpage-container {
-        // background-color: red;
-        margin: 0vh;
+    .container {
+      color: #e5e5e5;
+      font-size: 2.26rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: left;
+
+      .text {
+        padding: 20px;
         display: flex;
         flex-direction: column;
-        text-align: left;
-        border-radius: 0px;
-        min-height: 93vh;
-        margin-top: -5vh;
+        justify-content: center;
+        align-items: center;
+        text-shadow: #000000 0px 0px 7px;
+      }
 
-        .container {
-            color: #e5e5e5;
-            font-size: 2.26rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: left;
+      .name {
+        font-size: 3rem;
+        font-weight: bold;
+        margin: 0;
+        color: #e5e5e5;
+        margin-bottom: -2rem;
+      }
 
-
-            .text {
-                padding: 20px;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                text-shadow: #000000 0px 0px 7px;
-            }
-
-            .name {
-                font-size: 3rem;
-                font-weight: bold;
-                margin: 0;
-                color: #e5e5e5;
-                margin-bottom: -2rem;
-            }
-
-            .name-color {
-                font-size: 5rem;
-                color: #e5e5e5;
-                text-transform: uppercase;
-
-            }
-        }
-
-        .animation>div>div {
-            min-height: 3rem;
-            min-height: fit-content;
-            margin-bottom: 3rem;
-            font-size: 1.7rem;
-            line-height: 2rem;
-        }
-
-        .second {
-            min-height: fit-content;
-            margin-top: 1rem;
-        }
+      .name-color {
+        font-size: 5rem;
+        color: #e5e5e5;
+        text-transform: uppercase;
+      }
     }
+
+    .animation > div > div {
+      min-height: 3rem;
+      min-height: fit-content;
+      margin-bottom: 3rem;
+      font-size: 1.7rem;
+      line-height: 2rem;
+    }
+
+    .second {
+      min-height: fit-content;
+      margin-top: 1rem;
+    }
+  }
 }
 
-
 @keyframes floatAnimation {
-    0% {
-        transform: translateY(0);
-    }
+  0% {
+    transform: translateY(0);
+  }
 
-    50% {
-        transform: translateY(-4px);
-    }
+  50% {
+    transform: translateY(-4px);
+  }
 
-    100% {
-        transform: translateY(0);
-    }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 @keyframes revealName {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
 
-    50% {
-        opacity: 0.5;
-    }
+  50% {
+    opacity: 0.5;
+  }
 
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes animationDivReveal {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
 
-    50% {
-        opacity: 0.5;
-    }
+  50% {
+    opacity: 0.5;
+  }
 
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.button-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 200px;
-    height: 50px;
-    cursor: pointer;
-    color: secondary-color;
-    border-radius: 5px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-
-    .button {
-        padding: 10px 15px;
-        font-family: inherit;
-        font-size: 14px;
-        border-radius: 30px;
-        background-color: $secondary-color;
-        color: $base-color;
-        border: $accent-color 2px solid;
-        transition: all 0.9s ease;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        .icon-1 {
-            transition: all 0.7s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: $secondary-color;
-            width: 25px;
-            height: 25px;
-            border-radius: 50%;
-        }
-
-        &:hover {
-            transform: scale(0.7);
-            background-color: $base-color;
-            color: $secondary-color;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-
-            .icon-1 {
-                transform: scale(1.2);
-            }
-        }
-    }
-}
-
-.loading-bar {
-    width: 100%;
-    min-height: 5px;
-    max-height: 5px;
-    background-color: $secondary-color;
-    border-radius: 5px;
-    overflow: hidden;
-    position: relative;
-}
-
-.loading-bar-progress {
-    width: 0;
-    height: 100%;
-    background-color: $base-color;
-    position: absolute;
-    animation: load 1s forwards;
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes load {
-    from {
-        width: 0%;
-    }
+  from {
+    width: 0%;
+  }
 
-    to {
-        width: 100%;
-    }
-}
-
-.success-icon {
-    width: 50px;
-    height: 50px;
-    transition: opacity 0.3s ease;
+  to {
+    width: 100%;
+  }
 }

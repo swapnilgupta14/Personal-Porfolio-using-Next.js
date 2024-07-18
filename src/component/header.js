@@ -71,7 +71,7 @@ const Header = ({ isDropdownOpen, setIsDropdownOpen, scrollToSection }) => {
                   </p>
                 </li>
                 <li className="navbar-item">
-                  <p className="navbar-link hover" onClick={() => scrollToSection('contact')}>
+                  <p className="navbar-link hover" onClick={() => {console.log("oyeee"); scrollToSection('contact')}}>
                     CONTACT
                   </p>
                 </li>

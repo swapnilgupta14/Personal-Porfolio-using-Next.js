@@ -147,7 +147,7 @@ const icons = [
   { Component: FirebaseIcon, label: "Firebase" },
 ];
 
-const Project = () => {
+const Experience = () => {
   const cardRefs = useRef([]);
 
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -159,61 +159,9 @@ const Project = () => {
 
   return (
     <div className="detail-container">
-      <div className="container-title" id="projects">
-        <h2>PROJECTS</h2>
-      </div>
-
-      <div className="project-container">
-        {projectsData.map((project, index) => (
-          <React.Fragment key={index}>
-            <div
-              className="project-card"
-              data-index={index}
-              onMouseMove={(e) => {
-                if (!isMobile) {
-                  const card = cardRefs.current[index];
-                  const rect = card.getBoundingClientRect();
-                  const x = e.clientX - rect.left - 35; 
-                  const y = e.clientY - rect.top - 30;
-                  card.querySelector(".button").style.left = `${x}px`;
-                  card.querySelector(".button").style.top = `${y}px`;
-                }
-              }}
-              ref={(el) => (cardRefs.current[index] = el)}
-            >
-              <Image
-                className="project-image"
-                src={project.img}
-                alt="image"
-                width={500}
-                height={300}
-              />
-              {!isMobile && (
-                <div className="hover-bg">
-                  <a href={project.link} className="button">
-                    <Github color={"#000000"} width={30} height={30} />
-                  </a>
-                </div>
-              )}
-            </div>
-            <div>
-            {isMobile ? (
-                <h2>
-                  <a href={project.link}>{project.title}</a>
-                </h2>
-              ) : (
-                <h2>{project.title}</h2>
-              )}
-            </div>
-          </React.Fragment>
-        ))}
-      </div>
-
-
       <div className="container-title" id="experience">
         <h2>EXPERIENCE</h2>
       </div>
-      <div className="slidingTextContainer" style={{ transform: 'translateX(-134.076%) translateZ(0px)', opacity: '1' }}>FrontEnd Developer UI/UX Designer React Developer Freelancer</div>
 
       <div className="experience-container">
         <div className="skill-container">
@@ -277,4 +225,4 @@ const Project = () => {
   );
 };
 
-export default Project;
+export default Experience;
