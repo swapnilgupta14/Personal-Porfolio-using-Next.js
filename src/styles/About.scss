@@ -48,6 +48,7 @@
       background-clip: text;
       font-weight: 500;
       text-align: center;
+      text-shadow: 20px 0px 60px rgb(0, 0, 0);
     }
 
     p {
@@ -55,6 +56,7 @@
       width: 200px;
       color: white;
       text-align: center;
+      text-shadow: 20px 0px 60px rgb(0, 0, 0);
     }
   }
 }
@@ -75,12 +77,12 @@
     height: 300px;
     border-radius: 50%;
     overflow: hidden;
-    padding: 5px; 
-  box-sizing: border-box; 
-    
+    padding: 5px;
+    box-sizing: border-box;
+
     &::before,
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       left: 0;
@@ -89,31 +91,31 @@
       border-radius: 50%;
       border: 3px solid transparent; /* Set border size here */
     }
-  
+
     &::before {
       border-top-color: #338b93;
       border-right-color: #338b93;
       animation: rotate1 10s linear infinite;
     }
-  
+
     &::after {
       border-bottom-color: #b6f492;
       border-left-color: #b6f492;
       animation: rotate2 10s linear infinite;
     }
-  
+
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: transform 0.6s ease; /* Smooth transition for the zoom effect */
     }
-  
+
     &:hover img {
       transform: scale(0.95); /* Zoom out slightly on hover */
     }
   }
-  
+
   @keyframes rotate1 {
     0% {
       transform: rotate(0deg);
@@ -122,7 +124,7 @@
       transform: rotate(360deg);
     }
   }
-  
+
   @keyframes rotate2 {
     0% {
       transform: rotate(360deg);
@@ -131,7 +133,6 @@
       transform: rotate(0deg);
     }
   }
-  
 
   .name {
     margin-top: 20px;
@@ -140,84 +141,7 @@
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
-  }
-
-  .animation {
-    height: 5rem;
-    overflow: hidden;
-    margin-top: 1rem;
-  }
-
-  .animation > div > div {
-    padding: 0.25rem 1.5rem;
-    min-height: 3rem;
-    min-width: fit-content;
-    margin-bottom: 3rem;
-    display: inline-block;
-    font-size: 3rem;
-    text-shadow: #000000d5 0px 0px 1px;
-    font-weight: bold;
-    line-height: 3rem;
-    white-space: nowrap;
-  }
-
-  .animationOnLoad {
-    animation: animationDivReveal 4s ease-in-out forwards;
-  }
-
-  .animation div:first-child {
-    animation: text-animation 10s infinite;
-  }
-
-  .second {
-    margin-top: 0.5rem;
-  }
-
-  .third {
-    margin-top: -0.9rem;
-  }
-
-  .first div {
-    background-color: #20a7d8db;
-    border-radius: 10px;
-  }
-
-  .second div {
-    background-color: #dc5f00c1;
-    border-radius: 10px;
-  }
-
-  .third div {
-    background-color: #c10527df;
-    min-height: 5.2rem;
-    border-radius: 10px;
-  }
-
-  @keyframes text-animation {
-    0%,
-    10% {
-      margin-top: 0;
-    }
-
-    20%,
-    30% {
-      margin-top: -5rem;
-    }
-
-    40%,
-    60% {
-      margin-top: -10.25rem;
-    }
-
-    70%,
-    80% {
-      margin-top: -5rem;
-    }
-
-    90%,
-    100% {
-      margin-top: 0;
-    }
+    text-shadow: 20px 0px 60px rgb(0, 0, 0);
   }
 }
 
@@ -241,5 +165,86 @@
 
   .item {
     margin: 10px 0;
+  }
+}
+
+.wrapper-anime {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 0;
+  overflow: visible;
+
+  .animation {
+    height: 5.2rem;
+    overflow: hidden;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .animation > div > div {
+    padding: 0.25rem 1.5rem;
+    min-height: 2rem;
+    min-width: fit-content;
+    display: inline-block;
+    font-size: 2rem;
+    text-shadow: #000000d5 0px 0px 1px;
+    font-weight: bold;
+    line-height: 2rem;
+    white-space: nowrap;
+  }
+
+  .animationOnLoad {
+    animation: animationDivReveal 4s ease-in-out forwards;
+  }
+
+  .animation div:first-child {
+    animation: text-animation 10s infinite;
+  }
+
+  .first div {
+    background-color: #338b93;
+    border-radius: 10px;
+    margin: 2rem;
+  }
+
+  .second div {
+    background-color: #833393;
+    border-radius: 10px;
+    margin: 2rem;
+
+  }
+
+  .third div {
+    background-color: #b6f492;
+    // min-height: 5.2rem;
+    border-radius: 10px;
+    margin: 2rem;
+  }
+
+  @keyframes text-animation {
+    0%,
+    20% {
+      margin-top: 0;
+    }
+    25%,
+    45% {
+      margin-top: -5.2rem;
+    }
+    50%,
+    70% {
+      margin-top: -10.4rem;
+    }
+    75%,
+    95% {
+      margin-top: -5.2rem;
+    }
+    100% {
+      margin-top: 0;
+    }
   }
 }

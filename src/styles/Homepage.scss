@@ -60,6 +60,7 @@
 
       p{
         margin: 10px;
+        text-shadow: 20px 0px 60px rgb(0, 0, 0);
       }
     }
 
@@ -118,8 +119,7 @@
       -webkit-background-clip: text;
       background-clip: text;
    
-      text-shadow: 0px 0px 30px rgba(146, 244, 152, 0.3);
-      animation: anime 2s infinite alternate;
+      // animation: anime 2s infinite alternate;
 
       text-transform: uppercase;
       padding: 0;     
@@ -128,7 +128,7 @@
 
     @keyframes anime {
       100%{
-        text-shadow: 0px 0px 30px rgba(17, 107, 140, 0.3);
+        text-shadow: 0px 0px 30px rgba(15, 15, 15, 0.6);
       }
       
     }

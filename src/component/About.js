@@ -11,29 +11,33 @@ const About = () => {
     ];
 
     return (
-        <div className="aboutWrapper">
-            <div className="left">
-                <div className="inside-div">
-                    {data.map((item, index) => (
-                        <div key={index} className="item">
-                            <h2>{item.number}</h2>
-                            <p>{item.text}</p>
-                        </div>
-                    ))}
-                </div>
-            </div>
-            <div className="right">
-                <div className="profileImage">
-                    <Image src="/profile-pic.png" alt="profile" width={300} height={300} />
-                </div>
-                <h2 className="name">SWAPNIL GUPTA</h2>
-                {/* <section className="animation animationOnLoad">
+        <>
+            {/* <div className="wrapper-anime">
+                <div className="animation animationOnLoad">
                     <div className="first"><div>Web Developer</div></div>
                     <div className="second"><div>Full Stack Developer</div></div>
                     <div className="third"><div>Web3 Enthusiast</div></div>
-                </section> */}
+                </div>
+            </div> */}
+            <div className="aboutWrapper">
+                <div className="left">
+                    <div className="inside-div">
+                        {data.map((item, index) => (
+                            <div key={index} className="item">
+                                <h2>{item.number}</h2>
+                                <p>{item.text}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+                <div className="right">
+                    <div className="profileImage">
+                        <Image src="/profile-pic.png" alt="profile" width={300} height={300} />
+                    </div>
+                    {/* <h2 className="name">SWAPNIL GUPTA</h2> */}
+                </div>
             </div>
-        </div>
+        </>
     );
 };
 
