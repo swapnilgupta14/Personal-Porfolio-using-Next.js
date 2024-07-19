@@ -1,279 +1,357 @@
-.container-title {
-  margin: 0vh 15vh 5vh 15vh;
-  color: $secondary-color;
-  text-shadow: #000000 0px 1px 1px;
-  border-bottom: #d4cfcf 1px solid;
-}
+.detail-container {
+  background: linear-gradient(
+    to right,
+    rgba(51, 139, 147, 0.02),
+    60%,
+    rgba(182, 244, 146, 0.03)
+  );
 
-.container-title {
-  text-align: left;
-  margin-bottom: 2rem;
-
-  h2 {
-    font-size: 2rem;
-    color: $secondary-color;
-  }
-}
-
-.experience-container {
-  display: flex;
-  flex-direction: row;
-
-  .experience-sub-container {
-    background: linear-gradient(to right, #b6f492, 80%, #338b93);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-    border-bottom: 1px solid $secondary-color;
-    width: 100%;
-    padding: 10px;
-    text-align: left;
-    margin-bottom: 2rem;
-  }
-
-  .skill-container {
-    flex: 1;
-    width: 100%;
-
-    min-height: fit-content;
-    max-height: fit-content;
-
-    margin: 0vh 3vh 10vh 15vh;
-
-    border-radius: 15px;
-    padding: 20px;
-
+  .experience-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    margin-top: 4rem;
 
-    // background: linear-gradient(
-    //     to right,
-    //     rgba(182, 244, 146, 0.05),
-    //     70%,
-    //     rgba(51, 139, 147, 0.07)
-    //   );
-
-    color: $secondary-color;
-    position: relative;
-    overflow: hidden;
-
-    .wrapper {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem;
-      width: 100%;
-
-      p {
-        color: $accent-color;
-      }
-
-      .icon-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background: linear-gradient(
-          to right bottom,
-          rgba(182, 244, 146, 0.1),
-          90%,
-          rgba(51, 139, 147, 0.07)
-        );
-        backdrop-filter: blur(10px);
-        border-radius: 10px;
-        padding: 10px;
-        transition: transform 0.3s ease, background-color 0.3s ease;
-
-        &:hover {
-          transform: scale(1.1);
-          background-color: lighten($accent-color, $amount: 80);
-        }
-
-        img {
-          width: 50px;
-          height: 50px;
-        }
-
-        .icon-label {
-          margin-top: 0.5rem;
-          color: $secondary-color;
-        }
-      }
-    }
-  }
-
-  .companies-container {
-    flex: 1;
-    width: 100%;
-    font-style: normal;
-
-    min-height: fit-content;
-    max-height: fit-content;
-    margin: 0vh 15vh 10vh 3vh;
-    border-radius: 15px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    // background: linear-gradient(
-    //     to right,
-    //     rgba(182, 244, 146, 0.05),
-    //     70%,
-    //     rgba(51, 139, 147, 0.07)
-    //   );
-
-    // background: #444b586a;
-    // backdrop-filter: blur(10px);
-
-    color: $secondary-color;
-    transition: background-color 0.7s ease;
-    position: relative;
-    overflow: hidden;
-
-    .wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-    }
-
-    .experience-card {
-      width: 100%;
-      border-radius: 8px;
-      padding: 20px;
-      margin-bottom: 20px;
-      background: linear-gradient(
-        to right bottom,
-        rgba(182, 244, 146, 0.1),
-        70%,
-        rgba(51, 139, 147, 0.1)
-      );
-      position: relative;
-    }
-
-    .company-title {
-      // font-size: 24px;
-      margin-bottom: 10px;
-      color: $secondary-color;
-    }
-
-    .experience-details {
-      position: relative;
-      font-style: normal;
-      margin-left: 20px;
-    }
-
-    .job-detail {
-      display: flex;
-      position: relative;
-      margin-bottom: 10px;
-    }
-
-    .line {
-      width: 1.5px;
-      background-color: $secondary-color;
-      margin-left: 0px;
-      margin-bottom: -10px;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-    }
-
-    .content {
-      flex: 1;
-      padding-left: 21px;
-      margin: 0 0 0 0;
-      position: relative;
-      font-size: 14px;
-
-      .duration {
-        margin: 0;
-        margin-top: -15px;
-        margin-bottom: 15px;
-        font-weight: 400;
-      }
-
-      .description {
-        margin: 5px 0px;
-        font-weight: 400;
-      }
-    }
-
-    .job-title {
+    .experience-sub-container {
       background: linear-gradient(to right, #b6f492, 80%, #338b93);
       -webkit-text-fill-color: transparent;
       -webkit-background-clip: text;
       background-clip: text;
-      position: relative;
-      font-weight: 500;
+      border-bottom: 1px solid $secondary-color;
+      width: 100%;
+      padding: 10px;
+      text-align: left;
+      margin-bottom: 2rem;
     }
-
-    .job-title::before {
-      content: "";
-      position: absolute;
-      left: -27.5px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 15px;
-      height: 15px;
-      background-color: $secondary-color;
-      border-radius: 50%;
-      border: #b6f492 #338b93 1px solid;
-
-      background-image: url("/icons8-mandala-100.png");
-      background-size: contain;
-      background-repeat: no-repeat;
-    }
-
-    .duration {
-      margin: 0;
-      font-weight: 400;
-      color: $secondary-color;
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .experience-container {
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: center;
-    align-items: center;
-    font-style: normal;
 
     .skill-container {
-      width: calc(100% - 4rem);
-      margin: 1rem 2rem;
+      flex: 1;
+      width: 100%;
+
+      min-height: fit-content;
+      max-height: fit-content;
+
+      margin: 0vh 3vh 10vh 15vh;
+
+      border-radius: 15px;
+      padding: 20px;
+
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      border-radius: 10px;
+
+      // background: linear-gradient(
+      //     to right,
+      //     rgba(182, 244, 146, 0.05),
+      //     70%,
+      //     rgba(51, 139, 147, 0.07)
+      //   );
+
+      color: $secondary-color;
+      position: relative;
+      overflow: hidden;
 
       .wrapper {
-        grid-template-columns: repeat(3, 3fr);
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+        width: 100%;
+
+        p {
+          color: $accent-color;
+        }
 
         .icon-container {
-          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          background: linear-gradient(
+            to right bottom,
+            rgba(182, 244, 146, 0.1),
+            90%,
+            rgba(51, 139, 147, 0.07)
+          );
+          backdrop-filter: blur(10px);
+          border-radius: 10px;
+          padding: 10px;
+          transition: transform 0.3s ease, background-color 0.3s ease;
 
-          p {
-            font-size: 0.7rem;
+          &:hover {
+            transform: scale(1.1);
+            background-color: lighten($accent-color, $amount: 80);
           }
 
           img {
-            width: 30px;
-            height: 30px;
+            width: 50px;
+            height: 50px;
           }
 
           .icon-label {
             margin-top: 0.5rem;
+            color: $secondary-color;
           }
         }
       }
     }
 
     .companies-container {
-      width: calc(100% - 4rem);
-      margin: 1rem 2rem;
+      flex: 1;
+      width: 100%;
       font-style: normal;
+
+      min-height: fit-content;
+      max-height: fit-content;
+      margin: 0vh 15vh 10vh 3vh;
+      border-radius: 15px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      // background: linear-gradient(
+      //     to right,
+      //     rgba(182, 244, 146, 0.05),
+      //     70%,
+      //     rgba(51, 139, 147, 0.07)
+      //   );
+
+      // background: #444b586a;
+      // backdrop-filter: blur(10px);
+
+      color: $secondary-color;
+      transition: background-color 0.7s ease;
+      position: relative;
+      overflow: hidden;
+
+      .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+      }
+
+      .experience-card {
+        width: 100%;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+        background: linear-gradient(
+          to right bottom,
+          rgba(182, 244, 146, 0.1),
+          70%,
+          rgba(51, 139, 147, 0.1)
+        );
+        position: relative;
+      }
+
+      .company-title {
+        // font-size: 24px;
+        margin-bottom: 10px;
+        color: $secondary-color;
+      }
+
+      .experience-details {
+        position: relative;
+        font-style: normal;
+        margin-left: 20px;
+      }
+
+      .job-detail {
+        display: flex;
+        position: relative;
+        margin-bottom: 10px;
+      }
+
+      .line {
+        width: 1.5px;
+        background-color: $secondary-color;
+        margin-left: 0px;
+        margin-bottom: -10px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+      }
+
+      .content {
+        flex: 1;
+        padding-left: 21px;
+        margin: 0 0 0 0;
+        position: relative;
+        font-size: 14px;
+
+        .duration {
+          margin: 0;
+          margin-top: -15px;
+          margin-bottom: 15px;
+          font-weight: 400;
+        }
+
+        .description {
+          margin: 5px 0px;
+          font-weight: 400;
+        }
+      }
+
+      .job-title {
+        background: linear-gradient(to right, #b6f492, 80%, #338b93);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        position: relative;
+        font-weight: 500;
+      }
+
+      .job-title::before {
+        content: "";
+        position: absolute;
+        left: -27.5px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 15px;
+        height: 15px;
+        background-color: $secondary-color;
+        border-radius: 50%;
+        border: #b6f492 #338b93 1px solid;
+
+        background-image: url("/icons8-mandala-100.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+
+      .duration {
+        margin: 0;
+        font-weight: 400;
+        color: $secondary-color;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .experience-container {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
+      font-style: normal;
+
+      .skill-container {
+        width: calc(100% - 4rem);
+        margin: 1rem 2rem;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+
+        .wrapper {
+          grid-template-columns: repeat(3, 3fr);
+
+          .icon-container {
+            width: 100%;
+
+            p {
+              font-size: 0.7rem;
+            }
+
+            img {
+              width: 30px;
+              height: 30px;
+            }
+
+            .icon-label {
+              margin-top: 0.5rem;
+            }
+          }
+        }
+      }
+
+      .companies-container {
+        width: calc(100% - 4rem);
+        margin: 1rem 2rem;
+        font-style: normal;
+      }
+    }
+  }
+}
+
+// --------------------------------------------Project.scss----------------------------------------------
+
+.project-wrapper {
+  background: linear-gradient(
+    to right,
+    rgba(51, 139, 147, 0.02),
+    60%,
+    rgba(182, 244, 146, 0.03)
+  );
+
+  .projects-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    .project {
+      overflow: hidden;
+      display: flex;
+
+      margin: 8rem;
+
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      // padding: 10px;
+      border-radius: 20px;
+      background: linear-gradient(
+        to right,
+        rgba(51, 139, 147, 0.1),
+        60%,
+        rgba(182, 244, 146, 0.1)
+      );
+
+      img {
+        width: 70%;
+        height: 70%;
+        object-fit: cover;
+
+        margin: 5rem 0 0 0;
+
+        transition: transform 0.5s ease;
+        border-radius: 20px;
+      }
+
+      .project-text {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 70%;
+        margin: 2rem;
+        padding: 2rem;
+
+        .main-text {
+          flex: 3;
+          color: $secondary-color;
+
+          p {
+            background: linear-gradient(to right, #b6f492, 80%, #338b93);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+          }
+        }
+
+        .link-text {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          text-align: end;
+          background: linear-gradient(to right, #b6f492, 80%, #338b93);
+          -webkit-text-fill-color: transparent;
+          -webkit-background-clip: text;
+          background-clip: text;
+          padding: 1rem 0;
+
+          a{
+            padding: 10px;
+          }
+        }
+      }
     }
   }
 }

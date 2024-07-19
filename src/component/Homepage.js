@@ -14,6 +14,13 @@ const Homepage = () => {
         isMobile = true;
     }
 
+    const [isChrome, setIsChrome] = useState(false);
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            setIsChrome(window.navigator.userAgent.indexOf("Chrome") !== -1);
+        }
+    }, []);
+
 
     const handleButtonClick = () => {
         setIsLoading(true);
@@ -45,7 +52,7 @@ const Homepage = () => {
     useEffect(() => {
         const frontpageContainer = document.querySelector('.frontpage-container');
         const starsContainer = frontpageContainer.querySelector('.stars');
-        const starsCount = isSmallScreen ? 60 : 120;
+        const starsCount = isSmallScreen ? 60 : 200;
         const glowRadius = 100;
         let glowTimeout;
 
@@ -122,12 +129,12 @@ const Homepage = () => {
             <div className="container" id="otherElement">
                 <div className="name">
                     <p className="iam">hello, {isSmallScreen && <><br /></>} i am</p><br />
-                    <p className="name-color comic-neue-bold">Swapnil {isSmallScreen && <><br /></>} Gupta</p>
+                    <p className={`name-color ${isChrome ? 'chrome-class' : ''}`}><p>Swapnil {isSmallScreen && <><br /></>} Gupta</p></p>
                     <p className="detail">A front-end developer passionate about building accessible <br /> and user friendly websites.</p>
                 </div>
                 <div className="button-wrapper">
-                    <button className="download-button comic-neue-bold">Get in touch</button>
-                    <button className="download-button other comic-neue-bold">
+                    <button className="download-button comic-neue-bolder ">Get in touch</button>
+                    <button className="download-button other comic-neue-bolder ">
                         Download CV
                     </button>
                     <buttona className="icon" style={{ marginBottom: "-7px" }}><Linkedin width={35} height={35} /></buttona>

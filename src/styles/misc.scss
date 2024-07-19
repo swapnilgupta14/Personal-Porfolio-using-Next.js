@@ -1,283 +1,287 @@
 .container-title {
+  margin-top: -53px;
+
+  h2 {
+    font-size: 4rem;
     color: $secondary-color;
-    text-shadow: #000000 0px 1px 1px;
-    border-bottom: #d4cfcf 1px solid;
+    font-weight: 500;
+    text-align: center;
+    text-shadow: 20px 0px 60px rgb(0, 0, 0);
+  }
+
+  p {
+    background: linear-gradient(to right, #b6f492, 80%, #338b93);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    margin-top: -3rem;
+
+    font-weight: 400;
+    text-align: center;
+    text-shadow: 20px 0px 60px rgb(0, 0, 0);
+    font-size: 1.2rem;
+  }
 }
 
 .misc-container {
-    width: 100%;
+  width: 100%;
 
-    .contact-container {
-        display: flex;
-        flex-direction: row-reverse;
-        justify-content: center;
-        align-items: flex-start;
-        margin: 0vh 15vh 15vh 15vh;
-        background: rgba(255, 255, 255, 0.064);
-        backdrop-filter: blur(20px);
-        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
-        border-radius: 15px;
-        padding: 20px;
+  .contact-container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0vh 15vh 15vh 15vh;
+    background: linear-gradient(
+      to right,
+      rgba(51, 139, 147, 0.02),
+      60%,
+      rgba(182, 244, 146, 0.03)
+    );
+    border-radius: 15px;
+    padding: 20px;
 
-        .experience-sub-container {
-            color: $base-color;
-            border-bottom: 1px solid $accent-color;
-            padding: 1rem 0;
-            margin: 1rem 1rem 0rem 1rem;
-            margin-bottom: 2rem;
-            text-align: left;
-        }
-
-        .contact-me {
-            flex: 2;
-            backdrop-filter: blur(30px);
-            border-radius: 15px;
-            padding: 20px;
-            margin: 10px 0rem;
-            display: flex;
-            flex-direction: column;
-            height: 460px;
-
-
-            .contact-form {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                height: 100%;
-
-                .form-group {
-                    margin-bottom: 10px;
-                    display: flex;
-                    flex-direction: row;
-                    width: 100%;
-
-                    .name,
-                    .email {
-                        margin: 0px 5px;
-                        width: 100%;
-                    }
-
-                    label {
-                        font-size: 16px;
-                        color: $secondary-color;
-                        width: 100%;
-                        font-style: normal;
-                        margin: 5px;
-                        font-weight: 400;
-                    }
-
-                    input,
-                    textarea {
-                        width: 100%;
-                        padding: 10px;
-                        font-size: 14px;
-                        font-weight: 400;
-                        font-style: normal;
-                        border: none;
-                        border-radius: 0px;
-                        border-bottom: 1px solid $secondary-color;
-                        background: transparent;
-                        color: $secondary-color;
-                        caret-color: $secondary-color;
-                        outline: none;
-                        margin-bottom: 1rem;
-                    }
-
-                    #message {
-                        height: 5rem;
-                        height: fit-content;
-                        max-height: 100px;
-                    }
-                }
-
-                button {
-                    background-color: $base-color;
-                    color: $secondary-color;
-                    padding: 10px 20px;
-                    width: 95%;
-                    font-weight: bold;
-                    text-align: center;
-                    justify-content: center;
-                    border: none;
-                    border-radius: 5px;
-                    cursor: pointer;
-                    transition: background-color 0.7s;
-
-                    &:hover {
-                        background-color: $secondary-color;
-                        color: $base-color;
-                    }
-                }
-            }
-        }
-
-        .buy {
-            padding: 10px;
-            margin: 10px;
-            margin-right: 10px;
-            border-radius: 15px;
-            backdrop-filter: blur(30px);
-            // backdrop-filter: blur(10px);
-            display: flex;
-            flex-direction: column;
-
-            .buy-container {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                padding: 20px;
-                border-radius: 10px;
-                max-width: 400px;
-                margin: 0 auto;
-                text-align: center;
-                animation: fadeIn 1s ease-in-out;
-
-                img {
-                    width: 20vh;
-                    height: 20vh;
-                    margin: 2rem 3rem;
-                    transition: transform 0.3s;
-
-                    &:hover {
-                        transform: scale(1.05);
-                    }
-                }
-
-                p {
-                    font-size: 14px;
-                    color: $secondary-color;
-                    margin: 0;
-                    height: fit-content;
-                    width: 100%;
-                    word-wrap: break-word;
-                    /* Ensure long words are wrapped */
-                    overflow-wrap: break-word;
-                    /* Handle overflow */
-                }
-
-
-                button {
-                    margin: 1rem;
-                    padding: 7px 10px;
-                    align-items: center;
-                    justify-content: center;
-                    width: 95%;
-                    color: $base-color;
-                    background-color: $secondary-color;
-                    border: none;
-                    border-radius: 5px;
-                    cursor: pointer;
-                    transition: background-color 0.7s, transform 0.3s;
-
-                    &:hover {
-                        background-color: $accent-color;
-                        color: $secondary-color;
-                        transform: translateY(-2px);
-                    }
-
-                    &:active {
-                        transform: translateY(0);
-                    }
-                }
-            }
-
-            @keyframes fadeIn {
-                from {
-                    opacity: 0;
-                    transform: translateY(-10px);
-                }
-
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-        }
+    .experience-sub-container {
+      color: $base-color;
+      border-bottom: 1px solid $accent-color;
+      padding: 1rem 0;
+      margin: 1rem 1rem 0rem 1rem;
+      margin-bottom: 2rem;
+      text-align: left;
     }
 
+    .contact-me {
+      flex: 2;
+      backdrop-filter: blur(30px);
+      border-radius: 15px;
+      padding: 20px;
+      margin: 10px 0rem;
+      display: flex;
+      flex-direction: column;
+      height: 460px;
+
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+
+        .form-group {
+          margin-bottom: 10px;
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+
+          .name,
+          .email {
+            margin: 0px 5px;
+            width: 100%;
+          }
+
+          label {
+            font-size: 16px;
+            color: $secondary-color;
+            width: 100%;
+            font-style: normal;
+            margin: 5px;
+            font-weight: 400;
+          }
+
+          input,
+          textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            font-weight: 400;
+            font-style: normal;
+            border: none;
+            border-radius: 0px;
+            border-bottom: 1px solid $secondary-color;
+            background: transparent;
+            color: $secondary-color;
+            caret-color: $secondary-color;
+            outline: none;
+            margin-bottom: 1rem;
+          }
+
+          #message {
+            height: 5rem;
+            height: fit-content;
+            max-height: 100px;
+          }
+        }
+
+        button {
+          background-color: $base-color;
+          color: $secondary-color;
+          padding: 10px 20px;
+          width: 95%;
+          font-weight: bold;
+          text-align: center;
+          justify-content: center;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.7s;
+
+          &:hover {
+            background-color: $secondary-color;
+            color: $base-color;
+          }
+        }
+      }
+    }
+
+    .buy {
+      padding: 10px;
+      margin: 10px;
+      margin-right: 10px;
+      border-radius: 15px;
+      backdrop-filter: blur(30px);
+      // backdrop-filter: blur(10px);
+      display: flex;
+      flex-direction: column;
+
+      .buy-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 400px;
+        margin: 0 auto;
+        text-align: center;
+        animation: fadeIn 1s ease-in-out;
+
+        img {
+          width: 20vh;
+          height: 20vh;
+          margin: 2rem 3rem;
+          transition: transform 0.3s;
+
+          &:hover {
+            transform: scale(1.05);
+          }
+        }
+
+        p {
+          font-size: 14px;
+          color: $secondary-color;
+          margin: 0;
+          height: fit-content;
+          width: 100%;
+          word-wrap: break-word;
+          /* Ensure long words are wrapped */
+          overflow-wrap: break-word;
+          /* Handle overflow */
+        }
+
+        button {
+          margin: 1rem;
+          padding: 7px 10px;
+          align-items: center;
+          justify-content: center;
+          width: 95%;
+          color: $base-color;
+          background-color: $secondary-color;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.7s, transform 0.3s;
+
+          &:hover {
+            background-color: $accent-color;
+            color: $secondary-color;
+            transform: translateY(-2px);
+          }
+
+          &:active {
+            transform: translateY(0);
+          }
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+  }
 }
 
-
 @media (max-width: 768px) {
+  .misc-container {
+    .publications {
+      margin: 0vh 3vh 5vh 3vh;
+      display: flex;
+      flex-direction: column;
 
+      .publication-image {
+        width: 0;
+        height: auto;
+        margin: 0;
+        border-radius: 5px;
+      }
 
-
-
-    .misc-container {
-        .publications {
-            margin: 0vh 3vh 5vh 3vh;
+      .publication {
+        .publication-details {
+          .publication-date {
+            margin: 5px 0 10px 0;
+            align-self: auto;
             display: flex;
-            flex-direction: column;
-
-
-            .publication-image {
-                width: 0;
-                height: auto;
-                margin: 0;
-                border-radius: 5px;
-            }
-
-            .publication {
-
-
-                .publication-details {
-
-                    .publication-date {
-                        margin: 5px 0 10px 0;
-                        align-self: auto;
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: space-between;
-
-
-                    }
-
-                }
-            }
+            flex-direction: row;
+            justify-content: space-between;
+          }
         }
-
-        .contact-container {
-            margin: 0vh 3vh 5vh 3vh;
-            flex-direction: column-reverse;
-            align-items: center;
-            justify-content: center;
-
-            .contact-me {
-                min-width: 100%;
-                margin: 0vh 0vh 3vh 0vh;
-
-                .experience-sub-container {
-                   margin: 0;
-                   margin-bottom: inherit;
-                }
-            }
-
-            .buy {
-                width: 100%;
-                margin: 0vh 3vh 3vh 3vh;
-                padding: 0;
-
-                .buy-container {
-
-                    max-width: calc(100% - 33px);
-                    padding: 0;
-                    margin-bottom: 2vh;
-
-                    p {
-                        margin: 20px;
-                        max-width: calc(100% - 45px);
-                        max-height: 40px;
-                    }
-
-                    img {
-                        width: 20vh;
-                        height: 20vh;
-                    }
-
-
-                }
-            }
-        }
+      }
     }
+
+    .contact-container {
+      margin: 0vh 3vh 5vh 3vh;
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: center;
+
+      .contact-me {
+        min-width: 100%;
+        margin: 0vh 0vh 3vh 0vh;
+
+        .experience-sub-container {
+          margin: 0;
+          margin-bottom: inherit;
+        }
+      }
+
+      .buy {
+        width: 100%;
+        margin: 0vh 3vh 3vh 3vh;
+        padding: 0;
+
+        .buy-container {
+          max-width: calc(100% - 33px);
+          padding: 0;
+          margin-bottom: 2vh;
+
+          p {
+            margin: 20px;
+            max-width: calc(100% - 45px);
+            max-height: 40px;
+          }
+
+          img {
+            width: 20vh;
+            height: 20vh;
+          }
+        }
+      }
+    }
+  }
 }
