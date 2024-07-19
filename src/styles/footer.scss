@@ -1,13 +1,18 @@
-.footer-container{
-    background-color: $secondary-color;
-    color: $accent-color;
-    display: flex;
-    margin: 2vh 0vh;
-    justify-content: center;
+.footer-container {
+    background: linear-gradient(
+        to right,
+        rgba(51, 139, 147, 0.02),
+        60%,
+        rgba(182, 244, 146, 0.03)
+      );
+  color: $accent-color;
+  display: flex;
+  justify-content: center;
 
-    .bottom-text{
-        font-size: 0.7rem;
-        padding: 0.2rem;
-        text-align: center;
-    }
+  .bottom-text {
+    font-size: 0.7rem;
+    color: $secondary-color;
+    padding: 0.2rem;
+    text-align: center;
+  }
 }
