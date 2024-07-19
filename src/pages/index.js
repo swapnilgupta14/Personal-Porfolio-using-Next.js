@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import Header from "@/component/header";
 import Footer from "@/component/footer";
 import Homepage from "@/component/Homepage";
 import AddButton from "@/component/utils/addButton";
@@ -9,7 +8,6 @@ import Experience from "@/component/Experience";
 import Projects from "@/component/Projects";
 
 export default function Home() {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleCopy = (e) => {
@@ -37,37 +35,7 @@ export default function Home() {
     isMobile = window.innerWidth <= 768;
   }
 
-  const [currentScroll, setCurrentScroll] = useState(0);
-  useEffect(() => {
-    let currentScroll = window.scrollY;
-    window.addEventListener('scroll', () => {
-      currentScroll = window.scrollY;
-      setCurrentScroll(currentScroll);
-    }
-    );
-  }, [currentScroll]);
-
-  const scrollToSection = (id) => {
-    let section = document.getElementById(id);
-    if (section) {
-      setTimeout(() => {
-        let sectionTop = section.getBoundingClientRect().top + window.scrollY;
-        if (sectionTop > currentScroll) {
-          section.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start',
-            inline: 'nearest'
-          });
-        } else {
-          window.scrollTo({
-            top: sectionTop,
-            behavior: 'smooth'
-          });
-        }
-        setIsDropdownOpen(false);
-      }, 200);
-    }
-  };
+  
 
 
 
@@ -98,7 +66,6 @@ export default function Home() {
         ) : (
           <>
             <div className="global-bg">
-              <Header isDropdownOpen={isDropdownOpen} setIsDropdownOpen={setIsDropdownOpen} scrollToSection={scrollToSection} />
               <Homepage />
               {isMobile ? null : <AddButton />}
               <About/>

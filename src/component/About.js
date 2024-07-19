@@ -4,21 +4,14 @@ import Image from 'next/image';
 const About = () => {
 
     const data = [
-        { number: '6+', text: 'Projects' },
-        { number: '600+', text: 'Solved Problems' },
+        { number: '8+', text: 'Projects' },
+        { number: '600+', text: 'Solved DSA Problems' },
         { number: '15+', text: 'CourseWorks' },
-        { number: '2+', text: 'Experience Count' },
+        { number: '1yr', text: 'Experience Count' },
     ];
 
     return (
         <>
-            {/* <div className="wrapper-anime">
-                <div className="animation animationOnLoad">
-                    <div className="first"><div>Web Developer</div></div>
-                    <div className="second"><div>Full Stack Developer</div></div>
-                    <div className="third"><div>Web3 Enthusiast</div></div>
-                </div>
-            </div> */}
             <div className="aboutWrapper">
                 <div className="left">
                     <div className="inside-div">

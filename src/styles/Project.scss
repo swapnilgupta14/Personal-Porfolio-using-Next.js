@@ -1,18 +1,18 @@
 .detail-container {
   background: linear-gradient(
     to right,
-    rgba(51, 139, 147, 0.02),
+    rgba(51, 139, 147, 0.075),
     60%,
-    rgba(182, 244, 146, 0.03)
+    rgba(182, 244, 146, 0.075)
   );
 
   .experience-container {
     display: flex;
     flex-direction: row;
-    margin-top: 4rem;
+    margin-top: 8rem;
 
     .experience-sub-container {
-      background: linear-gradient(to right, #b6f492, 80%, #338b93);
+      background: $secondary-color;
       -webkit-text-fill-color: transparent;
       -webkit-background-clip: text;
       background-clip: text;
@@ -56,19 +56,16 @@
         gap: 1.5rem;
         width: 100%;
 
-        p {
-          color: $accent-color;
-        }
-
         .icon-container {
           display: flex;
           flex-direction: column;
           align-items: center;
+          filter: drop-shadow(0 0 0.1rem rgb(16, 16, 16));
           background: linear-gradient(
             to right bottom,
-            rgba(182, 244, 146, 0.1),
-            90%,
-            rgba(51, 139, 147, 0.07)
+            rgba(182, 244, 146, 0.05),
+            70%,
+            rgba(51, 139, 147, 0.05)
           );
           backdrop-filter: blur(10px);
           border-radius: 10px;
@@ -78,6 +75,9 @@
           &:hover {
             transform: scale(1.1);
             background-color: lighten($accent-color, $amount: 80);
+            color: $accent-color;
+            filter: drop-shadow(0 0 0.1rem rgb(16, 16, 16));
+
           }
 
           img {
@@ -136,9 +136,9 @@
         margin-bottom: 20px;
         background: linear-gradient(
           to right bottom,
-          rgba(182, 244, 146, 0.1),
+          rgba(182, 244, 146, 0.03),
           70%,
-          rgba(51, 139, 147, 0.1)
+          rgba(51, 139, 147, 0.03)
         );
         position: relative;
       }
@@ -276,9 +276,9 @@
 .project-wrapper {
   background: linear-gradient(
     to right,
-    rgba(51, 139, 147, 0.02),
+    rgba(51, 139, 147, 0.075),
     60%,
-    rgba(182, 244, 146, 0.03)
+    rgba(182, 244, 146, 0.075)
   );
 
   .projects-container {
@@ -290,7 +290,7 @@
       overflow: hidden;
       display: flex;
 
-      margin: 8rem;
+      margin: 9rem;
 
       flex-direction: column;
       justify-content: center;
@@ -300,9 +300,9 @@
       border-radius: 20px;
       background: linear-gradient(
         to right,
-        rgba(51, 139, 147, 0.1),
-        60%,
-        rgba(182, 244, 146, 0.1)
+        rgba(51, 139, 147, 0.02),
+        80%,
+        rgba(182, 244, 146, 0.02)
       );
 
       img {
@@ -347,7 +347,7 @@
           background-clip: text;
           padding: 1rem 0;
 
-          a{
+          a {
             padding: 10px;
           }
         }

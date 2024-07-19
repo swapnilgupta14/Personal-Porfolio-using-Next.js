@@ -1,26 +1,41 @@
 // @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 // @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Lilita+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
 
-@import './header.scss';
-@import './variables';
-@import './index.scss';
-@import './Homepage.scss';
-@import './Project.scss';
-@import './footer.scss';
-@import './addButton.scss';
-@import './misc.scss';
-@import './About.scss';
+@import "./header.scss";
+@import "./variables";
+@import "./index.scss";
+@import "./Homepage.scss";
+@import "./Project.scss";
+@import "./footer.scss";
+@import "./addButton.scss";
+@import "./misc.scss";
+@import "./About.scss";
 
 body {
-  background-color: #0C1821;
-  color: #0C1821;
+  background: #000000;
+  // background: linear-gradient(
+  //   to right,
+  //   rgba(51, 139, 147, 0.02),
+  //   60%,
+  //   rgba(182, 244, 146, 0.03)
+  // );  color: #0C1821;
   font-family: "Josefin Sans", sans-serif;
-  font-optical-sizing: auto;  
+  font-optical-sizing: auto;
   font-weight: bold;
   margin: 0;
   padding: 0;
+}
+
+::selection {
+  background-color: #99e4ff; 
+  color: #000000; 
+}
+
+::-moz-selection {
+  background-color: #99e4ff; 
+  color: #000000; 
 }
 
 .comic-neue-light {
