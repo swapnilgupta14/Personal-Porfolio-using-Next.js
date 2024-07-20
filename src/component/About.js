@@ -3,6 +3,20 @@ import Image from 'next/image';
 
 const About = () => {
 
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            console.log(entry);
+            if(entry.isIntersecting){
+                entry.target.classList.add('prjShow');
+            }else{
+                entry.target.classList.remove("prjShow");
+            }
+        });
+    });
+
+    const intscnOBJ =  document.querySelectorAll(".prjAnime");
+    intscnOBJ.forEach((e) => observer.observe(e));
+
     const data = [
         { number: '8+', text: 'Projects' },
         { number: '600+', text: 'Solved DSA Problems' },
@@ -12,11 +26,11 @@ const About = () => {
 
     return (
         <>
-            <div className="aboutWrapper">
+            <div className="aboutWrapper ">
                 <div className="left">
                     <div className="inside-div">
                         {data.map((item, index) => (
-                            <div key={index} className="item">
+                            <div key={index} className="item prjAnime">
                                 <h2>{item.number}</h2>
                                 <p>{item.text}</p>
                             </div>

@@ -1,12 +1,31 @@
-.home-wrapper{
+.home-wrapper {
   background: linear-gradient(
     to right,
     rgba(51, 139, 147, 0.075),
     60%,
     rgba(182, 244, 146, 0.075)
   );
-    margin: -1vh 0vh 0vh 0vh;
+  margin: -1vh 0vh 0vh 0vh;
+}
 
+.prjHome{
+  opacity: 0;
+  filter: blur(5px);
+  // transform: translateX(-100%);
+  transition: ease-in 1.5s;
+}
+
+.prjPop{
+  opacity: 0;
+  filter: blur(5px);
+  // transform: translateX(-100%);
+  transition: all 1.5s;
+}
+
+.homeShow{
+  filter: blur(0);
+  // transform: translateX(0);
+  opacity: 1;
 }
 
 .frontpage-container {
@@ -17,7 +36,6 @@
   position: relative;
   overflow: hidden;
   margin-top: -5rem;
-
 
   .container {
     font-size: 2.26rem;
@@ -59,7 +77,6 @@
       align-items: center;
       margin: 2rem 0px;
       padding-left: 20px !important;
-
 
       .download-button {
         background-color: $secondary-color;

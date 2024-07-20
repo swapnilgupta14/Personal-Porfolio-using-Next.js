@@ -158,6 +158,20 @@ const Homepage = () => {
     //     };
     // }, []);
 
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            console.log(entry);
+            if(entry.isIntersecting){
+                entry.target.classList.add('homeShow');
+            }else{
+                entry.target.classList.remove("homeShow");
+            }
+        });
+    });
+
+    const intscnOBJ =  document.querySelectorAll(".prjHome");
+    intscnOBJ.forEach((e) => observer.observe(e));
+
     return (
         <div className='home-wrapper'>
             <Header isDropdownOpen={isDropdownOpen} setIsDropdownOpen={setIsDropdownOpen} scrollToSection={scrollToSection} />
@@ -166,16 +180,16 @@ const Homepage = () => {
                 {/* <div className="stars"></div> */}
                 <div className="container" id="otherElement">
                     <div className="name">
-                        <p className="iam">hi, {isSmallScreen && <><br /></>} i am</p><br />
-                        <p className={`name-color ${isChrome ? 'chrome-class' : ''}`}><p>Swapnil {isSmallScreen && <><br /></>} Gupta</p></p>
-                        <p className="detail">A front-end developer passionate about building accessible <br /> and user friendly websites.</p>
+                        <p className="iam prjHome">hi, {isSmallScreen && <><br /></>} i am</p><br />
+                        <p className={`name-color ${isChrome ? 'chrome-class' : ''} prjHome`}><p>Swapnil {isSmallScreen && <><br /></>} Gupta</p></p>
+                        <p className="detail prjHome">A front-end developer passionate about building accessible <br /> and user friendly websites.</p>
                     </div>
                     <div className="button-wrapper">
-                        <button className="download-button comic-neue-bolder ">Get in touch</button>
-                        <button className="download-button other comic-neue-bolder ">
+                        <button className="download-button comic-neue-bolder prjHome">Get in touch</button>
+                        <button className="download-button other comic-neue-bolder prjHome ">
                             Download CV
                         </button>
-                        <buttona className="icon" style={{ marginBottom: "-7px" }}><Linkedin width={35} height={35} /></buttona>
+                        <button className="icon" style={{ marginBottom: "-7px" }}><Linkedin width={35} height={35} /></button>
                         <button className="icon"><Github width={35} height={35} /></button>
                     </div>
                 </div>
