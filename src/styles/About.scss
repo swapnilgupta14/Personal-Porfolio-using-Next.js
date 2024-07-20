@@ -13,6 +13,19 @@
   height: 100vh;
   width: 100%;
   font-weight: 500;
+
+  .anm{
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1.5s;
+  }
+  
+  .prjShow{
+    filter: blur(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .left {

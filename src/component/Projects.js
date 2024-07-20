@@ -1,8 +1,6 @@
-import React, { useEffect, useRef } from 'react';
-
+import React, { useEffect } from 'react';
 
 const Projects = () => {
-
   const projectsData = [
     {
       title: "Geospatial-Remote-Sensing-application - In Developement",
@@ -59,15 +57,36 @@ const Projects = () => {
     },
   ];
 
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        console.log("about");
+        if (entry.isIntersecting) {
+          entry.target.classList.add('cardShow');
+        } else {
+          entry.target.classList.remove('cardShow');
+        }
+      });
+    });
+
+    const elements = document.querySelectorAll(".projectHidden");
+    console.log("hii", elements);
+    elements.forEach((el) => observer.observe(el));
+
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
+
   return (
     <div className='project-wrapper'>
-      <div className="container-title" id="projects" >
+      <div className="container-title " id="projects">
         <h2>Projects</h2>
         <p>Explore a selection of innovative projects demonstrating a blend of creativity and technical expertise.</p>
       </div>
-      <div className="projects-container">
+      <div className="projects-container ">
         {projectsData.map((project, index) => (
-          <div className="project" key={index}>
+          <div className="project " key={index}>
             <img src={project.img} alt={project.title} />
             <div className='project-text'>
               <div className='main-text'>
@@ -80,7 +99,6 @@ const Projects = () => {
                 <a href={project.demo} target="_blank" rel="noopener noreferrer">Demo</a>
               </div>
             </div>
-
           </div>
         ))}
       </div>
@@ -88,4 +106,4 @@ const Projects = () => {
   );
 };
 
-export default Projects
+export default Projects;

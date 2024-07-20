@@ -8,26 +8,6 @@
   margin: -1vh 0vh 0vh 0vh;
 }
 
-.prjHome{
-  opacity: 0;
-  filter: blur(5px);
-  // transform: translateX(-100%);
-  transition: ease-in 1.5s;
-}
-
-.prjPop{
-  opacity: 0;
-  filter: blur(5px);
-  // transform: translateX(-100%);
-  transition: all 1.5s;
-}
-
-.homeShow{
-  filter: blur(0);
-  // transform: translateX(0);
-  opacity: 1;
-}
-
 .frontpage-container {
   min-height: 100vh;
   display: flex;
@@ -47,6 +27,19 @@
     margin-top: -10vh;
     pointer-events: auto;
     color: #e5e5e5;
+
+    .prjHome{
+      opacity: 0;
+      filter: blur(5px);
+      transition:ease-in-out 1.2s;
+    }
+    
+    
+    .homeShow{
+      filter: blur(0);
+      // transform: translateX(0);
+      opacity: 1;
+    }
 
     .name {
       font-size: 5rem;

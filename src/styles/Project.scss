@@ -77,7 +77,6 @@
             background-color: lighten($accent-color, $amount: 80);
             color: $accent-color;
             filter: drop-shadow(0 0 0.1rem rgb(16, 16, 16));
-
           }
 
           img {
@@ -273,17 +272,15 @@
 
 // --------------------------------------------Project.scss----------------------------------------------
 
-.prjAnime{
-  opacity: 0;
-  filter: blur(5px);
-  transform: translateX(-100%);
-  transition: all 1.5s;
+.cardShow {
+  filter: blur(0);
+  opacity: 1;
 }
 
-.prjShow{
-  filter: blur(0);
-  transform: translateX(0);
-  opacity: 1;
+.projectHidden {
+  opacity: 0;
+  filter: blur(5px);
+  transition: ease-in 1.5s;
 }
 
 .project-wrapper {
