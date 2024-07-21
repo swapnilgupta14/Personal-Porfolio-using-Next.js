@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const Projects = () => {
   const projectsData = [
@@ -70,7 +70,6 @@ const Projects = () => {
     });
 
     const elements = document.querySelectorAll(".projectHidden");
-    console.log("hii", elements);
     elements.forEach((el) => observer.observe(el));
 
     return () => {
@@ -78,29 +77,56 @@ const Projects = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const projectContainer = document.querySelector('.projects-container');
+    const handleScroll = () => {
+      const offsetTop = projectContainer.parentElement.offsetTop;
+      const projectHeight = window.innerHeight;
+      const totalHeight = projectHeight * projectsData.length;
+      let percentage = ((window.scrollY - offsetTop) / totalHeight) * 100;
+      percentage = Math.max(0, Math.min(percentage, 100 * (projectsData.length - 1) / projectsData.length));
+      projectContainer.style.transform = `translate3D(${-(percentage * projectsData.length)}vw, 0, 0)`;
+
+      console.log(`offsetTop: ${offsetTop}`);
+      console.log(`window.scrollY: ${window.scrollY}`);
+      console.log(`percentage: ${percentage}`);
+      console.log(`transform: translate3D(${-(percentage * projectsData.length)}vw, 0, 0)`);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [projectsData]);
+
   return (
     <div className='project-wrapper'>
       <div className="container-title " id="projects">
         <h2>Projects</h2>
         <p>Explore a selection of innovative projects demonstrating a blend of creativity and technical expertise.</p>
       </div>
-      <div className="projects-container ">
-        {projectsData.map((project, index) => (
-          <div className="project " key={index}>
-            <img src={project.img} alt={project.title} />
-            <div className='project-text'>
-              <div className='main-text'>
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
-                <p>{project.technologies.join(', ')}</p>
-              </div>
-              <div className='link-text'>
-                <a href={project.link} target="_blank" rel="noopener noreferrer">GitHub</a>
-                <a href={project.demo} target="_blank" rel="noopener noreferrer">Demo</a>
+      <div className='outer'>
+        <div className="projects-container">
+          {projectsData.map((project, index) => (
+            <div className="project " key={index} style={{ '--projects-count': projectsData.length }}>
+              <div className='helper-div'>
+                <img src={project.img} alt={project.title} />
+                <div className='project-text'>
+                  <div className='main-text projectHidden'>
+                    <h3>{project.title}</h3>
+                    <p>{project.description}</p>
+                    <p>{project.technologies.join(', ')}</p>
+                  </div>
+                  <div className='link-text'>
+                    <a href={project.link} target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href={project.demo} target="_blank" rel="noopener noreferrer">Demo</a>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

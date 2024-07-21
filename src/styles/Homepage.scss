@@ -31,13 +31,14 @@
     .prjHome{
       opacity: 0;
       filter: blur(5px);
-      transition:ease-in-out 1.2s;
+      transition: ease-in-out 1.2s;
+      transform: translateX(-50px);
     }
     
     
     .homeShow{
       filter: blur(0);
-      // transform: translateX(0);
+      transform: translateX(0);
       opacity: 1;
     }
 

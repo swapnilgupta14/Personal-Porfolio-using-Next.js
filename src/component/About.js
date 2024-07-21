@@ -18,6 +18,9 @@ const About = () => {
         console.log("hii", elements);
         elements.forEach((el) => observer.observe(el));
 
+        const ele2  = document.querySelector(".profileImage");
+        observer.observe(ele2);
+
         return () => {
             elements.forEach((el) => observer.unobserve(el));
         };

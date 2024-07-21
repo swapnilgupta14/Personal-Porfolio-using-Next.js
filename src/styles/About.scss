@@ -20,6 +20,13 @@
     transform: translateX(-100%);
     transition: all 1.5s;
   }
+
+  .profileImage{
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(+100%);
+    transition: all 1.5s;
+  }
   
   .prjShow{
     filter: blur(0);

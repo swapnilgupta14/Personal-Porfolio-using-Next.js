@@ -1,28 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
 const Misc = () => {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        message: '',
-    });
-
-    const [isLoaded, setIsLoaded] = useState(false);
-
-    useEffect(() => {
-        setIsLoaded(true);
-    }, []);
-
-    const handleChange = (event) => {
-        setFormData({ ...formData, [event.target.name]: event.target.value });
-    };
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        console.log('Form submitted:', formData);
-        setFormData({ name: '', email: '', message: '' });
-    };
-
     return (
         <div className="misc-container ">
             <div className='inner'>

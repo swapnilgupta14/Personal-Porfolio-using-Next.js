@@ -15,33 +15,22 @@
 
 body {
   background: #000000;
-  // background: linear-gradient(
-  //   to right,
-  //   rgba(51, 139, 147, 0.02),
-  //   60%,
-  //   rgba(182, 244, 146, 0.03)
-  // );  color: #0C1821;
   font-family: "Josefin Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: bold;
   margin: 0;
   padding: 0;
+  overflow-x: hidden !important;
 }
 
 ::selection {
-  background-color: #99e4ff; 
-  color: #000000; 
+  background-color: #99e4ff;
+  color: #000000;
 }
 
 ::-moz-selection {
-  background-color: #99e4ff; 
-  color: #000000; 
-}
-
-.comic-neue-light {
-  font-family: "Comic Neue", cursive;
-  font-weight: 300;
-  font-style: normal;
+  background-color: #99e4ff;
+  color: #000000;
 }
 
 .comic-neue-regular {
@@ -59,22 +48,4 @@ body {
   font-family: "Comic Neue", cursive;
   font-weight: bolder;
   // font-style: italic;
-}
-
-.comic-neue-light-italic {
-  font-family: "Comic Neue", cursive;
-  font-weight: 300;
-  font-style: italic;
-}
-
-.comic-neue-regular-italic {
-  font-family: "Comic Neue", cursive;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.comic-neue-bold-italic {
-  font-family: "Comic Neue", cursive;
-  font-weight: 700;
-  font-style: italic;
 }

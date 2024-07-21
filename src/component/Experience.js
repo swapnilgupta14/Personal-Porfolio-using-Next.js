@@ -101,6 +101,36 @@ const Experience = () => {
     });
   }, []);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        } else {
+          entry.target.classList.remove('show');
+        }
+      });
+    });
+
+    const elements = document.querySelectorAll(".animeElements");
+    elements.forEach((el) => observer.observe(el));
+
+    const ele2 = document.querySelectorAll(".experience-card");
+    ele2.forEach((el) => observer.observe(el));
+
+    const ele3 = document.querySelectorAll(".icon-container");
+    ele3.forEach((el) => observer.observe(el));
+
+    // const ele4 = document.querySelectorAll(".line");
+    // ele4.forEach((el) => observer.observe(el));
+
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
+
+  
+
   return (
     <div className="detail-container">
       <div className="container-title" id="experience">
@@ -113,7 +143,7 @@ const Experience = () => {
 
           <div className="wrapper">
             {icons.map(({ Component, label }, index) => (
-              <div key={index} className={`icon-container`}>
+              <div key={index} className={`icon-container animeElements`}>
                 <Component />
                 <p>{label}</p>
               </div>
@@ -136,7 +166,7 @@ const Experience = () => {
                 )}
                 <div className="experience-details">
                   {experience.detail.map((detail, detailIndex) => (
-                    <div key={detailIndex} className="job-detail">
+                    <div key={detailIndex} className="job-detail animeElements">
                       <div className="line"></div>
                       <div className="content">
                         <h4 className="job-title">{detail.jobTitle}</h4>
