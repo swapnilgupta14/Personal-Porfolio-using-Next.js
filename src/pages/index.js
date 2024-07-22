@@ -6,22 +6,24 @@ import About from "@/component/About";
 import Misc from "@/component/Misc";
 import Experience from "@/component/Experience";
 import Projects from "@/component/Projects";
+import { Custom } from "@/component/icon/icon";
 
 export default function Home() {
+  const [cursorColor, setCursorColor] = useState('#ffffff'); 
 
   useEffect(() => {
     const handleCopy = (e) => {
       e.preventDefault();
     };
-
     document.addEventListener('copy', handleCopy);
-
     return () => {
       document.removeEventListener('copy', handleCopy);
     };
   }, []);
 
+
   const [showWelcome, setShowWelcome] = useState(true);
+
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -30,13 +32,33 @@ export default function Home() {
     return () => clearTimeout(timeout);
   }, []);
 
+
   let isMobile;
   if (typeof window !== "undefined") {
     isMobile = window.innerWidth <= 768;
   }
 
-  
+  useEffect(() => {
+    document.addEventListener('mousemove', function (dets) {
+      let x = dets.clientX - 5;
+      let y = dets.clientY - 4;
+      console.log(x, y);
 
+      let cursor = document.querySelector('.cursor');
+      if(cursor === null) return;
+      cursor.style.left = x + 'px';
+      cursor.style.top = y + 'px';
+    });
+  }, []);
+
+  const getLuminance = (color) => {
+    const rgb = color.match(/\d+/g).map(Number);
+    const [r, g, b] = rgb.map((v) => {
+      v /= 255;
+      return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+    });
+    return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+  };
 
 
   return (
@@ -66,9 +88,12 @@ export default function Home() {
         ) : (
           <>
             <div className="global-bg">
+              <div className="cursor">
+                <Custom fill={"#ffffff"} />
+              </div>
               <Homepage />
               {isMobile ? null : <AddButton />}
-              <About/>
+              <About />
               <Projects />
               <Experience />
               <Misc />

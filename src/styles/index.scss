@@ -1,3 +1,13 @@
+.cursor {
+  position: fixed;
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  pointer-events: none;
+  transition: transform 0.1s ease-out;
+  z-index: 1000;
+}
+
 .circle {
   position: relative;
   width: 300px;
@@ -8,7 +18,7 @@
 
 .loader-container {
   min-height: 100vh;
-  background: #0d0d0d; /* Fallback background color */
+  background: #0d0d0d;
   background: linear-gradient(
     to right,
     rgba(51, 139, 147, 0.075),
