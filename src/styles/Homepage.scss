@@ -15,7 +15,7 @@
   justify-content: center;
   position: relative;
   overflow: hidden;
-  margin-top: -5rem;
+  margin-top: -3.5rem;
 
   .container {
     font-size: 2.26rem;
@@ -134,19 +134,19 @@
 }
 
 @media (max-width: 768px) {
-  .frontpage-container .star {
-    width: 2px;
-    height: 2px;
+  .home-wrapper {
+    margin: 0vh 0vh 0vh 0vh;
   }
 
   .frontpage-container {
     margin: 0vh;
+    padding: 0;
     display: flex;
     flex-direction: column;
     text-align: left;
     border-radius: 0px;
-    min-height: 93vh;
-    margin-top: -5vh;
+    min-height: 100vh;
+    background: red;
 
     .container {
       color: #e5e5e5;
@@ -158,7 +158,7 @@
       text-align: left;
 
       .text {
-        padding: 20px;
+        // padding: 20px;
         display: flex;
         flex-direction: column;
         justify-content: center;

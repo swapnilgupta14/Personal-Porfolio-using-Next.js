@@ -110,7 +110,7 @@ const Homepage = () => {
                 <div className="container" id="otherElement">
                     <div className="name">
                         <p className="iam prjHome">hi, {isSmallScreen && <><br /></>} i am</p><br />
-                        <p className={`name-color ${isChrome ? 'chrome-class' : ''} prjHome`}><p>Swapnil {isSmallScreen && <><br /></>} Gupta</p></p>
+                        <p className={`name-color ${isChrome || true ? 'chrome-class' : ''} prjHome`}><p>Swapnil {isSmallScreen && <><br /></>} Gupta</p></p>
                         <p className="detail prjHome">A front-end developer passionate about building accessible <br /> and user friendly websites.</p>
                     </div>
                     <div className="button-wrapper">

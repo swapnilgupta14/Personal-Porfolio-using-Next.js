@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 const Projects = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
   const projectsData = [
     {
       title: "Geospatial-Remote-Sensing-application - In Developement",
@@ -57,51 +59,61 @@ const Projects = () => {
     },
   ];
 
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        console.log("about");
-        if (entry.isIntersecting) {
-          entry.target.classList.add('cardShow');
-        } else {
-          entry.target.classList.remove('cardShow');
-        }
-      });
-    });
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     const width = window.innerWidth;
+  //     setIsMobile(width <= 768);
+  //   };
+  //   handleResize();
+  //   window.addEventListener('resize', handleResize);
+  //   return () => window.removeEventListener('resize', handleResize);
+  // }, []);
 
-    const elements = document.querySelectorAll(".projectHidden");
-    elements.forEach((el) => observer.observe(el));
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver((entries) => {
+  //     entries.forEach((entry) => {
+  //       console.log("about");
+  //       if (entry.isIntersecting) {
+  //         entry.target.classList.add('cardShow');
+  //       } else {
+  //         entry.target.classList.remove('cardShow');
+  //       }
+  //     });
+  //   });
 
-    return () => {
-      elements.forEach((el) => observer.unobserve(el));
-    };
-  }, []);
+  //   const elements = document.querySelectorAll(".projectHidden");
+  //   elements.forEach((el) => observer.observe(el));
 
-  useEffect(() => {
-    const projectContainer = document.querySelector('.projects-container');
-    const handleScroll = () => {
-      const offsetTop = projectContainer.parentElement.offsetTop;
-      const projectHeight = window.innerHeight;
-      const totalHeight = projectHeight * projectsData.length;
-      let percentage = ((window.scrollY - offsetTop) / totalHeight) * 100;
-      percentage = Math.max(0, Math.min(percentage, 100 * (projectsData.length - 1) / projectsData.length));
-      projectContainer.style.transform = `translate3D(${-(percentage * projectsData.length)}vw, 0, 0)`;
+  //   return () => {
+  //     elements.forEach((el) => observer.unobserve(el));
+  //   };
+  // }, []);
 
-      console.log(`offsetTop: ${offsetTop}`);
-      console.log(`window.scrollY: ${window.scrollY}`);
-      console.log(`percentage: ${percentage}`);
-      console.log(`transform: translate3D(${-(percentage * projectsData.length)}vw, 0, 0)`);
-    };
+  // useEffect(() => {
+  //   const projectContainer = document.querySelector('.projects-container');
+  //   const handleScroll = () => {
+  //     const offsetTop = projectContainer.parentElement.offsetTop;
+  //     const projectHeight = window.innerHeight;
+  //     const totalHeight = projectHeight * projectsData.length;
+  //     let percentage = ((window.scrollY - offsetTop) / totalHeight) * 100;
+  //     percentage = Math.max(0, Math.min(percentage, 100 * (projectsData.length - 1) / projectsData.length));
+  //     projectContainer.style.transform = `translate3D(${-(percentage * projectsData.length)}vw, 0, 0)`;
 
-    window.addEventListener('scroll', handleScroll);
+  //     console.log(`offsetTop: ${offsetTop}`);
+  //     console.log(`window.scrollY: ${window.scrollY}`);
+  //     console.log(`percentage: ${percentage}`);
+  //     console.log(`transform: translate3D(${-(percentage * projectsData.length)}vw, 0, 0)`);
+  //   };
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [projectsData]);
+  //   window.addEventListener('scroll', handleScroll);
+
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, [projectsData]);
 
   return (
-    <div className='project-wrapper'>
+    (false && (<div className='project-wrapper'>
       <div className="container-title " id="projects">
         <h2>Projects</h2>
         <p>Explore a selection of innovative projects demonstrating a blend of creativity and technical expertise.</p>
@@ -128,7 +140,7 @@ const Projects = () => {
           ))}
         </div>
       </div>
-    </div>
+    </div>))
   );
 };
 

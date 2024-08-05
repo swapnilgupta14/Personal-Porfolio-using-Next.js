@@ -14,21 +14,21 @@
   width: 100%;
   font-weight: 500;
 
-  .anm{
+  .anm {
     opacity: 0;
     filter: blur(5px);
     transform: translateX(-100%);
     transition: all 1.5s;
   }
 
-  .profileImage{
+  .profileImage {
     opacity: 0;
     filter: blur(5px);
     transform: translateX(+100%);
     transition: all 1.5s;
   }
-  
-  .prjShow{
+
+  .prjShow {
     filter: blur(0);
     transform: translateX(0);
     opacity: 1;
@@ -167,29 +167,6 @@
   }
 }
 
-@media screen and (max-width: 768px) {
-  .aboutWrapper {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .left,
-  .right {
-    max-width: 100%;
-    text-align: center;
-  }
-
-  .left {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  .item {
-    margin: 10px 0;
-  }
-}
-
 .wrapper-anime {
   display: flex;
   flex-direction: row;
@@ -238,7 +215,6 @@
     background-color: #833393;
     border-radius: 10px;
     margin: 2rem;
-
   }
 
   .third div {
@@ -267,6 +243,39 @@
     }
     100% {
       margin-top: 0;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutWrapper {
+    display: flex;
+    min-height: fit-content;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    height: 150vh;
+    padding: 0;
+
+    .left {
+      .inside-div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    .right {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+
+      .profileImage {
+        margin-bottom: 10rem;
+        width: 200px;
+        height: 200px;
+      }
     }
   }
 }

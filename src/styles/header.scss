@@ -27,6 +27,7 @@
     left: 0;
     right: 0;
     overflow: hidden;
+    cursor: none;
 
     .navbar-list {
       list-style: none;
@@ -41,7 +42,7 @@
         font-size: 1rem;
         flex-direction: column;
         justify-content: center;
-        cursor: pointer !important;
+        // cursor: pointer !important;
 
         .navbar-link {
           text-decoration: none;
