@@ -8,7 +8,7 @@ const Projects = () => {
       title: "Geospatial-Remote-Sensing-application - In Developement",
       description: "An e-commerce platform with a customizable product catalog.",
       technologies: ["Next.js", "Node.js", "MongoDB"],
-      img: "/p6.webp",
+      img: "/p1 (2).webp",
       link: "https://github.com/swapnilgupta14/Geospatial-Remote-Sensing-application",
       demo: "#",
     },
@@ -59,61 +59,61 @@ const Projects = () => {
     },
   ];
 
-  // useEffect(() => {
-  //   const handleResize = () => {
-  //     const width = window.innerWidth;
-  //     setIsMobile(width <= 768);
-  //   };
-  //   handleResize();
-  //   window.addEventListener('resize', handleResize);
-  //   return () => window.removeEventListener('resize', handleResize);
-  // }, []);
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      setIsMobile(width <= 768);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver((entries) => {
-  //     entries.forEach((entry) => {
-  //       console.log("about");
-  //       if (entry.isIntersecting) {
-  //         entry.target.classList.add('cardShow');
-  //       } else {
-  //         entry.target.classList.remove('cardShow');
-  //       }
-  //     });
-  //   });
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        console.log("about");
+        if (entry.isIntersecting) {
+          entry.target.classList.add('cardShow');
+        } else {
+          entry.target.classList.remove('cardShow');
+        }
+      });
+    });
 
-  //   const elements = document.querySelectorAll(".projectHidden");
-  //   elements.forEach((el) => observer.observe(el));
+    const elements = document.querySelectorAll(".projectHidden");
+    elements.forEach((el) => observer.observe(el));
 
-  //   return () => {
-  //     elements.forEach((el) => observer.unobserve(el));
-  //   };
-  // }, []);
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
 
-  // useEffect(() => {
-  //   const projectContainer = document.querySelector('.projects-container');
-  //   const handleScroll = () => {
-  //     const offsetTop = projectContainer.parentElement.offsetTop;
-  //     const projectHeight = window.innerHeight;
-  //     const totalHeight = projectHeight * projectsData.length;
-  //     let percentage = ((window.scrollY - offsetTop) / totalHeight) * 100;
-  //     percentage = Math.max(0, Math.min(percentage, 100 * (projectsData.length - 1) / projectsData.length));
-  //     projectContainer.style.transform = `translate3D(${-(percentage * projectsData.length)}vw, 0, 0)`;
+  useEffect(() => {
+    const projectContainer = document.querySelector('.projects-container');
+    const handleScroll = () => {
+      const offsetTop = projectContainer.parentElement.offsetTop;
+      const projectHeight = window.innerHeight;
+      const totalHeight = projectHeight * projectsData.length;
+      let percentage = ((window.scrollY - offsetTop) / totalHeight) * 100;
+      percentage = Math.max(0, Math.min(percentage, 100 * (projectsData.length - 1) / projectsData.length));
+      projectContainer.style.transform = `translate3D(${-(percentage * projectsData.length)}vw, 0, 0)`;
 
-  //     console.log(`offsetTop: ${offsetTop}`);
-  //     console.log(`window.scrollY: ${window.scrollY}`);
-  //     console.log(`percentage: ${percentage}`);
-  //     console.log(`transform: translate3D(${-(percentage * projectsData.length)}vw, 0, 0)`);
-  //   };
+      console.log(`offsetTop: ${offsetTop}`);
+      console.log(`window.scrollY: ${window.scrollY}`);
+      console.log(`percentage: ${percentage}`);
+      console.log(`transform: translate3D(${-(percentage * projectsData.length)}vw, 0, 0)`);
+    };
 
-  //   window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScroll);
-  //   };
-  // }, [projectsData]);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [projectsData]);
 
   return (
-    (false && (<div className='project-wrapper'>
+    (true && (<div className='project-wrapper'>
       <div className="container-title " id="projects">
         <h2>Projects</h2>
         <p>Explore a selection of innovative projects demonstrating a blend of creativity and technical expertise.</p>

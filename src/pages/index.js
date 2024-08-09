@@ -9,7 +9,6 @@ import Projects from "@/component/Projects";
 import { Custom } from "@/component/icon/icon";
 
 export default function Home() {
-  const [cursorColor, setCursorColor] = useState('#ffffff'); 
 
   useEffect(() => {
     const handleCopy = (e) => {
@@ -39,26 +38,31 @@ export default function Home() {
   }
 
   useEffect(() => {
-    document.addEventListener('mousemove', function (dets) {
-      let x = dets.clientX - 5;
-      let y = dets.clientY - 4;
-      console.log(x, y);
+    let timeoutId = null;
 
-      let cursor = document.querySelector('.cursor');
-      if(cursor === null) return;
+    const handleMouseMove = (dets) => {
+      const x = dets.clientX - 5;
+      const y = dets.clientY - 4;
+
+      const cursor = document.querySelector('.cursor');
+      if (cursor === null) return;
+
+      cursor.style.display = 'block';
       cursor.style.left = x + 'px';
       cursor.style.top = y + 'px';
-    });
-  }, []);
 
-  const getLuminance = (color) => {
-    const rgb = color.match(/\d+/g).map(Number);
-    const [r, g, b] = rgb.map((v) => {
-      v /= 255;
-      return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
-    });
-    return 0.2126 * r + 0.7152 * g + 0.0722 * b;
-  };
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        cursor.style.display = 'none';
+      }, 1000);
+    };
+
+    document.addEventListener('mousemove', handleMouseMove);
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+      clearTimeout(timeoutId);
+    };
+  }, []);
 
 
   return (
