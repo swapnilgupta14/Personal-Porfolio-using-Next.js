@@ -27,7 +27,7 @@ const About = () => {
     }, []);
 
     const data = [
-        { number: '8+', text: 'Projects' },
+        { number: '10+', text: 'Projects' },
         { number: '600+', text: 'Solved DSA Problems' },
         { number: '15+', text: 'CourseWorks' },
         { number: '1yr', text: 'Experience Count' },

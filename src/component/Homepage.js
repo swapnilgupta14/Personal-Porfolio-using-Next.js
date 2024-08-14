@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Linkedin, Github, Mail, Leetcode, HackerRank, DownloadIcon } from './icon/icon';
 import { IndicatorIcon } from './icon/icon';
 import Header from './header';
+import Link from 'next/link';
+
 
 
 const Homepage = () => {
@@ -95,7 +97,7 @@ const Homepage = () => {
                 }
             });
         });
-        
+
         const intscnOBJ = document.querySelectorAll(".prjHome");
         intscnOBJ.forEach((e) => observer.observe(e));
     }, []);
@@ -114,12 +116,18 @@ const Homepage = () => {
                         <p className="detail prjHome">A front-end developer passionate about building accessible <br /> and user friendly websites.</p>
                     </div>
                     <div className="button-wrapper">
-                        <button className="download-button comic-neue-bolder prjHome">Get in touch</button>
-                        <button className="download-button other comic-neue-bolder prjHome ">
-                            Download CV
-                        </button>
-                        <button className="icon" style={{ marginBottom: "-7px" }}><Linkedin width={35} height={35} /></button>
-                        <button className="icon"><Github width={35} height={35} /></button>
+                        <Link href="mailto:mail.swapnilgupta@gmail.com">
+                            <button className="download-button comic-neue-bolder prjHome">Get in touch</button>
+                        </Link>
+                        <Link href="https://drive.google.com/file/d/1lkYROIEsFh7hk-zXhZ2-qXXKAhrA-2nW/view?usp=drive_link" passHref>
+                            <button className="download-button other comic-neue-bolder prjHome">Download CV</button>
+                        </Link>
+                        <a href="https://www.linkedin.com/in/swapnilgupta-ln/" target="_blank" rel="noopener noreferrer">
+                            <button className="icon" style={{ marginBottom: "-7px" }}><Linkedin width={35} height={35} /></button>
+                        </a>
+                        <a href="https://github.com/swapnilgupta14" target="_blank" rel="noopener noreferrer">
+                            <button className="icon"><Github width={35} heght={35} /></button>
+                        </a>
                     </div>
                 </div>
             </div>

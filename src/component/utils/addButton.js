@@ -6,7 +6,7 @@ import Link from 'next/link';
 const AddButton = () => {
   return (
     <div className="add">
-      <Link href="#" className="iconLink">
+      <Link href="https://drive.google.com/file/d/1lkYROIEsFh7hk-zXhZ2-qXXKAhrA-2nW/view?usp=drive_link" className="iconLink">
         <svg className="icon">
           <use xlinkHref="#fileIcon" />
         </svg>
@@ -16,12 +16,12 @@ const AddButton = () => {
           <use xlinkHref="#imageIcon" />
         </svg>
       </Link>
-      <Link href="#" className="iconLink">
+      <Link href="mailto:mail.swapnilgupta@gmail.com" className="iconLink">
         <svg className="icon">
           <use xlinkHref="#mailIcon" />
         </svg>
       </Link>
-      <Link href="#" className="iconLink">
+      <Link href="https://buymeacoffee.com/14guptaswapnil" className="iconLink">
         <svg className="icon">
           <use xlinkHref="#chatIcon" />
         </svg>

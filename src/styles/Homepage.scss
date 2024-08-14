@@ -16,6 +16,8 @@
   position: relative;
   overflow: hidden;
   margin-top: -3.5rem;
+  cursor: none !important;
+  pointer-events: none;
 
   .container {
     font-size: 2.26rem;
@@ -71,6 +73,8 @@
       align-items: center;
       margin: 2rem 0px;
       padding-left: 20px !important;
+      cursor: none !important;
+      pointer-events: none;
 
       .download-button {
         background-color: $secondary-color;
