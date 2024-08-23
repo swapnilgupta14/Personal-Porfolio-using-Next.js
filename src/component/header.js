@@ -45,7 +45,7 @@ const Header = ({ isDropdownOpen, setIsDropdownOpen, scrollToSection }) => {
 
   return (
     <header className='app-header app-header-large'>
-      <nav className={`navbar ${isMobile ? 'mobile' : ''}`}>
+      {/* <nav className={`navbar ${isMobile ? 'mobile' : ''}`}>
         <div className="navbar-tray">
           <ul className="navbar-list">
             <li className="navbar-item">
@@ -109,7 +109,7 @@ const Header = ({ isDropdownOpen, setIsDropdownOpen, scrollToSection }) => {
 
           </ul>
         </div>
-      </div>
+      </div> */}
     </header>
   );
 };

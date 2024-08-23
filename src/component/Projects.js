@@ -108,17 +108,16 @@ const Projects = () => {
   useEffect(() => {
     const projectContainer = document.querySelector('.projects-container');
     const handleScroll = () => {
-      const offsetTop = projectContainer.parentElement.offsetTop;
-      const projectHeight = window.innerHeight;
-      const totalHeight = projectHeight * projectsData.length;
+      let offsetTop = projectContainer.parentElement.offsetTop;
+      let projectHeight = window.innerHeight;
+      let totalHeight = projectHeight * projectsData.length;
       let percentage = ((window.scrollY - offsetTop) / totalHeight) * 100;
       percentage = Math.max(0, Math.min(percentage, 100 * (projectsData.length - 1) / projectsData.length));
       projectContainer.style.transform = `translate3D(${-(percentage * projectsData.length)}vw, 0, 0)`;
 
-      console.log(`offsetTop: ${offsetTop}`);
-      console.log(`window.scrollY: ${window.scrollY}`);
-      console.log(`percentage: ${percentage}`);
-      console.log(`transform: translate3D(${-(percentage * projectsData.length)}vw, 0, 0)`);
+      if(isMobile){
+        projectContainer.style.transform = `translate3D(0, 0, 0)`;
+      }
     };
 
     window.addEventListener('scroll', handleScroll);

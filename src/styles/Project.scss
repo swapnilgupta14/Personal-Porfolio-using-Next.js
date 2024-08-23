@@ -392,15 +392,29 @@
 }
 
 @media (max-width: 768px) {
-  .project-wrapper{
-    max-width: 100vw;
+  .project-wrapper {
+    // max-width: 100vw;
     overflow: hidden;
 
-    .outer{
+    .outer {
       overflow-x: none !important;
-      .projects-container{
+      max-width: 100vw;
+      height: fit-content;
+
+      .project-text {
+        display: flex;
+        flex-direction: column !important;
+
+        .main-text {
+        }
+
+        .link-text {
+          align-items: flex-start;
+          display: flex;
+          flex-direction: row !important;
+        }
+
       }
     }
   }
-  
 }
