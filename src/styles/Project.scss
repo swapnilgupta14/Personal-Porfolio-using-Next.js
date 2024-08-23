@@ -392,5 +392,15 @@
 }
 
 @media (max-width: 768px) {
+  .project-wrapper{
+    max-width: 100vw;
+    overflow: hidden;
+
+    .outer{
+      overflow-x: none !important;
+      .projects-container{
+      }
+    }
+  }
   
 }

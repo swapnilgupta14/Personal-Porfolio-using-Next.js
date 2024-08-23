@@ -116,18 +116,22 @@ const Homepage = () => {
                         <p className="detail prjHome">A front-end developer passionate about building accessible <br /> and user friendly websites.</p>
                     </div>
                     <div className="button-wrapper">
-                        <Link href="mailto:mail.swapnilgupta@gmail.com">
-                            <button className="download-button comic-neue-bolder prjHome">Get in touch</button>
-                        </Link>
-                        <Link href="https://drive.google.com/file/d/1lkYROIEsFh7hk-zXhZ2-qXXKAhrA-2nW/view?usp=drive_link" passHref>
-                            <button className="download-button other comic-neue-bolder prjHome">Download CV</button>
-                        </Link>
-                        <a href="https://www.linkedin.com/in/swapnilgupta-ln/" target="_blank" rel="noopener noreferrer">
-                            <button className="icon" style={{ marginBottom: "-7px" }}><Linkedin width={35} height={35} /></button>
-                        </a>
-                        <a href="https://github.com/swapnilgupta14" target="_blank" rel="noopener noreferrer">
-                            <button className="icon"><Github width={35} heght={35} /></button>
-                        </a>
+                        <div className="for-mobile">
+                            <Link href="mailto:mail.swapnilgupta@gmail.com">
+                                <button className="download-button comic-neue-bolder prjHome">Get in touch</button>
+                            </Link>
+                            <Link href="https://drive.google.com/file/d/1lkYROIEsFh7hk-zXhZ2-qXXKAhrA-2nW/view?usp=drive_link" passHref>
+                                <button className="download-button other comic-neue-bolder prjHome">Download CV</button>
+                            </Link>
+                        </div>
+                        {!isSmallScreen && (<div className="for-mobile">
+                            <a href="https://www.linkedin.com/in/swapnilgupta-ln/" target="_blank" rel="noopener noreferrer">
+                                <button className="icon" style={{ marginBottom: "-7px" }}><Linkedin width={35} height={35} /></button>
+                            </a>
+                            <a href="https://github.com/swapnilgupta14" target="_blank" rel="noopener noreferrer">
+                                <button className="icon"><Github width={35} heght={35} /></button>
+                            </a>
+                        </div>)}
                     </div>
                 </div>
             </div>
