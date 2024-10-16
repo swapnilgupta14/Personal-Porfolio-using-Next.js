@@ -17,7 +17,7 @@ const Projects = () => {
         "Rejouice: Modern animated agency website",
       description: "Animated Website build using Swiper, GSAP, JS, Tailwind",
       technologies: ["JS", "GSAP", "Swiper", "HTML"],
-      img: "/p31.webp",
+      img: "/p31.png",
       link: "https://github.com/swapnilgupta14/rejouice",
       demo: "https://swapnilgupta14.github.io/rejouice/",
     },
