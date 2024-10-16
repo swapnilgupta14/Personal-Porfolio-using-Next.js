@@ -14,6 +14,15 @@ const Projects = () => {
     },
     {
       title:
+        "Rejouice: Modern animated agency website",
+      description: "Animated Website build using Swiper, GSAP, JS, Tailwind",
+      technologies: ["JS", "GSAP", "Swiper", "HTML"],
+      img: "/p31.webp",
+      link: "https://github.com/swapnilgupta14/rejouice",
+      demo: "https://swapnilgupta14.github.io/rejouice/",
+    },
+    {
+      title:
         "GrabNGoods: An E-commerce web application",
       description:
         "A comprehensive e-commerce platform designed for a startup, featuring a scalable, component-based architecture with React.js and Redux Toolkit.",
@@ -55,15 +64,7 @@ const Projects = () => {
       link: "https://github.com/swapnilgupta14/IP-Address-Tracker",
       demo: "https://swapnilgupta14.github.io/IP-Address-Tracker/",
     },
-    {
-      title:
-        "Fully responsive personal-portfolio using Next.js & Sass with custom animations, build from scratch.",
-      description: "A social media application with real-time messaging.",
-      technologies: ["Next.js", "SASS", "HTML"],
-      img: "/p31.webp",
-      link: "https://github.com/swapnilgupta14/next-personal-portfolio",
-      demo: "#",
-    },
+   
     // {
     //   title: "Stock Price Prediction using LSTM.",
     //   description:
