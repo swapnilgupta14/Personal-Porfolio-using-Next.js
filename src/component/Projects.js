@@ -8,9 +8,27 @@ const Projects = () => {
       title: "CompileX - An Online Coding Platform",
       description: "A Coding Platform to Practice Problems, Compete in Battles",
       technologies: ["NEXT.js", "Tailwind CSS", "SCSS", "TypeScript", "AWS Lambda", "Django"],
-      img: "/p0.webp",
+      img: "/p0.png",
       link: "https://github.com/swapnilgupta14/CompileX-An-Online-Coding-Platform",
       demo: "https://code-editor-wine-kappa.vercel.app/",
+    },
+    {
+      title:
+        "GrabNGoods: An E-commerce web application",
+      description:
+        "A comprehensive e-commerce platform designed for a startup, featuring a scalable, component-based architecture with React.js and Redux Toolkit.",
+      technologies: ["React", "Redux", "CSS", "Tailwind"],
+      img: "/p.png",
+      link: "https://github.com/swapnilgupta14/GrabNGoods-E-commerce-web-application",
+      demo: "https://grab-n-goods-e-commerce-web-application.vercel.app/",
+    },
+    {
+      title: "Cricify: Cricket Coverage & Tournament Organiser Web Application",
+      description: "a Tournament Organizer App built with React, Vite, and Tailwind CSS. The app allows users to create tournaments, manage teams, schedule matches, and review tournament details with a clean and responsive UI.",
+      technologies: ["NEXT.js", "Redux-Toolkit", "TypeScriptIcon", "Tailwind"],
+      img: "/p_1.png",
+      link: "https://github.com/swapnilgupta14/Cricify-Cricket-Tournament-Organiser",
+      demo: "https://cricify.vercel.app/",
     },
     {
       title: "ChalkSlate - Real-Time Collaborative Whiteboard Canvas with Recording Features",
@@ -19,25 +37,6 @@ const Projects = () => {
       img: "/p6.webp",
       link: "https://github.com/swapnilgupta14/ChalkPad-An-interactive-whiteboard",
       demo: "https://chalkpad-web.vercel.app/",
-    },
-    // {
-    //   title:
-    //     "Electronic Medical Record application using Next.js, FAST API and MySQL with cloud as AWS.",
-    //   description:
-    //     "A web application that allows users to track their daily tasks.",
-    //   technologies: ["React", "Redux", "CSS"],
-    //   img: "/p1.webp",
-    //   link: "https://github.com/swapnilgupta14/Mediblock",
-    //   demo: "#",
-    // },
-    {
-      title:
-        "Fully responsive personal-portfolio using Next.js & Sass with custom animations, build from scratch.",
-      description: "A social media application with real-time messaging.",
-      technologies: ["Next.js", "SASS", "HTML"],
-      img: "/p31.webp",
-      link: "https://github.com/swapnilgupta14/next-personal-portfolio",
-      demo: "#",
     },
     {
       title: "CNN-Based-Neural-Network-based-on-ResNet50-Architecture ",
@@ -57,22 +56,31 @@ const Projects = () => {
       demo: "https://swapnilgupta14.github.io/IP-Address-Tracker/",
     },
     {
-      title: "Stock Price Prediction using LSTM.",
-      description:
-        "A blogging platform with markdown support and user authentication.",
-      technologies: ["Gatsby", "GraphQL", "Netlify"],
-      img: "/p2.webp",
-      link: "https://github.com/swapnilgupta14/Stock-Growth-Prediction-Project-using-LSTM",
-      demo: "https://github.com/swapnilgupta14/Stock-Growth-Prediction-Project-using-LSTM",
-    },
-    {
-      title: "Geospatial-Remote-Sensing-application - In Developement",
-      description: "An e-commerce platform with a customizable product catalog.",
-      technologies: ["Next.js", "Node.js", "MongoDB"],
-      img: "/p1 (2).webp",
-      link: "https://github.com/swapnilgupta14/Geospatial-Remote-Sensing-application",
+      title:
+        "Fully responsive personal-portfolio using Next.js & Sass with custom animations, build from scratch.",
+      description: "A social media application with real-time messaging.",
+      technologies: ["Next.js", "SASS", "HTML"],
+      img: "/p31.webp",
+      link: "https://github.com/swapnilgupta14/next-personal-portfolio",
       demo: "#",
     },
+    // {
+    //   title: "Stock Price Prediction using LSTM.",
+    //   description:
+    //     "A blogging platform with markdown support and user authentication.",
+    //   technologies: ["Gatsby", "GraphQL", "Netlify"],
+    //   img: "/p2.webp",
+    //   link: "https://github.com/swapnilgupta14/Stock-Growth-Prediction-Project-using-LSTM",
+    //   demo: "https://github.com/swapnilgupta14/Stock-Growth-Prediction-Project-using-LSTM",
+    // },
+    // {
+    //   title: "Geospatial-Remote-Sensing-application - In Developement",
+    //   description: "An e-commerce platform with a customizable product catalog.",
+    //   technologies: ["Next.js", "Node.js", "MongoDB"],
+    //   img: "/p1 (2).webp",
+    //   link: "https://github.com/swapnilgupta14/Geospatial-Remote-Sensing-application",
+    //   demo: "#",
+    // },
   ];
 
   useEffect(() => {

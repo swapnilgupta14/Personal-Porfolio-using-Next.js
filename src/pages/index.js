@@ -8,21 +8,29 @@ import Experience from "@/component/Experience";
 import Projects from "@/component/Projects";
 import { Custom } from "@/component/icon/icon";
 
-export default function Home() {
+import useLenis from "../component/utils/useLenis";
+import dynamic from "next/dynamic";
 
+// const ScrollTextEffect = dynamic(
+//   () => import("../components/common/ScrollTextEffect"),
+//   {
+//     ssr: false,
+//   }
+// );
+
+export default function Home() {
+  useLenis();
   useEffect(() => {
     const handleCopy = (e) => {
       e.preventDefault();
     };
-    document.addEventListener('copy', handleCopy);
+    document.addEventListener("copy", handleCopy);
     return () => {
-      document.removeEventListener('copy', handleCopy);
+      document.removeEventListener("copy", handleCopy);
     };
   }, []);
 
-
   const [showWelcome, setShowWelcome] = useState(true);
-
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -30,7 +38,6 @@ export default function Home() {
     }, 2500);
     return () => clearTimeout(timeout);
   }, []);
-
 
   let isMobile;
   if (typeof window !== "undefined") {
@@ -44,31 +51,29 @@ export default function Home() {
       const x = dets.clientX - 5;
       const y = dets.clientY - 4;
 
-      const cursor = document.querySelector('.cursor');
+      const cursor = document.querySelector(".cursor");
       if (cursor === null) return;
 
-      cursor.style.display = 'block';
-      cursor.style.left = x + 'px';
-      cursor.style.top = y + 'px';
+      cursor.style.display = "block";
+      cursor.style.left = x + "px";
+      cursor.style.top = y + "px";
 
       clearTimeout(timeoutId);
       timeoutId = setTimeout(() => {
-        cursor.style.display = 'none';
+        cursor.style.display = "none";
       }, 1000);
     };
 
-    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener("mousemove", handleMouseMove);
     return () => {
-      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener("mousemove", handleMouseMove);
       clearTimeout(timeoutId);
     };
   }, []);
 
-
   return (
     <>
       <div>
-
         {showWelcome ? (
           <div>
             <div className="loader-container">
@@ -93,6 +98,9 @@ export default function Home() {
         ) : (
           <>
             <div className="global-bg">
+              {/* <div>
+                <ScrollTextEffect />
+              </div> */}
               <div className="cursor">
                 <Custom fill={"#ffffff"} />
               </div>
